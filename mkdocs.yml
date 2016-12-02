@@ -44,10 +44,13 @@ pages:
       - 'StreetlightModel'          : 'StreetLighting/StreetlightModel/doc/spec.md'
       - 'StreetlightGroup'          : 'StreetLighting/StreetlightGroup/doc/spec.md'
       - 'StreetlightControlCabinet' : 'StreetLighting/StreetlightControlCabinet/doc/spec.md'
-  - 'Vehicle':
-      - 'Introduction'         : 'Vehicle/doc/introduction.md'
-      - 'Vehicle'              : 'Vehicle/Vehicle/doc/spec.md'
-      - 'VehicleModel'         : 'Vehicle/VehicleModel/doc/spec.md'
+  - 'Transportation':
+      - 'Introduction'         : 'Transportation/doc/introduction.md'
+      - 'Road'                 : 'Transportation/Road/doc/spec.md'
+      - 'RoadSegment'          : 'Transportation/RoadSegment/doc/spec.md'
+      - 'TrafficFlowObserved'  : 'Transportation/TrafficFlowObserved/doc/spec.md'
+      - 'Vehicle'              : 'Transportation/Vehicle/Vehicle/doc/spec.md'
+      - 'VehicleModel'         : 'Transportation/Vehicle/VehicleModel/doc/spec.md'
   -  'Weather':
       - 'Introduction'         : 'Weather/doc/introduction.md'
       - 'WeatherObserved'      : 'Weather/WeatherObserved/doc/spec.md'
