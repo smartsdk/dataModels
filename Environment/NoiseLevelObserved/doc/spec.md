@@ -11,6 +11,14 @@ This entity is primarily associated with the Smart City and environment vertical
 
 + `type` : Entity type. It must be equal to `NoiseLevelObserved`.
 
++ `dateCreated` : Entity's creation timestamp.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Optional
+
++ `dateModified` : Last update timestamp of this entity.
+    + Attribute type: [DateTime](https://schema.org/DateTime)
+    + Optional
+
 + `location` : Location of this observation represented by a GeoJSON geometry. 
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
