@@ -41,6 +41,17 @@ the lack of support of Orion Context Broker for datetime intervals, it can be us
 + `dateObservedTo` : Observation period end date and time. See `dateObserved`. 
     + Attribute type: [DateTime](https://schema.org/DateTime). 
     + Optional
+    
++ `refDevice` : A reference to the device which captured this observation.
+    + Attribute type: Reference to an entity of type `Device`
+    + Optional
+
++ `sonometerClass` : Class of sonometer (0, 1, 2) according to [ANSI](http://soundmetersource.com/ansi-standards.html)
+used for taking this observation. This attribute is useful when no device entity is associated to observations.
+It allows to convey, roughly, information about the precision of the measurements. 
+    + Attribute type: [Text](https://schema.org/Text)
+    + Allowed values: one of (`"0"`, `"1"`, `"2"`)
+    + Optional
 
 ### Representing acoustic parameters
 
@@ -57,8 +68,8 @@ As a result this model prescribes the following attributes to convey the referre
         + `observedValue` : corresponds to the value for the measurand as a number expressed in decibels. 
         + `description` : short description of the measurand.
         + Examples:
-    `"LAeq| 93.6| A-weighted, equivalent, sound level"  "LAS| 91.6| A-weighted, Slow, sound level"
-     "LAeq,d| 65.4| A-weighted, equivalent, day period, sound level"`
+    `"LAeq | 93.6 | A-weighted, equivalent, sound level"  "LAS | 91.6 | A-weighted, Slow, sound level"
+     "LAeq,d | 65.4 | A-weighted, equivalent, day period, sound level"`
     + Mandatory
     
 + In order to enable a proper management of the *historical evolution* of the different acoustic parameters,
@@ -76,17 +87,6 @@ There are two options for representing them:
 which will capture the associated weather conditions.
 + B/ Adding weather-related properties defined at [WeatherObserved](../../../Weather/WeatherObserved/doc/spec.md).
 
-+ `refDevice` : A reference to the device which captured this observation.
-    + Attribute type: Reference to an entity of type `Device`
-    + Optional
-
-+ `sonometerClass` : Class of sonometer (0, 1, 2) according to [ANSI](http://soundmetersource.com/ansi-standards.html)
-used for taking this observation. This attribute is useful when no device entity is associated to observations.
-It allows to convey, roughly, information about the precision of the measurements. 
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values: one of (`"0"`, `"1"`, `"2"`)
-    + Optional
-
 ## Examples of use
 
 ```
@@ -99,8 +99,8 @@ It allows to convey, roughly, information about the precision of the measurement
       },
       "dateObserved": "2016-12-28T11:00:00/2016-12-28T12:00:00",
       "measurand": [
-        "LAeq|67.8|A-weighted, equivalent, sound level",
-        "LAmax|94.5|A-weighted, maximum, sound level",
+        "LAeq  | 67.8 | A-weighted, equivalent, sound level",
+        "LAmax | 94.5 | A-weighted, maximum, sound level",
       ],
       "LAeq": 67.8,
       "LAmax": 94.5,
