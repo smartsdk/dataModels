@@ -1,13 +1,12 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https//fiware.github.io/dataModels/Weather/WeatherObserved/schema.json",
+  "id": "https://fiware.github.io/dataModels/Weather/WeatherObserved/schema.json",
   "title": "GSMA / FIWARE - Weather Observed schema",
   "description": "An observation of weather conditions at a certain place and time. This data model has been developed in cooperation with mobile operators and the GSMA.",
   "type": "object",
   "properties": {
     "id": {
-      "type": "string",
-      "description": "NGSI Entity id"
+      "type": "string"
     },
     "type": {
       "type": "string",
@@ -17,8 +16,7 @@
       "description": "NGSI Entity type"
     },
     "dateCreated": {
-      "type": "string",
-      "format": "date-time"
+      "$ref": "https://fiware.github.io/dataModels/schema-common.json#/definitions/dateCreated"
     },
     "dateModified": {
       "type": "string",

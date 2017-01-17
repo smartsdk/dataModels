@@ -1,18 +1,11 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https//fiware.github.io/dataModels/schema-common.json",
+  "id": "https://fiware.github.io/dataModels/schema-common.json",
   "title": "Common definitions for FIWARE Harmonized Data Models",
   "definitions": {
     "id": {
       "type": "string",
       "description": "NGSI Entity id"
-    },
-    "type": {
-      "type": "string",
-      "enum": [
-        "WeatherObserved"
-      ],
-      "description": "NGSI Entity type"
     },
     "dateCreated": {
       "type": "string",
