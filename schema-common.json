@@ -3,20 +3,42 @@
   "id": "https://fiware.github.io/dataModels/schema-common.json",
   "title": "Common definitions for FIWARE Harmonized Data Models",
   "definitions": {
-    "id": {
-      "type": "string",
-      "description": "NGSI Entity id"
+    "GSMA-Commons": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "NGSI Entity id"
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+         },
+        "dataProvider": {
+          "type": "string"
+        }
+      }
     },
-    "dateCreated": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "dateModified": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "source": {
-      "type": "string"
+    "Location-Commons": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "object"
+        },
+        "address": {
+          "type": "object"
+        }
+      }
     }
   }
 }
