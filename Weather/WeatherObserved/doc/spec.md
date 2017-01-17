@@ -7,7 +7,7 @@ This data model has been developed in cooperation with mobile operators and the 
 
 ## Data Model
 
-A JSON Schema corresponding to this data model can be found [here](../schema.json).
+A JSON Schema corresponding to this data model can be found [here](https://fiware.github.io/dataModels/Weather/WeatherObserved/schema.json).
 
 + `id` : Unique identifier. 
 
