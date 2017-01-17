@@ -23,7 +23,13 @@
         },
         "name": {
           "type": "string"
-         },
+        },
+        "alternateName": {
+           "type": "string" 
+        },
+        "description": {
+           "type": "string" 
+        },
         "dataProvider": {
           "type": "string"
         }
@@ -32,11 +38,32 @@
     "Location-Commons": {
       "type": "object",
       "properties": {
-        "location": {
-          "type": "object"
-        },
+        "location": { "$ref": "http://json-schema.org/geojson/geometry.json#" },
         "address": {
-          "type": "object"
+          "type": "object",
+          "properties": {
+            "streetAddress": {
+              "type": "string"
+            },
+            "addressLocality": {
+              "type": "string"
+            },
+            "addressRegion": {
+              "type": "string"
+            },
+            "addressCountry": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "postOfficeBoxNumber": {
+              "type": "string"
+            },
+            "areaServed": {
+              "type": "string"
+            }
+          }
         }
       }
     }
