@@ -1,0 +1,33 @@
+{
+  "id": "Madrid-AmbientObserved-28079004-2016-03-15T11:00:00",
+  "type": "AirQualityObserved",
+  "address": {
+    "addressCountry": "ES",
+    "addressLocality": "Madrid",
+    "streetAddress": "Plaza de España"
+  },
+  "dateObserved": "2016-03-15T11:00:00/2016-03-15T12:00:00",
+  "location": {
+    "type": "Point",
+    "coordinates": [-3.712247222222222, 40.423852777777775]
+  },
+  "source": "http://datos.madrid.es",
+  "precipitation": 0,
+  "relativeHumidity": 0.54,
+  "temperature": 12.2,
+  "windDirection": 186,
+  "windSpeed": 0.64,
+  "measurand": [
+     "CO, 500, GP, Carbon Monoxide",
+     "NO, 45, GQ, Nitrogen Monoxide",
+     "NO2, 69, GQ, Nitrogen Dioxide",
+     "NOx, 139, GQ, Nitrogen oxides",
+     "SO2, 11, GQ, Sulfur Dioxide"
+  ],
+  "CO": 500,
+  "NO": 45,
+  "NO2": 69,
+  "NOx": 139,
+  "SO2": 11,
+  "refPointOfInterest": "28079004-Pza. de España"
+}
