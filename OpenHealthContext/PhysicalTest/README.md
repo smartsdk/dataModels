@@ -46,11 +46,11 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
    + Mandatory.
 
 + `omh:end_date_time` : Time the test starts.
-   + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
+   + Attribute type: [omh:time-interval](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/time-interval-1.x.json).
    + Mandatory.
 
 + `omh:start_date_time` : Time the test ends.
-   + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
+   + Attribute type: [omh:time-interval](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/time-interval-1.x.json).
    + Mandatory.
 
 
@@ -125,11 +125,11 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
    },
    "omh:end_date_time": {
       "value": "2017-01-18T20:45:58.447Z-0800",
-      "type": "omh:date-time"
+      "type": "omh:time-interval"
    },
    "omh:start_date_time": {
       "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:date-time"
+      "type": "omh:time-interval"
    }
 }
 ```
