@@ -15,8 +15,8 @@
 		"test_identificator": {
 	    	"$ref": "test-identificator-1.x.json"
 	  	},
-	  	"user_identificator": {
-	    	"$ref": "user-identificator-1.x.json"
+	  	"patient_identificator": {
+	    	"$ref": "patient-identificator-1.x.json"
 	  	},
 	  	"question_identificator": {
 	    	"$ref": "question-identificator-1.x.json"
@@ -30,28 +30,28 @@
    	},
 
    	"properties": {
-   		"testIdentificator": {
+   		"test_identificator": {
 	    	"$ref": "#/definitions/test_identificator"
 	  	},
-	  	"patientIdentificator": {
-	    	"$ref": "#/definitions/user_identificator"
+	  	"patient_identificator": {
+	    	"$ref": "#/definitions/patient_identificator"
 	  	},
-	  	"questionIdentificator": {
+	  	"question_identificator": {
 	    	"$ref": "#/definitions/question_identificator"
 	  	},
 	  	"answer": {
 	    	"$ref": "#/definitions/answer_to_question"
 	  	},
-	  	"lastUpdate": {
+	  	"last_update": {
 	    	"$ref": "#/definitions/date_time"
 	  	}
    	},
 
    "required": [
    		"test",
-   		"userIdentificator",
-   		"questionIdentificator",
+   		"patient_identificator",
+   		"question_identificator",
    		"answer",
-   		"lastUpdate"
+   		"last_update"
    ]  
 }

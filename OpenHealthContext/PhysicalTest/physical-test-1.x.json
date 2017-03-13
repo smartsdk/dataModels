@@ -12,20 +12,17 @@
     ],
     
     "definitions": {
-        "test_type": {
+        "test": {
             "$ref": "test-type-1.x.json"
         },
-        "sensor_type": {
+        "sensor": {
             "$ref": "sensor-type-1.x.json"
         },
-        "sensor_speed": {
-            "$ref": "sensor-speed-1.x.json"
-        },
-        "sensor_data": {
+        "data": {
             "$ref": "sensor-data-1.x.json"
         },
-        "date_time": {
-            "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+        "time": {
+            "$ref": "time-interval-1.x.json"
         }
     },
     
@@ -42,8 +39,8 @@
         "data": {
             "$ref": "#/definitions/sensor_data"
         },
-        "time": {
-            "$ref": "#/definitions/date_time"
+        "timel": {
+            "$ref": "#/definitions/time_interval"
         },
     },
     
