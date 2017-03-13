@@ -1,0 +1,57 @@
+{  
+   "id": "patient",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "description": "This schema represents demographic data to identify patients.",
+   "type": "object",
+
+	"references": [
+        {
+            "description": "Pending to be included.",
+            "url": "Pending to be included."
+        }
+    ],
+
+   "definitions": {
+	   "patient_identification": {  
+	      "$ref": "patient_identification-1.x.json"
+	   },
+	   "gender": {  
+	      "$ref": "gender-1.x.json"
+	   },
+	   "birthday": {  
+	      "$ref": "birthday-1.x.json"
+	   },
+	   "created": {  
+	      "$ref": "date-time-1.x.json"
+	   },
+	   "last_update": {  
+	      "$ref": "date-time-1.x.json"
+	   }
+   },
+
+   "properties": {
+	   "patient_identification": {  
+	      "$ref": "#/definitions/patient_identification"
+	   },
+	   "gender": {  
+	      "$ref": "#/definitions/gender"
+	   },
+	   "birthday": {  
+	      "$ref": "#/definitions/birthday"
+	   },
+	   "created": {  
+	      "$ref": "#/definitions/date_time"
+	   },
+	   "last_update": {  
+	      "$ref": "#/definitions/date_time"
+	   }
+   },
+
+   "required": [
+   		"patient_identification",
+   		"gender",
+   		"birthday",
+   		"created",
+   		"last_update"
+   ]  
+}
