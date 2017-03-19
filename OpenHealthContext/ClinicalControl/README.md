@@ -15,12 +15,12 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
    + Mandatory
 
 + `omh:body_weight` : Represents body weight.
-    + Attribute type: [body-weight](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/body-weight-1.x.json).
+    + Attribute type: [body-weight](http://www.openmhealth.org/schema/omh/body-weight-1.0.json).
     + Allowed values: (`kg`, `g`, `lbs`, `oz`).
     + Mandatory.
 
 + `omh:body_height` : Represents body height.
-    + Attribute type: [body-height](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/body-height-1.x.json).
+    + Attribute type: [body-height](http://www.openmhealth.org/schema/omh/body-height-1.0.json).
     + Allowed values: (`m`, `cm`, `ft`, `in`)
     + Mandatory
 
@@ -29,22 +29,22 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     + Mandatory.
 
 + `omh:heart_rate` : Represents a person’s heart rate.
-    + Attribute type: [heart-rate](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/heart-rate-1.x.json).
+    + Attribute type: [heart-rate](http://www.openmhealth.org/schema/omh/heart-rate-1.0.json).
     + Allowed values: (`beats/min`).
     + Mandatory.
 
 + `omh:systolic_blood_pressure` : It should be combined with diastolic blood pressure schema to create the full schema.
-    + Attribute type: [systolic-blood-pressure](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/systolic-blood-pressure-1.x.json).
+    + Attribute type: [systolic-blood-pressure](http://www.openmhealth.org/schema/omh/systolic-blood-pressure-1.0.json).
     + Allowed values: (`mmHg`).
     + Mandatory.
 
 + `omh:diastolic_blood_pressure` : It should be combined with systolic blood pressure schema to create the full schema.
-    + Attribute type: [diastolic-blood-pressure](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/diastolic-blood-pressure-1.x.json).
+    + Attribute type: [diastolic-blood-pressure](http://www.openmhealth.org/schema/omh/diastolic-blood-pressure-1.0.json).
     + Allowed values: (`mmHg`).
     + Mandatory.
 
-+ `omh:effective_time_frame` : Date and time measurements are taken.
-    + Attribute type: [omh:time-interval](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/time-interval-1.x.json).
++ `lastUpdate` : Date and time measurements are taken.
+    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
     + Mandatory.
 
 
@@ -62,7 +62,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       "value": "180",
       "type": "cm"
    },
-   "waist_circumference": {  
+   "waistCircumference": {  
       "value": "100",
       "type": "cm"
    },
@@ -78,7 +78,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       "value": "120",
       "type": "mmHg"
    },
-   "omh:effective_time_frame": {  
+   "lastUpdate": {  
       "value": "2017-01-18T20:45:42.697Z-0800"
    }
 }

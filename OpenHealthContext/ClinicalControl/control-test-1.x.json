@@ -13,25 +13,25 @@
 
    "definitions": {
 	   "body_weight": {  
-	      "$ref": "body-weight-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json"
 	   },
 	   "body_height": {  
-	      "$ref": "body-height-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/body-height-1.0.json"
 	   },
 	   "waist_circumference": {  
 	      "$ref": "waist-size-1.x.json"
 	   },
 	   "heart_rate": {  
-	      "$ref": "heart-rate-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/heart-rate-1.0.json"
 	   },
 	   "systolic_blood_pressure": {  
-	      "$ref": "systolic-blood-pressure-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/systolic-blood-pressure-1.0.json"
 	   },
 	   "diastolic_blood_pressure": {  
-	      "$ref": "diastolic-blood-pressure-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/diastolic-blood-pressure-1.0.json"
 	   },
-	   "effective_time_frame": {  
-	      "$ref": "effective-time-frame-1.x.json"
+	   "date_time": {  
+	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
 	   }
    },
    
@@ -42,7 +42,7 @@
 	   "omh:body_height": {  
 	      "$ref": "#/definitions/body_height"
 	   },
-	   "waist_circumference": {  
+	   "waistCircumference": {  
 	      "$ref": "#/definitions/waist_circumference"
 	   },
 	   "omh:heart_rate": {  
@@ -54,7 +54,7 @@
 	   "omh:diastolic_blood_pressure": {  
 	      "$ref": "#/definitions/diastolic_blood_pressure"
 	   },
-	   "omh:effective_time_frame": {  
+	   "lastUpdate": {  
 	      "$ref": "#/definitions/date_time"
 	   }
    },
@@ -62,10 +62,10 @@
    "required": [
    		"omh:body_weight", 
    		"omh:body_height", 
-   		"waist_circumference",
+   		"waistCircumference",
    		"omh:heart_rate",
    		"omh:systolic_blood_pressure",
    		"omh:diastolic_blood_pressure",
-   		"omh:effective_time_frame"
+   		"lastUpdate"
    	]
 }

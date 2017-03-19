@@ -24,7 +24,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     + Mandatory.  
 
 + `last_update` : Last entity's update timestamp.
-    + Attribute type: [omh:time-interval](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/time-interval-1.x.json).
+    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
     + Mandatory. 
 
 ## Examples of use
@@ -45,7 +45,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     "value": "true",
     "type": "answer-to-question"
   },
-  "last_update": {
+  "lastUpdate": {
     "value": "2017-01-18T20:45:42.697Z-0800",
     "type": "omh:time-interval"
   }
