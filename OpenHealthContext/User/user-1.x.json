@@ -12,26 +12,26 @@
     ],
 
    "definitions": {
-	   "patient_identification": {  
-	      "$ref": "patient_identification-1.x.json"
+	   "user_identification": {  
+	      "$ref": "user_identification-1.x.json"
 	   },
 	   "gender": {  
 	      "$ref": "gender-1.x.json"
 	   },
 	   "birthday": {  
-	      "$ref": "birthday-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
 	   },
 	   "created": {  
-	      "$ref": "date-time-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
 	   },
 	   "last_update": {  
-	      "$ref": "date-time-1.x.json"
+	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
 	   }
    },
 
    "properties": {
-	   "patient_identification": {  
-	      "$ref": "#/definitions/patient_identification"
+	   "userIdentification": {  
+	      "$ref": "#/definitions/user_identification"
 	   },
 	   "gender": {  
 	      "$ref": "#/definitions/gender"
@@ -42,16 +42,16 @@
 	   "created": {  
 	      "$ref": "#/definitions/date_time"
 	   },
-	   "last_update": {  
+	   "lastUpdate": {  
 	      "$ref": "#/definitions/date_time"
 	   }
    },
 
    "required": [
-   		"patient_identification",
+   		"userIdentification",
    		"gender",
    		"birthday",
    		"created",
-   		"last_update"
+   		"lastUpdate"
    ]  
 }
