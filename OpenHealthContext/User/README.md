@@ -25,15 +25,15 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     + Mandatory.
 
 + `birthday` : Date of birth.
-    + Attribute type: [birthday](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/birthday-1.x.json).
+    + Attribute type: [birthday](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
     + Mandatory.
 
 + `created` : Date of creation.
-    + Attribute type: [omh:time-interval](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/time-interval-1.x.json).
+    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
     + Mandatory.
 
 + `last_update` : Last update made to the patient register.
-    + Attribute type: [omh:time-interval](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/time-interval-1.x.json).
+    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
     + Mandatory.
     
 
@@ -57,11 +57,11 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
    },
    "created": {  
       "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:time-interval"
+      "type": "omh:date-time"
    },
-   "last_update": {  
+   "lastUpdate": {  
       "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:time-interval"
+      "type": "omh:date-time"
    }
 }
 ```
