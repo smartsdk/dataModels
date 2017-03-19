@@ -56,30 +56,31 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
    "type": "ControlTest",
    "omh:body_weight": {  
       "value": "89",
-      "type": "kg"
+      "unit": "kg"
    },
    "omh:body_height": {  
       "value": "180",
-      "type": "cm"
+      "unit": "cm"
    },
    "waistCircumference": {  
       "value": "100",
-      "type": "cm"
+      "unit": "cm"
    },
    "omh:heart_rate": {  
       "value": "70",
-      "type": "beats/min"
+      "unit": "beats/min"
    },
    "omh:systolic_blood_pressure": {  
       "value": "120",
-      "type": "mmHg"
+      "unit": "mmHg"
    },
    "omh:diastolic_blood_pressure": {  
       "value": "120",
-      "type": "mmHg"
+      "unit": "mmHg"
    },
    "lastUpdate": {  
-      "value": "2017-01-18T20:45:42.697Z-0800"
+      "value": "2017-01-18T20:45:42.697Z-0800",
+      "type": "omh:date-time"
    }
 }
 ```
