@@ -7,7 +7,7 @@ The objective of this model is to define all the data that will send to Orion Co
 ## Data model
 
 A JSON Schema corresponding to this data model can be found [JSON Schema] 
-(https://github.com/smartsdkInfotec/DataModelsSmartCity/blob/master/datamodels/User%20event%20entity/UserEventEntityJsonSchema.json)
+(https://github.com/smartsdk/dataModels/blob/master/UserDataModels/datamodels/User%20event%20entity/UserEventEntityJsonSchema.json)
 
 + `id` : Entity's unique identifier. 
 
