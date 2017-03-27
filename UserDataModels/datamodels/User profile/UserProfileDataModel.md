@@ -6,7 +6,7 @@ In addition, this model considers the addresses of home and workplace of a user.
 
 ## Data model
 A JSON Schema corresponding to this data model can be found [JSON Schema] 
-(https://github.com/smartsdkInfotec/DataModelsSmartCity/blob/master/datamodels/User%20profile/UserJsonSchema.json)
+(https://github.com/smartsdk/dataModels/blob/master/UserDataModels/datamodels/User%20profile/UserJsonSchema.json)
 
 + `id` : Entity's unique identifier. 
 
