@@ -7,7 +7,7 @@ We use this model in Smart City App to propose an ideal route for the user, avoi
 
 ## Data model
 A JSON Schema corresponding to this data model can be found [JSON Schema] 
-(https://github.com/smartsdkInfotec/DataModelsSmartCity/blob/master/datamodels/Disease%20profile/DiseaseJsonSchema.json)
+(https://github.com/smartsdk/dataModels/blob/master/UserDataModels/datamodels/Disease%20profile/DiseaseJsonSchema.json)
 
 + `id` : Entity's unique identifier. 
 
