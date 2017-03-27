@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/diseaseprofile/schema.json",
+  "title": "Disease profile JSON Schema",
+  "description": "This file describes the json schema of disease profile",
+  "type": "object",
+      "properties": {
+        "id": {
+          "description": "Entity's unique identifier",
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "disease"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "pathology": {
+          "description": "Illness physical or mental of user",
+          "type": "string"          
+        },
+        "symptom": {
+          "description": "A sign or symptom of user condition.",
+          "type": "string"          
+        },
+        "PhysicalActivity": {
+          "description": "Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan.",
+        "type": "string"          
+        },
+        "possibleComplication": {
+          "description": "A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc.",
+          "type": "string"          
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time"           
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time"           
+        }
+    },
+    "required": [
+    "id",
+    "type"
+  ]
+} 
