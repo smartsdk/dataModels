@@ -16,30 +16,6 @@
           ],
           "description": "NGSI Entity type"
         },
-		"id_disease": {
-          "type": "string",
-          "enum": [
-            "disease:"
-          ]
-        },
-		"id_vehicle": {
-          "type": "string",
-          "enum": [
-            "vehicle:"
-          ]
-        },
-		"id_device": {
-          "type": "string",
-          "enum": [
-            "device:"
-          ]
-        },
-		"id_POI": {
-          "type": "string",
-          "enum": [
-            "poi:"
-          ]
-        },
         "name": {
           "description": "The name of user",
           "type": "string"          

@@ -1,8 +1,7 @@
 # User profile data model
 
 ## Description
-This entity models a user. This model presents the relationships that a user could have with a disease, a vehicle, a device and  Smart POIs. 
-In addition, this model considers the addresses of home and workplace of a user. The objective to consider these data is to save favorites routes and to determine in a quicker manner a route.
+This entity models a user. In addition, this model considers the addresses of home and workplace of a user. The model considers these data due to that these could be used to save favorites places.
 
 ## Data model
 A JSON Schema corresponding to this data model can be found [JSON Schema] 
@@ -11,14 +10,6 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 + `id` : Entity's unique identifier. 
 
 + `type` : Entity type. It must be equal to `user`.
-
-+ `id_disease` : Unique identifier related to user disease. 
-
-+ `id_vehicle` : Unique identifier related to user vehicle.
-
-+ `id_device` : Unique identifier related to user device.
-
-+ `id_POI` : Unique identifier related to user POIs
 
 + `name` : The name of user. 
 	+ Attribute type: text
@@ -61,7 +52,6 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 	{
 		"id": "user:1",
 		"type": "user",  
-		"id_disease": "disease:asthma",
 		"name": "Iker",  
 		"family name": "Smith", 
 		"gender": "Smith", 
