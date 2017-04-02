@@ -1,4 +1,4 @@
-# User Context
+# UserContext
 
 This data model describe the Context of a User. No personal data is encoded in
 the model. The actual User data are stored in a different end point, as identified
