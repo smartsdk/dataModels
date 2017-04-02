@@ -2,7 +2,7 @@
 
 ## Description
 
-This data model defines users generated notifications. This model can be used
+This data model represents user generated notifications. This model can be used
 in different scenarios. For example in Smart Mobility scenarios to provide a Traffic Alert,
 or in Smart Security scenarios to report suspicious activities.
 
