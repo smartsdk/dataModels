@@ -1,4 +1,4 @@
-UserContext
+# UserContext
 
 ## Description
 
@@ -70,4 +70,4 @@ The service is currently under development in the context of SmartSDK project.
 
 ## Open Issues
 
-- [ ] Evaluated additional properties
+- [ ] Evaluate additional properties
