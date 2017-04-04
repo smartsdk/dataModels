@@ -34,7 +34,7 @@ This is different than the vehicle type (car, lorry, etc.) represented by the `v
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
 
-+ `stop_location` : Vehicle's last known location represented by a GeoJSON Point. Such point may contain the vehicle's
++ `bus_stop` : Vehicle's last known location represented by a GeoJSON Point. Such point may contain the vehicle's
 *altitude* as the third component of the `coordinates` array. 
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
@@ -43,9 +43,13 @@ This is different than the vehicle type (car, lorry, etc.) represented by the `v
 	+ Attribute type: Text
 	+ Mandatory
 
-+ `arrivalTime` : The expected arrival time by PublicTransport (a la siguiente parada)
++ `arrivalTime` : The expected arrival time by PublicTransport to the next stop.
 	+ Attribute type: [DateTime](http://schema.org/DateTime)
-	+ Mandatory	
+	+ Mandatory
+
++ `number_passengers` : The expected arrival time by PublicTransport to the next stop.
+	+ Attribute type: [DateTime](http://schema.org/DateTime)
+	+ Mandatory		
 
 + `returnTime` : The expected return time by PublicTransport 
 	+ Attribute type: [DateTime](http://schema.org/DateTime)
