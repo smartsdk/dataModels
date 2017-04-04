@@ -20,26 +20,17 @@ oHealth-Context data model defines the following entity:
 * [Sensor data](./dataType/sensor-data-1.x.json)
 * [Sensor resolution](./dataType/sensor-resolution-1.x.json)
 * [Sensor power](./dataType/sensor-power-1.x.json)
-* [Time interval](./dataType/time-interval-1.x.json)
 * [Gender](./dataType/gender-1.x.json)
-* [Birthday](./dataType/birthday-1.x.json)
-* [Body weight](./dataType/body-weight-1.x.json)
-* [Body height](./dataType/body-height-1.x.json)
 * [Waist circumference](./dataType/waist-circumference-1.x.json)
-* [Heart rate](./dataType/heart-rate-1.x.json)
-* [Systolic blood pressure](./dataType/systolic-blood-pressure-1.x.json)
-* [Diastolic blood pressure](./dataType/diastolic-blood-pressure-1.x.json)
 * [Question identification](./dataType/question-identification-1.x.json)
 * [Question](./dataType/question-1.x.json)
 * [Answer to question](./dataType/answer-to-question-1.x.json)
-* [Date time](./dataType/date-time-1.x.json)
 
 ## Specific purpose (Physical test)
 
 Schemas that correspond to the variables of interest for some physical test used as proof of concept.
 
 ### Test: Timed Up and Go 
-* [Step count](./dataType/step-count-1.x.json)
 * [Walk speed](./dataType/walk-speed-1.x.json)
 * [Distance between steps](./dataType/step-distance-1.x.json)
 * [Distance unit value](./dataType/distance-unit-1.x.json)
@@ -50,6 +41,6 @@ Schemas that correspond to the variables of interest for some physical test used
 * [Time between repetitions](./dataType/latency-1.x.json)
 
 ### Test: 4-Stage Balance Test
-* [Interval of time that last the test](./duration-unit-value-1.x.json)
+* [Interval of time that last the test](http://www.openmhealth.org/schema/omh/duration-unit-value-1.0.json)
 * [Balance index](./dataType/balance-index-1.x.json)
 * [Balance test](./dataType/balance-test-1.x.json)
