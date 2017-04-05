@@ -44,10 +44,7 @@ If the device is not a constrained device this property can be left as `null` or
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
-        + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`,
-        `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`,
-        `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`,
-        `gasComsumption`, `electricityConsumption`)
+        + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`, `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`, `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`, `gasComsumption`, `electricityConsumption`, `acceleration`, `orientation`)
     + Mandatory
         
 + `function` :  The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function.
