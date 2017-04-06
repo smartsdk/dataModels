@@ -21,11 +21,11 @@
 	   "birthday": {  
 	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
 	   },
-	   "created": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+	   "date_created": {  
+	      "$ref": "https://schema.org/DateTime"
 	   },
-	   "last_update": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+	   "date_modified": {  
+	      "$ref": "https://schema.org/DateTime"
 	   }
    },
 
@@ -39,11 +39,11 @@
 	   "birthday": {  
 	      "$ref": "#/definitions/birthday"
 	   },
-	   "created": {  
-	      "$ref": "#/definitions/date_time"
+	   "dateCreated": {  
+	      "$ref": "#/definitions/date_created"
 	   },
-	   "lastUpdate": {  
-	      "$ref": "#/definitions/date_time"
+	   "dateModified": {  
+	      "$ref": "#/definitions/date_modified"
 	   }
    },
 

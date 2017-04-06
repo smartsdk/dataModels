@@ -18,8 +18,11 @@
         "refDevice": {
             "$ref": "https://fiware.github.io/dataModels/common-schema.json"
         },
-        "date_time": {
-            "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+        "date_test_started": {
+            "$ref": "https://schema.org/DateTime"
+        },
+        "date_test_ended": {
+            "$ref": "https://schema.org/DateTime"
         }
     },
     
@@ -30,14 +33,18 @@
         "refDevice": {
             "$ref": "#/definitions/refDevice"
         },
-        "time": {
-            "$ref": "#/definitions/date_time"
+        "dateTestStarted": {
+            "$ref": "#/definitions/date_test_started"
         },
+        "dateTestEnded": {
+            "$ref": "#/definitions/date_test_ended"
+        }
     },
     
     "required": [
         "test", 
         "refDevice", 
-        "time"
+        "dateTestStarted",
+        "dateTestEnded"
     ]
 }

@@ -30,8 +30,8 @@
 	   "diastolic_blood_pressure": {  
 	      "$ref": "http://www.openmhealth.org/schema/omh/diastolic-blood-pressure-1.0.json"
 	   },
-	   "date_time": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
+	   "date_modified": {  
+	      "$ref": "https://schema.org/DateTime"
 	   }
    },
    
@@ -54,8 +54,8 @@
 	   "omh:diastolic_blood_pressure": {  
 	      "$ref": "#/definitions/diastolic_blood_pressure"
 	   },
-	   "lastUpdate": {  
-	      "$ref": "#/definitions/date_time"
+	   "dateModified": {  
+	      "$ref": "#/definitions/date_modified"
 	   }
    },
 
@@ -66,6 +66,6 @@
    		"omh:heart_rate",
    		"omh:systolic_blood_pressure",
    		"omh:diastolic_blood_pressure",
-   		"lastUpdate"
+   		"dateModified"
    	]
 }

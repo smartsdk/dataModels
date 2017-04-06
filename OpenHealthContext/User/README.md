@@ -28,12 +28,12 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     + Attribute type: [birthday](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
     + Mandatory.
 
-+ `created` : Date of creation.
-    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
++ `dateCreated` : Date of creation.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Mandatory.
 
-+ `last_update` : Last update made to the patient register.
-    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
++ `dateModified` : Last update made to the patient register.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Mandatory.
     
 
@@ -55,13 +55,13 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       "value": "2017-01-18",
       "type": "birthday"
    },
-   "created": {  
+   "dateCreated": {  
       "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:date-time"
+      "type": "DateTime"
    },
-   "lastUpdate": {  
+   "dateModified": {  
       "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:date-time"
+      "type": "DateTime"
    }
 }
 ```

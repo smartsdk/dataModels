@@ -22,12 +22,12 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
    + Attribute type: List of Reference to entity(ies) of type [Device](https://github.com/smartsdk/dataModels/blob/master/Device/Device/doc/spec.md)
    + Mandatory.
 
-+ `omh:end_date_time` : Time the test starts.
-   + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
++ `dateTestStarted` : Time the test starts.
+   + Attribute type: [DateTime](https://schema.org/DateTime).
    + Mandatory.
 
-+ `omh:start_date_time` : Time the test ends.
-   + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
++ `dateTestEnded` : Time the test ends.
+   + Attribute type: [DateTime](https://schema.org/DateTime).
    + Mandatory.
 
 
@@ -77,13 +77,13 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       },
       "dateCreated": "2017-04-05"
    },
-   "omh:end_date_time": {
+   "dateTestStarted": {
       "value": "2017-01-18T20:45:58.447Z-0800",
-      "type": "omh:date-time"
+      "type": "DateTime"
    },
-   "omh:start_date_time": {
+   "odateTestEnded": {
       "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:date-time"
+      "type": "DateTime"
    }
 }
 ```

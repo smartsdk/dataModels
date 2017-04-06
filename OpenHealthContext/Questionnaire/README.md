@@ -23,8 +23,8 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     + Attribute type: [question](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/question-1.x.json).
     + Mandatory.  
 
-+ `last_update` : Last entity's update timestamp.
-    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
++ `dateModified` : Last entity's update timestamp.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Mandatory. 
 
 ## Examples of use
@@ -45,9 +45,9 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     "value": "true",
     "type": "answer-to-question"
   },
-  "lastUpdate": {
+  "dateModified": {
     "value": "2017-01-18T20:45:42.697Z-0800",
-    "type": "omh:time-interval"
+    "type": "DateTime"
   }
 }
 ```

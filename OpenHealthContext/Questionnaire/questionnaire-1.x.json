@@ -24,8 +24,8 @@
 	  	"answer": {
 	    	"$ref": "answer-to-question-1.x.json"
 	  	},
-	  	"last_update": {
-	    	"$ref": "date-time-1.x.json"
+	  	"date_modified": {
+	    	"$ref": "https://schema.org/DateTime"
 	  	}
    	},
 
@@ -42,8 +42,8 @@
 	  	"answer": {
 	    	"$ref": "#/definitions/answer_to_question"
 	  	},
-	  	"lastUpdate": {
-	    	"$ref": "#/definitions/date_time"
+	  	"dateModified": {
+	    	"$ref": "#/definitions/date_modified"
 	  	}
    	},
 
@@ -52,6 +52,6 @@
    		"userIdentificator",
    		"questionIdentificator",
    		"answer",
-   		"lastUpdate"
+   		"dateModified"
    ]  
 }

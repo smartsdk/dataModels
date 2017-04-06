@@ -43,8 +43,8 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     + Allowed values: (`mmHg`).
     + Mandatory.
 
-+ `lastUpdate` : Date and time measurements are taken.
-    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
++ `dateModified` : Date and time measurements are taken.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Mandatory.
 
 
@@ -78,9 +78,9 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       "value": "120",
       "unit": "mmHg"
    },
-   "lastUpdate": {  
+   "dateModified": {  
       "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:date-time"
+      "type": "DateTime"
    }
 }
 ```
