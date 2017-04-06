@@ -15,14 +15,8 @@
         "test_type": {
             "$ref": "test-type-1.x.json"
         },
-        "sensor_type": {
-            "$ref": "sensor-type-1.x.json"
-        },
-        "sensor_speed": {
-            "$ref": "sensor-speed-1.x.json"
-        },
-        "sensor_data": {
-            "$ref": "sensor-data-1.x.json"
+        "refDevice": {
+            "$ref": "https://fiware.github.io/dataModels/common-schema.json"
         },
         "date_time": {
             "$ref": "http://www.openmhealth.org/schema/omh/date-time-1.0.json"
@@ -33,14 +27,8 @@
         "test": {
             "$ref": "#/definitions/test_type"
         },
-        "sensor": {
-            "$ref": "#/definitions/sensor_type"
-        },
-        "speed": {
-            "$ref": "#/definitions/sensor_speed"
-        },
-        "data": {
-            "$ref": "#/definitions/sensor_data"
+        "refDevice": {
+            "$ref": "#/definitions/refDevice"
         },
         "time": {
             "$ref": "#/definitions/date_time"
@@ -49,9 +37,7 @@
     
     "required": [
         "test", 
-        "sensor", 
-        "speed", 
-        "data", 
+        "refDevice", 
         "time"
     ]
 }
