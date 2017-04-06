@@ -92,7 +92,6 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
   "id": "model-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
   "type": "DeviceModel",
   "function": ["sensing"],
-  "energyLimitationClass": "E1",
   "brandName": "Xioami",
   "modelName": "MI 5",
   "manufacturerName": "Samsung"
