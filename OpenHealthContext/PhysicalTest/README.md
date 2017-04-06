@@ -33,61 +33,72 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 
     
 ## Examples of use
+### Creation of PhysicalTest entity
 
 ```
 {  
-   "id": "test-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
-   "type": "PhysicalTest",
-   "test": {  
+  "id": "test-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
+  "type": "PhysicalTest",
+  "test": {  
       "value": "Timed Up and Go",
       "type": "test-type"
    },
-   "refDevice": {
-      "id": "device-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
-      "type": "Device",
-      "category": ["smartphone"],
-      "controlledProperty": ["accelerometer","orientation"],
-      "osVersion": "Android 4.0",
-      "softwareVersion": "MA-Test 1.6",
-      "hardwareVersion": "GP-P9872",
-      "firmwareVersion": "SM-A310F",
-      "refDeviceModel": {
-         "id": "model-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
-          "type": "DeviceModel",
-          "function": ["sensing"],
-          "energyLimitationClass": "E1",
-          "brandName": "Xioami",
-          "modelName": "MI 5",
-          "manufacturerName": "Samsung",
-      },
-      "value": {"acceleration" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...", "orientation" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800..." },
-      "configuration": {
-         "data": {  
-            "format": {
-               "value": "csv",
-               "type": "data-format"
-         }
-       },
-         "sensor": {  
-            "speed": {
-               "value": "60",
-               "type": "hz"
-            }
-         }
-      },
-      "dateCreated": "2017-04-05"
-   },
-   "dateTestStarted": {
+  "refDevice": "device-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
+  "dateTestStarted": {
       "value": "2017-01-18T20:45:58.447Z-0800",
       "type": "DateTime"
-   },
-   "odateTestEnded": {
+  },
+  "dateTestEnded": {
       "value": "2017-01-18T20:45:42.697Z-0800",
       "type": "DateTime"
-   }
+  }
 }
 ```
-    
+
+### Creation of Device entity (Dependency on Device)
+```
+{
+  "id": "device-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
+  "type": "Device",
+  "category": ["smartphone"],
+  "controlledProperty": ["accelerometer","orientation"],
+  "osVersion": "Android 4.0",
+  "softwareVersion": "MA-Test 1.6",
+  "hardwareVersion": "GP-P9872",
+  "firmwareVersion": "SM-A310F",
+  "refDeviceModel": "model-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
+  "value": {"acceleration" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...", "orientation" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800..." },
+  "configuration": {
+    "data": {  
+      "format": {
+        "value": "csv",
+        "type": "data-format"
+      }
+    },
+    "sensor": {  
+      "speed": {
+        "value": "60",
+        "type": "hz"
+      }
+    }
+  },
+  "dateCreated": "2017-04-05"
+}
+```
+
+### Creation of Device entity (Dependency on DeviceModel)
+```
+{
+  "id": "model-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
+  "type": "DeviceModel",
+  "function": ["sensing"],
+  "energyLimitationClass": "E1",
+  "brandName": "Xioami",
+  "modelName": "MI 5",
+  "manufacturerName": "Samsung"
+}
+```
+
 ## Use it with a real service
 
 T.B.D.
