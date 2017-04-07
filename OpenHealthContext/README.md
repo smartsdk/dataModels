@@ -13,7 +13,6 @@ oHealth-Context data model defines the following entity:
 * [Questionnaire](./Questionnaire/questionnaire-1.x.json)
 * [Test type](./dataType/test-type-1.x.json)
 * [Test identification](./dataType/test-identification-1.x.json)
-* [User identification](./dataType/user-identification-1.x.json)
 * [Sensor type](./dataType/sensor-type-1.x.json)
 * [Sensor data](./dataType/sensor-data-1.x.json)
 * [Sensor resolution](./dataType/sensor-resolution-1.x.json)

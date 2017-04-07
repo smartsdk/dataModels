@@ -15,9 +15,9 @@
 		"test_identificator": {
 	    	"$ref": "test-identificator-1.x.json"
 	  	},
-	  	"user_identificator": {
-	    	"$ref": "user-identificator-1.x.json"
-	  	},
+	  	"refActor":{
+   	   	  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+   	   	},
 	  	"question_identificator": {
 	    	"$ref": "question-identificator-1.x.json"
 	  	},
@@ -33,9 +33,9 @@
    		"testIdentificator": {
 	    	"$ref": "#/definitions/test_identificator"
 	  	},
-	  	"patientIdentificator": {
-	    	"$ref": "#/definitions/user_identificator"
-	  	},
+	  	"refActor":{
+   	     "$ref": "#/definitions/refActor"
+   	   	},
 	  	"questionIdentificator": {
 	    	"$ref": "#/definitions/question_identificator"
 	  	},
@@ -48,7 +48,8 @@
    	},
 
    "required": [
-   		"test",
+   		"testIdentificator",
+   		"refActor",
    		"userIdentificator",
    		"questionIdentificator",
    		"answer",

@@ -15,6 +15,9 @@
         "test_type": {
             "$ref": "test-type-1.x.json"
         },
+        "refActor":{
+          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        },
         "refDevice": {
             "$ref": "https://fiware.github.io/dataModels/common-schema.json"
         },
@@ -30,6 +33,9 @@
         "test": {
             "$ref": "#/definitions/test_type"
         },
+        "refActor":{
+         "$ref": "#/definitions/refActor"
+        },
         "refDevice": {
             "$ref": "#/definitions/refDevice"
         },
@@ -43,6 +49,7 @@
     
     "required": [
         "test", 
+        "refActor",
         "refDevice", 
         "dateTestStarted",
         "dateTestEnded"

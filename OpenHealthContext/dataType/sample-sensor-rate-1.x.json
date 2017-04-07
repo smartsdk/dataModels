@@ -1,7 +1,7 @@
 {
-    "id": "sensor-speed",
+    "id": "sample-sensor-rate",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "This schema represents the speed of the sensors devices used to collect data.",
+    "description": "This schema represents the sample rate of the sensors devices used to collect data.",
     "type": "object",
 
     "references": [

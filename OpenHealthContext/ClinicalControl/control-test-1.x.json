@@ -12,6 +12,9 @@
     ],
 
    "definitions": {
+   	   "refActor":{
+   	   	  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+   	   	},
 	   "body_weight": {  
 	      "$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json"
 	   },
@@ -36,6 +39,9 @@
    },
    
    "properties": {
+   	   "refActor":{
+   	     "$ref": "#/definitions/refActor"
+   	   },
 	   "omh:body_weight": {  
 	     "$ref": "#/definitions/body_weight"
 	   },
@@ -60,6 +66,7 @@
    },
 
    "required": [
+   		"refActor",
    		"omh:body_weight", 
    		"omh:body_height", 
    		"waistCircumference",

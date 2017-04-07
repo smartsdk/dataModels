@@ -14,9 +14,8 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 + `type` : Entity type. It must be equal to `Questionnaire`.
     + Mandatory.
 
-+ `user` : User ptofile.
-    + Attribute type: [user](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/User/user-1.x.json).
-    + Allowed values: (`Patient`, `Clinician`).
++ `refActor` : Reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
+    + Attribute type: `string`.
     + Mandatory.
 
 + `question` : Word or set of words that represent a particular question related to health.
@@ -37,10 +36,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     "value": "ffffffffff9cbbf4465f0ef30033c587-test-71108",
     "type": "test-identification"
   },
-  "user": {
-    "value": "ffffffffff9cbbf4465f0ef30033c587-patient-71108",
-    "type": "user-identification"
-  },
+  "refActor": "https://account.lab.fiware.org/users/1",
   "question": {
     "value": "true",
     "type": "answer-to-question"
