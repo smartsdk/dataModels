@@ -8,7 +8,6 @@ oHealth-Context data model defines the following entity:
 
 
 ## Used in general test
-* [User](./User/user-1.x.json)
 * [Control test](./ClinicalControl/control-test-1.x.json)
 * [Physical test](./PhysicalTest/physical-test-1.x.json)
 * [Questionnaire](./Questionnaire/questionnaire-1.x.json)
@@ -16,11 +15,10 @@ oHealth-Context data model defines the following entity:
 * [Test identification](./dataType/test-identification-1.x.json)
 * [User identification](./dataType/user-identification-1.x.json)
 * [Sensor type](./dataType/sensor-type-1.x.json)
-* [Sensor speed](./dataType/sensor-speed-1.x.json)
 * [Sensor data](./dataType/sensor-data-1.x.json)
 * [Sensor resolution](./dataType/sensor-resolution-1.x.json)
 * [Sensor power](./dataType/sensor-power-1.x.json)
-* [Gender](./dataType/gender-1.x.json)
+* [Sample sensor speed](./dataType/sample-sensor-rate-1.x.json)
 * [Waist circumference](./dataType/waist-circumference-1.x.json)
 * [Question identification](./dataType/question-identification-1.x.json)
 * [Question](./dataType/question-1.x.json)
