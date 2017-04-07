@@ -15,7 +15,7 @@
 		"test_identificator": {
 	    	"$ref": "test-identificator-1.x.json"
 	  	},
-	  	"refActor":{
+	  	"refUser":{
    	   	  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
    	   	},
 	  	"question_identificator": {
@@ -33,8 +33,8 @@
    		"testIdentificator": {
 	    	"$ref": "#/definitions/test_identificator"
 	  	},
-	  	"refActor":{
-   	     "$ref": "#/definitions/refActor"
+	  	"refUser":{
+   	     "$ref": "#/definitions/refUser"
    	   	},
 	  	"questionIdentificator": {
 	    	"$ref": "#/definitions/question_identificator"
@@ -49,7 +49,7 @@
 
    "required": [
    		"testIdentificator",
-   		"refActor",
+   		"refUser",
    		"userIdentificator",
    		"questionIdentificator",
    		"answer",

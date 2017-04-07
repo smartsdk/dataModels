@@ -14,7 +14,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 + `type` : Entity type. It must be equal to `ControlTest`.
    + Mandatory
 
-+ `refActor` : Reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
++ `refUser` : Reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
     + Attribute type: `string`.
     + Mandatory.
 
@@ -58,7 +58,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 {  
    "id": "ffffffffff9cbbf4465f0ef30033c587-control-4",
    "type": "ControlTest",
-   "refActor": "https://account.lab.fiware.org/users/1",
+   "refUser": "https://account.lab.fiware.org/users/1",
    "omh:body_weight": {  
       "value": "89",
       "unit": "kg"
