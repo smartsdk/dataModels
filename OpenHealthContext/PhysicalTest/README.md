@@ -76,7 +76,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       }
     },
     "sensor": {  
-      "speed": {
+      "sampleRate": {
         "value": "60",
         "type": "hz"
       }
