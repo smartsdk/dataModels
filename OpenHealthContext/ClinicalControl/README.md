@@ -9,12 +9,12 @@ Patient's basic health data that migh influence the physical performance.
 A JSON Schema corresponding to this data model can be found [here](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/ClinicalControl/control-test-1.x.json).
 
 + `id` : Unique identifier. 
-   + Mandatory
+   + Mandatory.
 
 + `type` : Entity type. It must be equal to `ControlTest`.
    + Mandatory
 
-+ `refUser` : Reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
++ `refUser` : Reference to the actual User sheltered by an independent service.
     + Attribute type: `string`.
     + Mandatory.
 
@@ -25,8 +25,8 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 
 + `omh:body_height` : Represents body height.
     + Attribute type: [body-height](http://www.openmhealth.org/schema/omh/body-height-1.0.json).
-    + Allowed values: (`m`, `cm`, `ft`, `in`)
-    + Mandatory
+    + Allowed values: (`m`, `cm`, `ft`, `in`).
+    + Mandatory.
 
 + `waist_circumference` : This schema represents a person's waist circumference, either a single body weight measurement, or for the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures).
     + Attribute type: [waist-circumference](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/waist-circumference-1.x.json).
@@ -58,7 +58,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 {  
    "id": "ffffffffff9cbbf4465f0ef30033c587-control-4",
    "type": "ControlTest",
-   "refUser": "https://account.lab.fiware.org/users/1",
+   "refUser": "http://207.249.127.162:1234/users/1",
    "omh:body_weight": {  
       "value": "89",
       "unit": "kg"

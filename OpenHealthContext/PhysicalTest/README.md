@@ -18,12 +18,12 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
    + Attribute type: [test-type](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/test-type-1.x.json).
    + Mandatory.
 
-+ `refUser` : Reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
++ `refUser` : Reference to the actual User sheltered by an independent service.
    + Attribute type: `string`.
    + Mandatory.
 
 + `refDevice` : Reference to the device(s) used to monitor this test.
-   + Attribute type: List of Reference to entity(ies) of type [Device](https://github.com/smartsdk/dataModels/blob/master/Device/Device/doc/spec.md)
+   + Attribute type: List of Reference to entity(ies) of type [Device](https://github.com/smartsdk/dataModels/blob/master/Device/Device/doc/spec.md).
    + Mandatory.
 
 + `dateTestStarted` : Time the test starts.
@@ -47,7 +47,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       "value": "Timed Up and Go",
       "type": "test-type"
    },
-  "refUser": "https://account.lab.fiware.org/users/1",
+  "refUser": "http://207.249.127.162:1234/users/1",
   "refDevice": "device-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
   "dateTestStarted": {
       "value": "2017-01-18T20:45:58.447Z-0800",

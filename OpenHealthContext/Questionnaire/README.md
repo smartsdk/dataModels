@@ -14,7 +14,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 + `type` : Entity type. It must be equal to `Questionnaire`.
     + Mandatory.
 
-+ `refUser` : Reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
++ `refUser` : Reference to the actual User sheltered by an independent service.
     + Attribute type: `string`.
     + Mandatory.
 
@@ -36,7 +36,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     "value": "ffffffffff9cbbf4465f0ef30033c587-test-71108",
     "type": "test-identification"
   },
-  "refUser": "https://account.lab.fiware.org/users/1",
+  "refUser": "http://207.249.127.162:1234/users/1",
   "question": {
     "value": "true",
     "type": "answer-to-question"
