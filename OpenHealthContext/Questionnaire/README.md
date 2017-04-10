@@ -2,7 +2,7 @@
 
 ## Description
 
-Set of questions regarding the physical test performance.
+Set of questions written questions for the purposes of a specific survey or statistical study.
 
 ## Data Model
 
@@ -14,13 +14,14 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 + `type` : Entity type. It must be equal to `Questionnaire`.
     + Mandatory.
 
-+ `refUser` : Reference to the actual User sheltered by an independent service.
++ `descriptor` : Unique value to contextualize a test.
     + Attribute type: `string`.
+    + Allowed values: The parameter is open to any descriptor that might bring a significant meaning. However, in the scope of health, follow descriptors are recommended: `Timed Up and Go`, `30 second sit to stand test`, `4-Stage Balance Test`.
     + Mandatory.
 
-+ `question` : Word or set of words that represent a particular question related to health.
-    + Attribute type: [question](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/question-1.x.json).
-    + Mandatory.  
++ `description` : A brief description regarding the purpose of the questionnaire.
+    + Attribute type: `string`.
+    + Mandatory.
 
 + `dateModified` : Last entity's update timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime).
@@ -32,23 +33,12 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 {
   "id": "ffffffffff9cbbf4465f0ef30033c587-questionnaire-7118",
   "type": "Questionnaire",
-  "test": {
-    "value": "ffffffffff9cbbf4465f0ef30033c587-test-71108",
-    "type": "test-identification"
-  },
-  "refUser": "http://207.249.127.162:1234/users/1",
-  "question": {
-    "value": "true",
-    "type": "answer-to-question"
-  },
-  "dateModified": {
-    "value": "2017-01-18T20:45:42.697Z-0800",
-    "type": "DateTime"
-  }
+  "descriptor": "Timed Up and Go",
+  "description": "Simple test used to assess a person's mobility."
+  "dateModified": "2017-01-18T20:45:42.697Z-0800"
 }
 ```
 
-    
 ## Use it with a real service
 
 T.B.D.

@@ -1,6 +1,7 @@
 {
-    "id": "distance-unit",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "distance-unit",
+    "title": "",
     "description": "This schema represents distance",
     "type": "object",
 
@@ -13,16 +14,12 @@
 
     "allOf": [
         {
-            "$ref": "unit-value-1.x.json"
+            "$ref": "http://www.openmhealth.org/schema/omh/length-unit-value-1.0.json"
         },
         {
             "properties": {
                 "unit": {
                     "references": [
-                        {
-                            "description": "The unit of measure of the element. Basic unit is millimeters (mm). Allowed values are drawn from the SI Length Units (non-UCUM).",
-                            "url": "http://download.hl7.de/documents/ucum/ucumdata.html"
-                        },
                         {
                             "description": "The SNOMED code represents MilliMeter per seconds.",
                             "url": "http://purl.bioontology.org/ontology/SNOMEDCT/258993000"

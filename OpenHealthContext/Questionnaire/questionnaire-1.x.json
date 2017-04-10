@@ -1,58 +1,86 @@
 {
-  	"id": "questionnaire",
   	"$schema": "http://json-schema.org/draft-04/schema#",
-   	"description": "This schema represents a questionnaire filled from medical staff after supervising physical test.",
+  	"id": "questionnaire",
+  	"title": "FIWARE - Questionnaire schema",
+   	"description": "Set of questions written questions for the purposes of a specific survey or statistical study.",
    	"type": "object",
 
-	"references": [
+	  "references": [
         {
-            "description": "Pending to be included.",
-            "url": "Pending to be included."
+            "description": "Questionnaire to collect qualitative information observed along a performed test. There might be one questionnaire per each test type.",
         }
     ],
 
    	"definitions": {
-		"test_identificator": {
-	    	"$ref": "test-identificator-1.x.json"
-	  	},
-	  	"refUser":{
-   	   	  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-   	   	},
-	  	"question_identificator": {
-	    	"$ref": "question-identificator-1.x.json"
-	  	},
-	  	"answer": {
-	    	"$ref": "answer-to-question-1.x.json"
-	  	},
-	  	"date_modified": {
+      "id":{
+  			   "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+  		},
+      "type":{
+        "description": "NGSI Entity type",
+        "type": "string",
+        "enum": [
+          "Questionnaire"
+        ]
+      },
+		  "descriptor": {
+            "description": "Physical test to measure risk of fall.",
+            "type": "string",
+
+            "references": [
+                {
+                    "value": "Timed Up and Go",
+                    "description": "Rehab Measures: Timed Up and Go",
+                    "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/PrintView.aspx?ID=903"
+                },
+                {
+                    "value": "30 second sit to stand test",
+                    "description": "Rehab Measures: 30 second sit to stand test",
+                    "url": "http://www.rehabmeasures.org/Lists/RehabMeasures/DispForm.aspx?ID=1122"
+                },
+                {
+                    "value": "4-Stage Balance Test",
+                    "description": "Rehab Measures: 4-Stage Balance Test",
+                    "url": "https://www.cdc.gov/steadi/pdf/4-stage_balance_test-a.pdf"
+                }
+            ],
+
+            "enum": [
+                "Timed Up and Go",
+                "30 second sit to stand test",
+                "4-Stage Balance Test"
+            ]
+      },
+      "description":{
+        "type": "string"
+      },
+	  	"dateModified": {
 	    	"$ref": "https://schema.org/DateTime"
 	  	}
    	},
 
    	"properties": {
-   		"testIdentificator": {
-	    	"$ref": "#/definitions/test_identificator"
+   		"id":{
+	   	 	"$ref": "#/definitions/id"
+	   	},
+	   	"type": {
+        "$ref": "#/definitions/type"
+      },
+   		"descriptor": {
+	    	"$ref": "#/definitions/descriptor"
 	  	},
-	  	"refUser":{
-   	     "$ref": "#/definitions/refUser"
-   	   	},
-	  	"questionIdentificator": {
-	    	"$ref": "#/definitions/question_identificator"
-	  	},
-	  	"answer": {
-	    	"$ref": "#/definitions/answer_to_question"
-	  	},
+      "description": {
+        "$ref": "#/definitions/description"
+      },
 	  	"dateModified": {
-	    	"$ref": "#/definitions/date_modified"
+	    	"$ref": "#/definitions/dateModified"
 	  	}
    	},
 
    "required": [
-   		"testIdentificator",
-   		"refUser",
-   		"userIdentificator",
-   		"questionIdentificator",
-   		"answer",
+   		"id",
+   		"type",
+   		"descriptor",
+      "description",
    		"dateModified"
    ]  
 }

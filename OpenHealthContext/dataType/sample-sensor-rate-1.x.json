@@ -1,6 +1,7 @@
 {
-    "id": "sample-sensor-rate",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "sample-sensor-rate",
+    "title": "",
     "description": "This schema represents the sample rate of the sensors devices used to collect data.",
     "type": "object",
 
@@ -13,7 +14,7 @@
 
       "definitions": {
           "unit_value": {
-              "$ref": "unit-value-1.x.json"
+              "$ref": "http://www.openmhealth.org/schema/omh/unit-value-1.0.json"
           }
       },
 

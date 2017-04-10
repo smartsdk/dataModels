@@ -14,9 +14,15 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 + `type` : Entity type. It must be equal to `PhysicalTest`.
    + Mandatory.
 
-+ `test` : Name of physical test.
-   + Attribute type: [test-type](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/test-type-1.x.json).
++ `testType` : Name of physical test.
+   + Attribute type: `string`
+   + Allowed values: (`Timed Up and Go`, `30 second sit to stand test`, `4-Stage Balance Test`).
    + Mandatory.
+
++ `balanceTestType` : Name of the balance test type.
+   + Attribute type: `string`
+   + Allowed values: (`Side by Side`, `Semi-Tandem`, `Tandem (Full)`, `Single-Leg Stance`).
+   + Optional.
 
 + `refUser` : Reference to the actual User sheltered by an independent service.
    + Attribute type: `string`.
@@ -43,20 +49,11 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
 {  
   "id": "test-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
   "type": "PhysicalTest",
-  "test": {  
-      "value": "Timed Up and Go",
-      "type": "test-type"
-   },
+  "testType": "Timed Up and Go",
   "refUser": "http://207.249.127.162:1234/users/1",
   "refDevice": "device-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
-  "dateTestStarted": {
-      "value": "2017-01-18T20:45:58.447Z-0800",
-      "type": "DateTime"
-  },
-  "dateTestEnded": {
-      "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "DateTime"
-  }
+  "dateTestStarted": "2017-01-18T20:45:58.447Z-0800",
+  "dateTestEnded": "2017-01-18T20:45:42.697Z-0800"
 }
 ```
 
@@ -75,10 +72,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
   "value": {"acceleration" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...", "orientation" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800..." },
   "configuration": {
     "data": {  
-      "format": {
-        "value": "csv",
-        "type": "data-format"
-      }
+      "format": "csv"
     },
     "sensor": {  
       "sampleRate": {

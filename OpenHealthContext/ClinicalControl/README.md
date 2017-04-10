@@ -28,7 +28,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
     + Allowed values: (`m`, `cm`, `ft`, `in`).
     + Mandatory.
 
-+ `waist_circumference` : This schema represents a person's waist circumference, either a single body weight measurement, or for the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures).
++ `waistCircumference` : This schema represents a person's waist circumference, either a single body weight measurement, or for the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures).
     + Attribute type: [waist-circumference](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/waist-circumference-1.x.json).
     + Mandatory.
 
@@ -83,10 +83,7 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
       "value": "120",
       "unit": "mmHg"
    },
-   "dateModified": {  
-      "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "DateTime"
-   }
+   "dateModified": "2017-01-18T20:45:42.697Z-0800"
 }
 ```
 

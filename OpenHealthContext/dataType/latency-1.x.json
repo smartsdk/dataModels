@@ -1,6 +1,7 @@
 {
-    "id": "latency",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "latency",
+    "title": "",
     "description": "This schema represents the average time in between two events.",
     "type": "object",
 
@@ -12,16 +13,16 @@
     ],
 
     "definitions": {
-        "duration_unit_value": {
-            "$ref": "duration-unit-value-1.x.json"
+        "durationUnitValue": {
+            "$ref": "http://www.openmhealth.org/schema/omh/duration-unit-value-1.0.json"
         }
     },
 
     "properties": {
-        "step_latency": {
+        "stepLatency": {
             "allOf": [
                 {
-                    "$ref": "#/definitions/duration_unit_value"
+                    "$ref": "#/definitions/durationUnitValue"
                 },
                 {
                     "properties": {
@@ -38,6 +39,6 @@
     },
 
     "required": [
-        "step_latency"
+        "stepLatency"
     ]
 }

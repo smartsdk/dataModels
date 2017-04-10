@@ -1,6 +1,7 @@
 {
-    "id": "walk-speed",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "walk-speed",
+    "title": "",
     "description": "This schema represents the average walking speed.",
     "type": "object",
 
@@ -12,16 +13,16 @@
     ],
 
     "definitions": {
-        "duration_unit_value": {
-            "$ref": "duration-unit-value-1.x.json"
+        "durationUnitValue": {
+            "$ref": "http://www.openmhealth.org/schema/omh/duration-unit-value-1.0.json"
         }
     },
 
     "properties": {
-        "walk_speed": {
+        "walkSpeed": {
             "allOf": [
                 {
-                    "$ref": "#/definitions/duration_unit_value"
+                    "$ref": "#/definitions/durationUnitValue"
                 },
                 {
                     "properties": {
@@ -39,6 +40,6 @@
     },
 
     "required": [
-        "walk_speed"
+        "walkSpeed"
     ]
 }

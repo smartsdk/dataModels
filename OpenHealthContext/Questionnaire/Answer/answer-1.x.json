@@ -1,0 +1,65 @@
+{
+  	"$schema": "http://json-schema.org/draft-04/schema#",
+  	"id": "answer",
+  	"title": "FIWARE - Questionnaire - Answer schema",
+   	"description": "Represents an answer for a specific question.",
+   	"type": "object",
+
+	"references": [
+        {
+            "description": "A single answer written to provide a complete view of a given question."
+        }
+    ],
+
+   	"definitions": {
+   		"id":{
+  			"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+  		},
+  		"type":{
+  		  "description": "NGSI Entity type",
+			  "type": "string",
+        "enum": [
+          "Question"
+        ]
+  		},
+	  	"refQuestion":{
+ 			  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+  		},
+	  	"refUser":{
+        "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+      },
+      "answer":{
+        "type": "string"
+      },
+	  	"dateModified": {
+	    	"$ref": "https://schema.org/DateTime"
+	  	}
+   	},
+
+   	"properties": {
+   		"id":{
+	   	 	"$ref": "#/definitions/id"
+	   	},
+	   	"type": {
+	   		"$ref": "#/definitions/type"
+        },
+   		"refQuestionnaire": {
+	    	"$ref": "#/definitions/refQuestionnaire"
+	  	},
+	  	"language":{
+   	     	"$ref": "#/definitions/language"
+   	   	},
+	  	"dateModified": {
+	    	"$ref": "#/definitions/dateModified"
+	  	}
+   	},
+
+   "required": [
+   		"id",
+   		"type",
+   		"refQuestion",
+   		"refUser",
+      "answer",
+   		"dateModified"
+   ]  
+}

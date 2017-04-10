@@ -1,6 +1,7 @@
 {
-    "id": "data-format",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "data-format",
+    "title": "",
     "description": "This schema defines data format used along the gathering process.",
     "type": "string",
 

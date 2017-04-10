@@ -1,7 +1,8 @@
 {
-    "id": "balance-index",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "This schema represents a balance index.",
+    "id": "balance-index",
+    "title": "Schema to present the balance index value",
+    "description": "Represents a balance index.",
     "type": "number",
 
     "references": [

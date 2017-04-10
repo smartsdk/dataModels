@@ -1,78 +1,103 @@
 {  
-   "id": "control-test",
-   "$schema": "http://json-schema.org/draft-04/schema#",
-   "description": "This schema represents baseline measurement data for patients.",
-   "type": "object",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "control-test",
+	"title": "FIWARE - Control-test schema",
+	"description": "Represents a baseline measurement data for patients.",
+	"type": "object",
 
 	"references": [
-        {
-            "description": "Pending to be included.",
-            "url": "Pending to be included."
-        }
-    ],
+		{
+			"description": "Pending to be included.",
+			"url": "Pending to be included."
+		}
+	],
 
-   "definitions": {
-   	   "refUser":{
-   	   	  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-   	   	},
-	   "body_weight": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json"
-	   },
-	   "body_height": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/body-height-1.0.json"
-	   },
-	   "waist_circumference": {  
-	      "$ref": "waist-size-1.x.json"
-	   },
-	   "heart_rate": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/heart-rate-1.0.json"
-	   },
-	   "systolic_blood_pressure": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/systolic-blood-pressure-1.0.json"
-	   },
-	   "diastolic_blood_pressure": {  
-	      "$ref": "http://www.openmhealth.org/schema/omh/diastolic-blood-pressure-1.0.json"
-	   },
-	   "date_modified": {  
-	      "$ref": "https://schema.org/DateTime"
-	   }
-   },
-   
-   "properties": {
-   	   "refUser":{
-   	     "$ref": "#/definitions/refUser"
-   	   },
-	   "omh:body_weight": {  
-	     "$ref": "#/definitions/body_weight"
-	   },
-	   "omh:body_height": {  
-	      "$ref": "#/definitions/body_height"
-	   },
-	   "waistCircumference": {  
-	      "$ref": "#/definitions/waist_circumference"
-	   },
-	   "omh:heart_rate": {  
-	      "$ref": "#/definitions/heart_rate"
-	   },
-	   "omh:systolic_blood_pressure": {  
-	      "$ref": "#/definitions/systolic_blood_pressure"
-	   },
-	   "omh:diastolic_blood_pressure": {  
-	      "$ref": "#/definitions/diastolic_blood_pressure"
-	   },
-	   "dateModified": {  
-	      "$ref": "#/definitions/date_modified"
-	   }
-   },
+	"definitions": {
+		"id":{
+			"references": [
+				{
+				"description": "Unique value either created or provided from an entity to identify a single test. The SNOMED code represents an identifier (property).",
+				"url": "http://purl.bioontology.org/ontology/SNOMEDCT/118522005"
+				}
+		    ],
+			"type": "string"
+		},
+		"type":{
+  			"description": "NGSI Entity type",
+			"type": "string",
+            "enum": [
+            	"ControlTest"
+            ]
+  		},
+		"refUser":{
+			"$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+		},
+		"bodyWeight": {  
+			"$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json"
+		},
+		"bodyHeight": {  
+			"$ref": "http://www.openmhealth.org/schema/omh/body-height-1.0.json"
+		},
+		"waistCircumference": {  
+			"$ref": "http://www.openmhealth.org/schema/omh/length-unit-value-1.0.json"
+		},
+		"heartRate": {  
+			"$ref": "http://www.openmhealth.org/schema/omh/heart-rate-1.0.json"
+		},
+		"systolicBloodPressure": {  
+			"$ref": "http://www.openmhealth.org/schema/omh/systolic-blood-pressure-1.0.json"
+		},
+		"diastolicBloodPressure": {  
+			"$ref": "http://www.openmhealth.org/schema/omh/diastolic-blood-pressure-1.0.json"
+		},
+		"dateModified": {  
+			"$ref": "https://schema.org/DateTime"
+		}
+	},
 
-   "required": [
-   		"refUser",
-   		"omh:body_weight", 
-   		"omh:body_height", 
-   		"waistCircumference",
-   		"omh:heart_rate",
-   		"omh:systolic_blood_pressure",
-   		"omh:diastolic_blood_pressure",
-   		"dateModified"
-   	]
+	"properties": {
+		"id":{
+			"$ref": "#/definitions/id"
+		},
+		"type": {
+	   		"$ref": "#/definitions/type"
+        },
+		"refUser":{
+			"$ref": "#/definitions/refUser"
+		},
+		"omh:body_weight": {  
+			"$ref": "#/definitions/bodyWeight"
+		},
+		"omh:body_height": {  
+			"$ref": "#/definitions/bodyHeight"
+		},
+		"waistCircumference": {  
+			"$ref": "#/definitions/waistCircumference"
+		},
+		"omh:heart_rate": {  
+			"$ref": "#/definitions/heartRate"
+		},
+		"omh:systolic_blood_pressure": {  
+			"$ref": "#/definitions/systolicBloodPressure"
+		},
+		"omh:diastolic_blood_pressure": {  
+			"$ref": "#/definitions/diastolicBloodPressure"
+		},
+		"dateModified": {  
+			"$ref": "#/definitions/dateModified"
+		}
+	},
+
+	"required": [
+		"id",
+		"type",
+		"refUser",
+		"omh:body_weight", 
+		"omh:body_height", 
+		"waistCircumference",
+		"omh:heart_rate",
+		"omh:systolic_blood_pressure",
+		"omh:diastolic_blood_pressure",
+		"dateModified"
+	]
 }

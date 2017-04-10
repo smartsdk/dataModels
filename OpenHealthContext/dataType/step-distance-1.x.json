@@ -1,6 +1,7 @@
 {
-    "id": "step-distance",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "step-distance",
+    "title": "",
     "description": "This schema represents the average distance in between two steps.",
     "type": "object",
 
@@ -12,16 +13,16 @@
     ],
 
     "definitions": {
-        "distanca_unit_value": {
-            "$ref": "distance-unit-value-1.x.json"
+        "distancaUnitValue": {
+            "$ref": "./dataType/distance-unit-value-1.x.json"
         }
     },
 
     "properties": {
-        "step_distance": {
+        "stepDistance": {
             "allOf": [
                 {
-                    "$ref": "#/definitions/distance_unit_value"
+                    "$ref": "#/definitions/distanceUnitValue"
                 },
                 {
                     "properties": {
@@ -37,6 +38,6 @@
         },
 
     "required": [
-        "step_distance"
+        "stepDistance"
     ]
 }

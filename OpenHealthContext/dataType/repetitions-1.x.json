@@ -1,6 +1,7 @@
 {
-    "id": "repetitions",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "repetitions",
+    "title": "",
     "description": "This schema represents the number of times of repetitions performed along a particular test.",
     "type": "number",
 
