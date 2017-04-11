@@ -1,4 +1,4 @@
-language: shell
+language: node_js
 
 install:
  - sudo apt-get -qq update
