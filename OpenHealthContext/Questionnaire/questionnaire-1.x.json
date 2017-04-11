@@ -1,5 +1,5 @@
 {
-  	"$schema": "http://json-schema.org/draft-04/schema#",
+  	"$schema": "http://json-schema.org/schema#",
   	"id": "questionnaire",
   	"title": "FIWARE - Questionnaire schema",
    	"description": "Set of questions written questions for the purposes of a specific survey or statistical study.",
@@ -7,7 +7,7 @@
 
 	  "references": [
         {
-            "description": "Questionnaire to collect qualitative information observed along a performed test. There might be one questionnaire per each test type.",
+            "description": "Questionnaire to collect qualitative information observed along a performed test. There might be one questionnaire per each test type."
         }
     ],
 
@@ -59,7 +59,7 @@
    	},
 
    	"properties": {
-   		"id":{
+   		"id": {
 	   	 	"$ref": "#/definitions/id"
 	   	},
 	   	"type": {

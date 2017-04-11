@@ -1,5 +1,5 @@
 {   
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/schema#",
     "id": "physical-test",
     "title": "FIWARE - Physical test schema",
     "description": "Represents a physical test performed. It concentrates sensor data collected along a controlled test from a physical device carried/worn by a user while performing a supervised physical test.",
