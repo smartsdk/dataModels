@@ -14,3 +14,4 @@ script:
  - sh test/ci-test-questionnaire.sh
  - sh test/ci-test-question.sh
   - sh test/ci-test-answer.sh
+  - sh test/ci-test-alert.sh
