@@ -20,8 +20,10 @@
             }
           ]
         },
-	 "intensity": {
-        "type": "string"          
+	 "severity": {
+        "type": "integer",
+		"minimum": 0,
+        "maximum": 3
      },
 	 "alertType": {
           "type": "string",

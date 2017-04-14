@@ -31,9 +31,8 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 	+ Attribute type: DateTime or an ISO8601 interval represented as Text.
 	+ Mandatory
 
-+ `intensity` : Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
-	 + Attribute type: text
-	 + Normative References: [http://health-lifesci.schema.org/intensity](http://health-lifesci.schema.org/intensity)
++ `severity` : Describe the severity of Alert (0 = None, 1 = Low, 2 = Medium, 3 = High) 
+	 + Attribute type: integer
 	 + Optional
 
 + `description` : A description of alert (Traffic jam in Paseo de la Reforma. Emergency services at place).
@@ -68,7 +67,7 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 			"coordinates": [-3.712247222222222, 40.423852777777775]
 		},
 		"eventObserved": "2017-01-02T09:25:55.00Z",
-		"intensity": "Very congested",
+		"severity": "3",
 		"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
 		"refUser": "https://account.lab.fiware.org/users/8"
 	}  
