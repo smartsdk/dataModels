@@ -10,8 +10,4 @@ before_script:
 
 script:
  - sh test/ci-test-weather.sh
- - sh test/ci-test-physicalTest.sh
- - sh test/ci-test-clinicalControl.sh
- - sh test/ci-test-questionnaire.sh
- - sh test/ci-test-question.sh
- - sh test/ci-test-answer.sh
+ - sh test/ci-test-ohealth.sh
