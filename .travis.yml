@@ -10,4 +10,4 @@ before_script:
 
 script:
  - sh test/ci-test-weather.sh
- - sh test/ci-test-alert.sh
+ - sh test/ci-test-user.sh 
