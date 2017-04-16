@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "id": "physical-test",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/PhysicalTest/schema.json",
   "title": "FIWARE - Physical test schema",
   "description": "Represents a physical test performed. It concentrates sensor data collected along a controlled test from a physical device carried/worn by a user while performing a supervised physical test.",
   "type": "object",
@@ -85,15 +85,13 @@
     },
     "refDevice": {
       "type": "array",
-          "items": {
-            "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-          },
-          "minItems": 1,
-          "uniqueItems": true
+      "items": {
+        "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
-    "dateTestStarted": {
-
-    },
+    "dateTestStarted": {},
     "dateTestEnded": {
       "type": "string",
       "format": "date-time"

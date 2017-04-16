@@ -31,7 +31,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
   "type": "Questionnaire",
   "questionnaireType": "Timed Up and Go",
   "description": "Simple test used to assess a person's mobility.",
-  "dateModified": "2017-01-18T20:45:42.697Z-0800"
+  "dateModified": "2017-01-18T20:45:42.697Z"
 }
 ```
 

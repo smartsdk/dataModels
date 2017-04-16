@@ -4,7 +4,7 @@
 
 A JSON Schema corresponding to this data model can be found [here](../schema.json).
 
-+ `id` : Unique identifier. 
++ `id` : Unique identifier.
    + Mandatory.
 
 + `type` : Entity type. It must be equal to `ControlTest`.
@@ -79,7 +79,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
       "value": "120",
       "unit": "mmHg"
    },
-   "dateModified": "2017-01-18T20:45:42.697Z-0800"
+   "dateModified": "2017-01-18T20:45:42.697Z"
 }
 ```
 

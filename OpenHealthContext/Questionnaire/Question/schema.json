@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "id": "question",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/Questionnaire/Question/schema.json",
   "title": "FIWARE - Questionnaire - Question schema",
   "description": "A sentence worded or expressed to provide an inquiry.",
   "type": "object",

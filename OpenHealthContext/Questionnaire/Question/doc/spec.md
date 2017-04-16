@@ -4,7 +4,7 @@
 
 A JSON Schema corresponding to this data model can be found [here](../schema.json).
 
-+ `id` : Unique identifier. 
++ `id` : Unique identifier.
     + Mandatory.
 
 + `type` : Entity type. It must be equal to `Question`.
@@ -21,7 +21,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 
 + `dateModified` : Last entity's update timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Mandatory. 
+    + Mandatory.
 
 ## Examples of use
 
@@ -31,7 +31,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
   "type": "Question",
   "refQuestionnaire": "ffffffffff9cbbf4465f0ef30033c587-questionnaire-7118",
   "language": "en",
-  "dateModified": "2017-01-18T20:45:42.697Z-0800"
+  "dateModified": "2017-01-18T20:45:42.697Z"
 }
 ```
 

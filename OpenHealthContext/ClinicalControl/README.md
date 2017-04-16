@@ -35,6 +35,6 @@ Patient's basic health data that might influence the physical performance.
       "value": "120",
       "unit": "mmHg"
    },
-   "dateModified": "2017-01-18T20:45:42.697Z-0800"
+   "dateModified": "2017-01-18T20:45:42.697Z"
 }
 ```

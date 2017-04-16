@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/schema#",
-  "id": "control-test",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/ClinicalControl/schema.json",
   "title": "FIWARE - Control-test schema",
   "description": "Represents a baseline measurement data for patients.",
   "type": "object",
@@ -32,10 +32,10 @@
       "format": "uri"
     },
     "bodyWeight": {
-      "$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json"
+      "$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json#mass_unit_value"
     },
     "bodyHeight": {
-      "$ref": "http://www.openmhealth.org/schema/omh/body-height-1.0.json"
+      "$ref": "http://www.openmhealth.org/schema/omh/body-height-1.0.json#length_unit_value"
     },
     "waistCircumference": {
       "$ref": "http://www.openmhealth.org/schema/omh/length-unit-value-1.0.json"
