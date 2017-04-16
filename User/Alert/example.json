@@ -1,7 +1,7 @@
 	{
 		"id": "Alert:1",
-		"type": "Alert", 
-		"alertType": "Traffic jam",
+		"type": "Alert",
+		"alertType": "TrafficJam",
 		"location": {
 			"type": "Point",
 			"coordinates": [-3.712247222222222, 40.423852777777775]
@@ -10,4 +10,4 @@
 		"severity": "3",
 		"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
 		"refUser": "https://account.lab.fiware.org/users/8"
-	}  
+	}

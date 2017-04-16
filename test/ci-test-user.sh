@@ -2,11 +2,13 @@
 
 # Tests the User datamodels
 
-testUserContext()
+testAlert()
 {
-  # Check that running with a short help flag results in a non-error exit code
-  ../validate.sh ../User/UserContext/schema.json ../User/UserContext/example.json
-  result=$?
-  assertEquals "xeno daemon with -h should exit with code 0" 0 ${result}
-
+   result=`ajv compile --v5 -s User/Alert/schema.json -r common-schema.json -r geometry-schema.json`
+   assertEquals "schema User/Alert/schema.json is valid" "${result}"
+   result=`ajv test --v5 -s User/Alert/schema.json -r common-schema.json -r geometry-schema.json -d User/Alert/example.json --valid`
+   assertEquals "User/Alert/example.json passed test" "${result}"
 }
+
+# load shunit2
+. shunit2
