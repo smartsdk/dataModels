@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Schema library (v 1.0)
 
 This set of schemas represent a mechanism to package sensor data collected from mobile devices worn by a user while performing taking into account medical detail information.
@@ -47,7 +46,6 @@ Schemas that correspond to the variables of interest for some physical test used
 * [Balance test](./dataType/balance-test-1.x.json)
 =======
 =======
->>>>>>> a55ad3b... feat: inclusion of the oHealth-Context
 # PREFACE
 
 This project provides an overview of a data model in the scope of sensing data for wearable and mobile devices. It introduces a data model called oHealth-Context which stands for Open Health Context.
