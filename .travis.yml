@@ -9,6 +9,7 @@ before_script:
  - npm install -g ajv-cli
 
 script:
+ - sh test/ci-test-weather.sh
  - sh test/ci-test-physicalTest.sh
  - sh test/ci-test-clinicalControl.sh
  - sh test/ci-test-questionnaire.sh
