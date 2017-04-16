@@ -10,6 +10,7 @@ Patient's basic health data that might influence the physical performance.
 {  
    "id": "ffffffffff9cbbf4465f0ef30033c587-control-4",
    "type": "ControlTest",
+   "refUser": "http://207.249.127.162:1234/users/1",
    "omh:body_weight": {  
       "value": "89",
       "unit": "kg"
@@ -34,9 +35,6 @@ Patient's basic health data that might influence the physical performance.
       "value": "120",
       "unit": "mmHg"
    },
-   "lastUpdate": {  
-      "value": "2017-01-18T20:45:42.697Z-0800",
-      "type": "omh:date-time"
-   }
+   "dateModified": "2017-01-18T20:45:42.697Z-0800"
 }
 ```

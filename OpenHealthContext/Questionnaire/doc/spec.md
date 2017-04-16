@@ -4,13 +4,13 @@
 
 A JSON Schema corresponding to this data model can be found [here](../schema.json).
 
-+ `id` : Unique identifier. 
++ `id` : Unique identifier.
     + Mandatory.
 
 + `type` : Entity type. It must be equal to `Questionnaire`.
     + Mandatory.
 
-+ `descriptor` : Unique value to contextualize a test.
++ `questionnaireType` : Unique value to contextualize a test.
     + Attribute type: `string`.
     + Allowed values: The parameter is open to any descriptor that might bring a significant meaning. However, in the scope of health, follow descriptors are recommended: `Timed Up and Go`, `30 second sit to stand test`, `4-Stage Balance Test`.
     + Mandatory.
@@ -21,7 +21,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 
 + `dateModified` : Last entity's update timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Mandatory. 
+    + Mandatory.
 
 ## Examples of use
 
@@ -29,8 +29,8 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 {
   "id": "ffffffffff9cbbf4465f0ef30033c587-questionnaire-7118",
   "type": "Questionnaire",
-  "descriptor": "Timed Up and Go",
-  "description": "Simple test used to assess a person's mobility."
+  "questionnaireType": "Timed Up and Go",
+  "description": "Simple test used to assess a person's mobility.",
   "dateModified": "2017-01-18T20:45:42.697Z-0800"
 }
 ```

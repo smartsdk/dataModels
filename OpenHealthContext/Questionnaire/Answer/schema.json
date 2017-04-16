@@ -26,13 +26,15 @@
  			  "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
   		},
 	  	"refUser":{
-        "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        "type": "string",
+        "format": "uri"
       },
       "answer":{
         "type": "string"
       },
 	  	"dateModified": {
-	    	"$ref": "https://schema.org/DateTime"
+        "type": "string",
+        "format": "date-time"
 	  	}
    	},
 
@@ -61,5 +63,5 @@
    		"refUser",
       "answer",
    		"dateModified"
-   ]  
+   ]
 }

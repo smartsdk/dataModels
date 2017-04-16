@@ -25,7 +25,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
    + Mandatory.
 
 + `refDevice` : Reference to the device(s) used to monitor this test.
-   + Attribute type: List of Reference to entity(ies) of type [Device](https://github.com/smartsdk/dataModels/blob/master/Device/Device/doc/spec.md).
+   + Attribute type: List of Reference to entity(ies) of type [Device](../../Device/Device/doc/spec.md).
    + Mandatory.
 
 + `dateTestStarted` : Time the test starts.
@@ -37,7 +37,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
    + Mandatory.
 
 
-    
+
 ## Examples of use
 ### Creation of PhysicalTest entity
 
@@ -47,7 +47,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
   "type": "PhysicalTest",
   "testType": "Timed Up and Go",
   "refUser": "http://207.249.127.162:1234/users/1",
-  "refDevice": "device-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
+  "refDevice": ["device-ffffffffff9cbbf4465f0ef30033c587-acc-7118"],
   "dateTestStarted": "2017-01-18T20:45:58.447Z-0800",
   "dateTestEnded": "2017-01-18T20:45:42.697Z-0800"
 }

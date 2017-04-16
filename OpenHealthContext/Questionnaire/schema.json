@@ -22,7 +22,7 @@
           "Questionnaire"
         ]
       },
-		  "descriptor": {
+		  "questionnaireType": {
             "description": "Physical test to measure risk of fall.",
             "type": "string",
 
@@ -54,7 +54,8 @@
         "type": "string"
       },
 	  	"dateModified": {
-	    	"$ref": "https://schema.org/DateTime"
+        "type": "string",
+        "format": "date-time"
 	  	}
    	},
 
@@ -65,8 +66,8 @@
 	   	"type": {
         "$ref": "#/definitions/type"
       },
-   		"descriptor": {
-	    	"$ref": "#/definitions/descriptor"
+   		"questionnaireType": {
+	    	"$ref": "#/definitions/questionnaireType"
 	  	},
       "description": {
         "$ref": "#/definitions/description"
@@ -79,8 +80,8 @@
    "required": [
    		"id",
    		"type",
-   		"descriptor",
+   		"questionnaireType",
       "description",
    		"dateModified"
-   ]  
+   ]
 }
