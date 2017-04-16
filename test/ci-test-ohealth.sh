@@ -3,9 +3,9 @@
 # Test OpenHealthContext models
 
 testClinicalControl(){
-   result=`ajv compile --v5 -s OpenHealthContext/ClinicalControl/schema.json -r common-schema.json -r geometry-schema.json -r OpenHealthContext/ClinicalControl/body-height-1.0.json -r OpenHealthContext/ClinicalControl/body-weight-1.0.json -r OpenHealthContext/ClinicalControl/diastolic-blood-pressure-1.0.json -r OpenHealthContext/ClinicalControl/heart-rate-1.0.json -r OpenHealthContext/ClinicalControl/length-unit-value-1.0.json -r OpenHealthContext/ClinicalControl/systolic-blood-pressure-1.0.json -r OpenHealthContext/ClinicalControl/unit-value-1.x.json`
+   result=`ajv compile --v5 -s OpenHealthContext/ClinicalControl/schema.json -r common-schema.json -r geometry-schema.json -r OpenHealthContext/body-height-1.0.json -r OpenHealthContext/body-weight-1.0.json -r OpenHealthContext/diastolic-blood-pressure-1.0.json -r OpenHealthContext/heart-rate-1.0.json -r OpenHealthContext/length-unit-value-1.0.json -r OpenHealthContext/systolic-blood-pressure-1.0.json -r OpenHealthContext/unit-value-1.x.json`
    assertEquals "schema OpenHealthContext/ClinicalControl/schema.json is valid" "${result}"
-   result=`ajv test --v5 -s OpenHealthContext/ClinicalControl/schema.json -r common-schema.json -r geometry-schema.json -r OpenHealthContext/ClinicalControl/body-height-1.0.json -r OpenHealthContext/ClinicalControl/body-weight-1.0.json -r OpenHealthContext/ClinicalControl/diastolic-blood-pressure-1.0.json -r OpenHealthContext/ClinicalControl/heart-rate-1.0.json -r OpenHealthContext/ClinicalControl/length-unit-value-1.0.json -r OpenHealthContext/ClinicalControl/systolic-blood-pressure-1.0.json -r OpenHealthContext/ClinicalControl/unit-value-1.x.json -d OpenHealthContext/ClinicalControl/example.json --valid`
+   result=`ajv test --v5 -s OpenHealthContext/ClinicalControl/schema.json -r common-schema.json -r geometry-schema.json -r OpenHealthContext/body-height-1.0.json -r OpenHealthContext/body-weight-1.0.json -r OpenHealthContext/diastolic-blood-pressure-1.0.json -r OpenHealthContext/heart-rate-1.0.json -r OpenHealthContext/length-unit-value-1.0.json -r OpenHealthContext/systolic-blood-pressure-1.0.json -r OpenHealthContext/unit-value-1.x.json -d OpenHealthContext/ClinicalControl/example.json --valid`
    assertEquals "OpenHealthContext/ClinicalControl/example.json passed test" "${result}"
 }
 
