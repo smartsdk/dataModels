@@ -1,14 +1,14 @@
-# UserActivity
+# Activity
 
 ## Description
 
 This entity represents the current activity performed by an user. It can be used in different
-scenarios, from modeling social activities on a web site (e.g. Federico shares the a picture of his dog) to real life activities (e.g. Federico drives his car to work). The model is largely inspired by
+scenarios, from modeling social activities on a web site (e.g. Federico shares a picture of his dog) to real life activities (e.g. Federico drives his car to work). The model is largely inspired by
 [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core).
 
 The model is represents users activities using the following predicate structure: `(Actor, Verb, Object*, Target*)`, where `Object` and `Target` are optional.
 
-The `Actor` is identified by the attribute `refActor`, the `Verb` is identified by `refActivityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`. In generally it is assumed that the different part of the predicate are references to other NGSI entities, with the exception of the `Actor`. Within FIWARE, `refActor` could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
+The `Actor` is identified by the attribute `refActor`, the `Verb` is identified by `activityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`. In generally it is assumed that the different part of the predicate are references to other NGSI entities, with the exception of the `Actor`. Within FIWARE, `refActor` could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
 
 ## Data Model
 
@@ -35,19 +35,23 @@ A JSON Schema corresponding to this data model can be found [here](https://smart
     + Optional
 
 + `refActor` : Reference to the actor of the activity. Within FIWARE, `refActor` could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
-    + Attribute type: `string`
+    + Attribute type: [https://schema.org/URL](https://schema.org/URL)
+    + Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)
     + Mandatory
 
-+ `refActivityType` : Reference to the type of activity
++ `activityType` : The action performed (e.g. Drive)
     + Attribute type: `string`
+    + Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivity](https://health-lifesci.schema.org/PhysicalActivity)
     + Mandatory
 
 + `refObject` : Reference to the object of the action
-    + Attribute type: `string`
+    + Attribute type: `string` or [https://schema.org/URL](https://schema.org/URL)
+    + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
     + Optional
 
-+ `refTarget` : Reference to the target of the action
-    + Attribute type: `string`
++ `refTarget` : Reference to the target of the action, it could be an NGSI entity (identified via entity reference) or an external object (identified via uri).
+    + Attribute type: `string` or [https://schema.org/URL](https://schema.org/URL)
+    + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
     + Optional
 
 ## Examples of use
@@ -56,18 +60,18 @@ A JSON Schema corresponding to this data model can be found [here](https://smart
 {
   "id": "UserActivity1",
   "type": "UserActivity",
-  "refActivityType": "http://contextbroker:1026/v2/entities/Drive",
+  "activityType": "Drive",
   "description": "User1 drive Car1 to Office1",
   "activityStart": "2016-11-30T07:00:00.00Z",
-  "refObject": "http://contextbroker:1026/v2/entities/Car1",
-  "refTarget": "http://contextbroker:1026/v2/entities/Office1",
+  "refObject": "Car1",
+  "refTarget": "Office1",
   "refActor": "https://account.lab.fiware.org/users/1"
 }
 ```
 
 ## Use it with a real service
 
-The service is currently under development in the context of SmartSDK project.
+A real service is currently under development in the context of SmartSDK project.
 
 ## Open Issues
 

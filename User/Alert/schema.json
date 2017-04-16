@@ -68,12 +68,26 @@
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "location",
-    "refUser",
-    "alertType",
-    "eventObserved"
+  "oneOf": [
+    {
+      "required": [
+        "id",
+        "type",
+        "location",
+        "refUser",
+        "alertType",
+        "eventObserved"
+      ]
+    },
+    {
+      "required": [
+        "id",
+        "type",
+        "address",
+        "refUser",
+        "alertType",
+        "eventObserved"
+      ]
+    }
   ]
 }

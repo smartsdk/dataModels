@@ -8,6 +8,6 @@
       41.640833333
     ]
   },
-  "refActivity": "http://contextbroker:1026/v2/entities/UserActivity1",
+  "refActivity": "UserActivity1",
   "refUser": "https://account.lab.fiware.org/users/1"
 }

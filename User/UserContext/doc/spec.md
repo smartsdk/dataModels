@@ -25,7 +25,8 @@ A JSON Schema corresponding to this data model can be found [here](https://smart
 
 + `refUser` : reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of
 the FIWARE Identity Manager, where FIWARE user profiles are stored.
-    + Attribute type: `string`
+    + Attribute type: [https://schema.org/URL](https://schema.org/URL)
+    + Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)
     + Mandatory
 
 + `location` : Current location of the User represented by a GeoJSON geometry.
@@ -38,11 +39,11 @@ the FIWARE Identity Manager, where FIWARE user profiles are stored.
     + Mandatory if `location` is not present.
 
 + `refDevice` : An object representing the current device user by the User. See [Device](../../Device/Device/doc/spec.md) definition.
-    + Attribute type: `string`
+    + Attribute type: A references to a [Device](../../Device/Device/doc/spec.md) entity.
     + Optional
 
 + `refActivity` : An object representing the current activity performed by the User. See [UserActivity](../UserActivity/doc/spec.md) definition.
-    + Attribute type: `string`
+    + Attribute type: A references to a [UserActivity](../UserActivity/doc/spec.md) entity.
     + Optional
 
 ## Examples of use
@@ -58,15 +59,15 @@ the FIWARE Identity Manager, where FIWARE user profiles are stored.
       41.640833333
     ]
   },
-  "refActivity": "http://contextbroker:1026/v2/entities/UserActivity1",
-  "refDevice": "http://contextbroker:1026/v2/entities/Device1",
+  "refActivity": "UserActivity1",
+  "refDevice": "Device1",
   "refUser": "https://account.lab.fiware.org/users/1"
 }
 ```
 
 ## Use it with a real service
 
-The service is currently under development in the context of SmartSDK project.
+Real services are currently under development in the context of SmartSDK project.
 
 ## Open Issues
 

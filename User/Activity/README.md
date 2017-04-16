@@ -14,11 +14,11 @@ The `Actor` is identified by the attribute `refActor`, the `Verb` is identified 
 {
   "id": "UserActivity1",
   "type": "UserActivity",
-  "refActivityType": "http://contextbroker:1026/v2/entities/Drive",
+  "activityType": "Drive",
   "description": "User1 drive Car1 to Office1",
   "activityStart": "2016-11-30T07:00:00.00Z",
-  "refObject": "http://contextbroker:1026/v2/entities/Car1",
-  "refTarget": "http://contextbroker:1026/v2/entities/Office1",
+  "refObject": "Car1",
+  "refTarget": "Office1",
   "refActor": "https://account.lab.fiware.org/users/1"
 }
 ```
