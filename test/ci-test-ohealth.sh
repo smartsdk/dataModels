@@ -36,7 +36,7 @@ testQuestionnaireQuestion()
 testQuestionnaireAnswer()
 {
   result=`ajv compile --v5 -s OpenHealthContext/Questionnaire/Answer/schema.json -r common-schema.json -r geometry-schema.json`
-  assertEquals "schema OpenHealthContext/Questionnaire/schema.json is valid" "${result}"
+  assertEquals "schema OpenHealthContext/Questionnaire/Answer/schema.json is valid" "${result}"
   result=`ajv test --v5 -s OpenHealthContext/Questionnaire/Answer/schema.json -r common-schema.json -r geometry-schema.json -d OpenHealthContext/Questionnaire/Answer/example.json --valid`
   assertEquals "OpenHealthContext/Questionnaire/Answer/example.json passed test" "${result}"
 }
