@@ -32,16 +32,16 @@
       "format": "uri"
     },
     "bodyWeight": {
-      "$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json#mass_unit_value"
+      "$ref": "http://www.openmhealth.org/schema/omh/body-weight-1.0.json#/definitions/mass_unit_value"
     },
     "bodyHeight": {
-      "$ref": "http://www.openmhealth.org/schema/omh/body-height-1.0.json#length_unit_value"
+      "$ref": "http://www.openmhealth.org/schema/omh/length-unit-value-1.0.json"
     },
     "waistCircumference": {
       "$ref": "http://www.openmhealth.org/schema/omh/length-unit-value-1.0.json"
     },
     "heartRate": {
-      "$ref": "http://www.openmhealth.org/schema/omh/heart-rate-1.0.json"
+      "$ref": "http://www.openmhealth.org/schema/omh/heart-rate-1.0.json#/properties/heart_rate"
     },
     "systolicBloodPressure": {
       "$ref": "http://www.openmhealth.org/schema/omh/systolic-blood-pressure-1.0.json"
