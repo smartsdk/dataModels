@@ -4,29 +4,6 @@
 
 Set of questions regarding the physical test performance.
 
-## Data Model
-
-A JSON Schema corresponding to this data model can be found [here](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/Questionnaire/questionnaire-1.x.json).
-
-+ `id` : Unique identifier. 
-    + Mandatory.
-
-+ `type` : Entity type. It must be equal to `Questionnaire`.
-    + Mandatory.
-
-+ `user` : User ptofile.
-    + Attribute type: [user](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/User/user-1.x.json).
-    + Allowed values: (`Patient`, `Clinician`).
-    + Mandatory.
-
-+ `question` : Word or set of words that represent a particular question related to health.
-    + Attribute type: [question](https://github.com/netzahdzc/oHealth-Context/blob/master/schemas/dataType/question-1.x.json).
-    + Mandatory.  
-
-+ `last_update` : Last entity's update timestamp.
-    + Attribute type: [omh:date-time](http://www.openmhealth.org/schema/omh/date-time-1.0.json).
-    + Mandatory. 
-
 ## Examples of use
 
 ```
@@ -51,12 +28,3 @@ A JSON Schema corresponding to this data model can be found [here](https://githu
   }
 }
 ```
-
-    
-## Use it with a real service
-
-T.B.D.
-
-## Open Issues
-
-T.B.A.
