@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-
+    "id": "http://www.openmhealth.org/schema/omh/body-height-1.0.json",
     "description": "This schema represents a person's body height, either a single body height measurement, or the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures)",
     "type": "object",
     "references": [

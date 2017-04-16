@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-
+    "id": "http://www.openmhealth.org/schema/omh/unit-value-1.x.json",
     "description": "This schema represents a numerical value with a unit of measure.",
 
     "type": "object",

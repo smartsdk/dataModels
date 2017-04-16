@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
+    "id": "http://www.openmhealth.org/schema/omh/diastolic-blood-pressure-1.0.json",
     "description": "This schema represents a person's diastolic blood pressure.",
     "references": [
         {

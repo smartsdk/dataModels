@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-
+    "id": "http://www.openmhealth.org/schema/omh/length-unit-value-1.0.json",
     "description": "This schema represents a length or a distance.",
     "type": "object",
 

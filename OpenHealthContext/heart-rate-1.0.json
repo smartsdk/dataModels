@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-
+    "id": "http://www.openmhealth.org/schema/omh/heart-rate-1.0.json",
     "description": "This schema represents a person's heart rate, either a single heart rate measurement, or the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures)",
     "type": "object",
     "references": [
