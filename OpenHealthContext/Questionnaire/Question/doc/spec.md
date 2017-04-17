@@ -14,6 +14,10 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
     + Attribute type: `string`.
     + Mandatory.
 
++ `value` : A single question written to provide specific information.
+    + Attribute type: `string`.
+    + Mandatory
+
 + `language` : Language in which the questions is written.
     + Attribute type: `string`.
     + Allowed values: (`eng`, `es`, and those included into the ISO: 639-4:2010).
@@ -30,6 +34,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
   "id": "ffffffffff9cbbf4465f0ef30033c587-question-7118",
   "type": "Question",
   "refQuestionnaire": "ffffffffff9cbbf4465f0ef30033c587-questionnaire-7118",
+  "value": "Does the participant required physical assistance when performing the test?",
   "language": "en",
   "dateModified": "2017-01-18T20:45:42.697Z"
 }
