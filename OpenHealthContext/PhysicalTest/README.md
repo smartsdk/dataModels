@@ -15,4 +15,5 @@ Sensor data collected along a physical test in the scope of health. This model h
   "refDevice": ["device-ffffffffff9cbbf4465f0ef30033c587-acc-7118"],
   "dateTestStarted": "2017-01-18T20:45:58.447Z",
   "dateTestEnded": "2017-01-18T20:45:42.697Z"
-}``
+}
+```
