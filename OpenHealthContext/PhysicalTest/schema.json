@@ -91,7 +91,10 @@
       "minItems": 1,
       "uniqueItems": true
     },
-    "dateTestStarted": {},
+    "dateTestStarted": {
+      "type": "string",
+      "format": "date-time"
+    },
     "dateTestEnded": {
       "type": "string",
       "format": "date-time"
