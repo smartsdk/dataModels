@@ -6,8 +6,10 @@ testAlert()
 {
    result=`ajv compile --v5 -s User/Alert/schema.json -r common-schema.json -r geometry-schema.json`
    assertEquals "schema User/Alert/schema.json is valid" "${result}"
-   result=`ajv test --v5 -s User/Alert/schema.json -r common-schema.json -r geometry-schema.json -d User/Alert/example.json --valid`
-   assertEquals "User/Alert/example.json passed test" "${result}"
+   result=`ajv test --v5 -s User/Alert/schema.json -r common-schema.json -r geometry-schema.json -d User/Alert/example-1.json --valid`
+   assertEquals "User/Alert/example-1.json passed test" "${result}"
+   result=`ajv test --v5 -s User/Alert/schema.json -r common-schema.json -r geometry-schema.json -d User/Alert/example-2.json --valid`
+   assertEquals "User/Alert/example-2.json passed test" "${result}"
 }
 
 testActivity()

@@ -9,6 +9,5 @@
 		"dataTime": "2017-01-02T09:25:55.00Z",
 		"severity": 3,
 		"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
-		"refUser": "https://account.lab.fiware.org/users/8",
-		"refDevice": ""
+		"refDevice": "Device:1"
 	}
