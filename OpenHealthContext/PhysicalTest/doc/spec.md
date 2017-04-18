@@ -24,40 +24,40 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
    + Attribute type: `string`.
    + Mandatory.
 
-+ `category` : See attribute `category` from [DeviceModel](../../../DeviceModel/doc/spec.md). 
++ `category` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
    + Mandatory.
 
-+ `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../../../DeviceModel/doc/spec.md). 
++ `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
    + Mandatory.
 
-+ `osVersion` : See attribute `category` from [Device](../../../Device/doc/spec.md). 
++ `osVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
    + Mandatory.
 
-+ `softwareVersion` : See attribute `category` from [Device](../../../Device/doc/spec.md). 
++ `softwareVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
    + Mandatory.
 
-+ `hardwareVersion` : See attribute `category` from [Device](../../../Device/doc/spec.md). 
++ `hardwareVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
    + Mandatory.
 
-+ `firmwareVersion` : See attribute `category` from [Device](../../../Device/doc/spec.md). 
++ `firmwareVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
    + Mandatory.
 
-+ `function` : See attribute `category` from [DeviceModel](../../../DeviceModel/doc/spec.md). 
++ `function` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
    + Mandatory.
 
-+ `brandName` : See attribute `category` from [DeviceModel](../../../DeviceModel/doc/spec.md). 
++ `brandName` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
    + Mandatory.
 
-+ `modelName` : See attribute `category` from [DeviceModel](../../../DeviceModel/doc/spec.md). 
++ `modelName` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
    + Mandatory.
 
-+ `manufacturerName` : See attribute `category` from [DeviceModel](../../../DeviceModel/doc/spec.md). 
++ `manufacturerName` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
    + Mandatory.
 
-+ `value` : See attribute `category` from [Device](../../../Device/doc/spec.md).
++ `value` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md).
    + Mandatory.
 
-+ `configuration` : See attribute `category` from [Device](../../../Device/doc/spec.md). 
++ `configuration` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
    + Mandatory.
 
 + `dateTestStarted` : Timestamp to denotes when the test started.
