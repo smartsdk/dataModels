@@ -80,7 +80,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
   "testType": "Timed Up and Go",
   "refUser": "http://207.249.127.162:1234/users/1",
   "category": ["smartphone"],
-  "controlledProperty": ["accelerometer","orientation"],
+  "controlledProperty": ["accelerometer"],
   "osVersion": "Android 4.0",
   "softwareVersion": "MA-Test 1.6",
   "hardwareVersion": "GP-P9872",
@@ -89,7 +89,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
   "brandName": "Xioami",
   "modelName": "MI 5",
   "manufacturerName": "Samsung",
-  "value": {"acceleration" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...", "orientation" : "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800..." },
+  "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
   "configuration": {
     "data": {  
       "format": "csv"

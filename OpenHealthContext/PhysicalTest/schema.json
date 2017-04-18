@@ -133,7 +133,7 @@
         "medicalDevice",
         "smartphone"
       ],
-      "minItems": 1,
+      "maxItems": 1,
       "uniqueItems": false
     },
     "controlledProperty": {
@@ -180,7 +180,7 @@
         "acceleration",
         "orientation"
       ],
-      "minItems": 1,
+      "maxItems": 1,
       "uniqueItems": false
     },
     "osVersion": {
