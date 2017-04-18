@@ -16,5 +16,7 @@ The data model can be used to generate user or application notifications based o
 		"eventObserved": "2017-01-02T09:25:55.00Z",
 		"severity": 3,
 		"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
-		"refUser": "https://account.lab.fiware.org/users/8"
+		"refUser": "https://account.lab.fiware.org/users/8",
+		"refDevice": ""
+		
 	}  ``
