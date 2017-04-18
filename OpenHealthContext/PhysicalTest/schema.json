@@ -83,15 +83,140 @@
       "type": "string",
       "format": "uri"
     },
-    "refDevice": {
+    "category": {
+      "description": "Device's category(ies).",
       "type": "array",
-      "items": {
-        "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-      },
+      "references": [
+        {
+          "value": "sensor",
+          "description": "A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes.",
+          "url": "https://w3id.org/saref#Sensor"
+        },
+        {
+          "value": "actuator",
+          "description": "A device responsible for moving or controlling a mechanism or system.",
+          "url": "https://w3id.org/saref#Actuator"
+        },
+        {
+          "value": "meter",
+          "description": "A device built to accurately detect and display a quantity in a form readable by a human being. Partially defined by SAREF.",
+          "url": "http://ontology.tno.nl/saref/#Meter"
+        },
+        {
+          "value": "HVAC",
+          "description": "Heating, Ventilation and Air Conditioning (HVAC) device that provides indoor environmental comfort.",
+          "url": "https://w3id.org/saref#HVAC"
+        },
+        {
+          "value": "network",
+          "description": "A device used to connect other devices in a network, such as hub, switch or router in a LAN or Sensor network.",
+          "url": "https://w3id.org/saref#Network"
+        },
+        {
+          "value": "multimedia",
+          "description": "A device designed to display, store, record or play multimedia content such as audio, images, animation, video.",
+          "url": "https://w3id.org/saref#Multimedia"
+        },
+        {
+          "value": "smartphone",
+          "description": "A specific product line (such as iPhone) that performs many of the functions of a computer, typically having a touchscreen interface, Internet access, and an operating system capable of running downloaded apps.",
+          "url": "https://schema.org/ContactPoint"
+        }
+      ],
+      "enum": [
+        "sensor",
+        "actuator",
+        "meter",
+        "HVAC",
+        "network",
+        "multimedia",
+        "medicalDevice",
+        "smartphone"
+      ],
       "minItems": 1,
-      "uniqueItems": true
+      "uniqueItems": false
     },
-    "dateTestStarted": {},
+    "controlledProperty": {
+      "description": "Anything that can be sensed, measured or controlled by.",
+      "type": "array",
+      "enum": [
+        "temperature",
+        "humidity",
+        "light",
+        "motion",
+        "fillingLevel",
+        "occupancy",
+        "power",
+        "pressure",
+        "smoke",
+        "energy",
+        "airPollution",
+        "noiseLevel",
+        "weatherConditions",
+        "precipitation",
+        "windSpeed",
+        "windDirection",
+        "barometricPressure",
+        "solarRadiation",
+        "depth",
+        "pH",
+        "pressure",
+        "conductivity",
+        "conductance",
+        "tss",
+        "tds",
+        "turbidity",
+        "salinity",
+        "orp",
+        "cdom",
+        "waterPollution",
+        "location",
+        "speed",
+        "heading",
+        "weight",
+        "waterConsumption",
+        "gasComsumption",
+        "electricityConsumption",
+        "acceleration",
+        "orientation"
+      ],
+      "minItems": 1,
+      "uniqueItems": false
+    },
+    "osVersion": {
+      "type": "string"
+    },
+    "softwareVersion": {
+      "type": "string"
+    },
+    "hardwareVersion": {
+      "type": "string"
+    },
+    "firmwareVersion": {
+      "type": "string"
+    },
+    "function": {
+      "type": "string"
+    },
+    "brandName": {
+      "type": "string"
+    },
+    "modelName": {
+      "type": "string"
+    },
+    "manufacturerName": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "configuration": {
+      "type": "object"
+    },
+    "dateTestStarted": {
+      "type": "string",
+      "format": "date-time"
+    },
     "dateTestEnded": {
       "type": "string",
       "format": "date-time"
@@ -113,8 +238,41 @@
     "refUser": {
       "$ref": "#/definitions/refUser"
     },
-    "refDevice": {
-      "$ref": "#/definitions/refDevice"
+    "category": {
+      "$ref": "#/definitions/category"
+    },
+    "controlledProperty": {
+      "$ref": "#/definitions/controlledProperty"
+    },
+    "osVersion": {
+      "$ref": "#/definitions/osVersion"
+    },
+    "softwareVersion": {
+      "$ref": "#/definitions/softwareVersion"
+    },
+    "hardwareVersion": {
+      "$ref": "#/definitions/hardwareVersion"
+    },
+    "firmwareVersion": {
+      "$ref": "#/definitions/firmwareVersion"
+    },
+    "function": {
+      "$ref": "#/definitions/function"
+    },
+    "brandName": {
+      "$ref": "#/definitions/brandName"
+    },
+    "modelName": {
+      "$ref": "#/definitions/modelName"
+    },
+    "manufacturerName": {
+      "$ref": "#/definitions/manufacturerName"
+    },
+    "value": {
+      "$ref": "#/definitions/value"
+    },
+    "configuration": {
+      "$ref": "#/definitions/configuration"
     },
     "dateTestStarted": {
       "$ref": "#/definitions/dateTestStarted"
@@ -128,7 +286,18 @@
     "type",
     "testType",
     "refUser",
-    "refDevice",
+    "category",
+    "controlledProperty",
+    "osVersion",
+    "softwareVersion",
+    "hardwareVersion",
+    "firmwareVersion",
+    "function",
+    "brandName",
+    "modelName",
+    "manufacturerName",
+    "value",
+    "configuration",
     "dateTestStarted",
     "dateTestEnded"
   ]
