@@ -25,9 +25,11 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
    + Mandatory.
 
 + `category` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
+   + Attribute type: `string`.
    + Mandatory.
 
 + `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
+   + Attribute type: `string`.
    + Mandatory.
 
 + `osVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 

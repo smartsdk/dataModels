@@ -85,7 +85,7 @@
     },
     "category": {
       "description": "Device's category(ies).",
-      "type": "array",
+      "type": "string",
       "references": [
         {
           "value": "sensor",
@@ -132,13 +132,11 @@
         "multimedia",
         "medicalDevice",
         "smartphone"
-      ],
-      "maxItems": 1,
-      "uniqueItems": false
+      ]
     },
     "controlledProperty": {
       "description": "Anything that can be sensed, measured or controlled by.",
-      "type": "array",
+      "type": "string",
       "enum": [
         "temperature",
         "humidity",
@@ -179,9 +177,7 @@
         "electricityConsumption",
         "acceleration",
         "orientation"
-      ],
-      "maxItems": 1,
-      "uniqueItems": false
+      ]
     },
     "osVersion": {
       "type": "string"
@@ -196,7 +192,9 @@
       "type": "string"
     },
     "function": {
-      "type": "string"
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": false
     },
     "brandName": {
       "type": "string"
