@@ -9,16 +9,16 @@ The data model can be used to generate user or application notifications based o
 A JSON Schema corresponding to this data model can be found [JSON Schema]
 (https://github.com/smartsdk/dataModels/blob/master/User/Alert/schema.json)
 
-+ `id` : Entity's unique identifier.
++ `id` : Entity's unique identifier. 
 
 + `type` : Entity type. It must be equal to `Alert`.
 
-+ `alertType` : Define the type of alert (TrafficJam, CarAccident, WeatherCondition, Pollutants, Pollen, AsthmaAttacks)
-    + Attribute type: text
-    + Allowed values: (`TrafficJam`, `CarAccident`, `WeatherCondition`, `Pollutants`, `Pollen`, `AsthmaAttacks`)
-    + Mandatory
++ `alertType` : Define the type of alert (Traffic jam, accidents, weather conditions, high level of pollutants)
+	+ Attribute type: text
+    + Normative References: [https://schema.org/Event](https://schema.org/Event)
+    + Mandatory 
 
-+ `location` : Location of alert represented by a GeoJSON geometry.
++ `location` : Location of alert represented by a GeoJSON geometry. 
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946)
     + Mandatory
@@ -26,55 +26,47 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 + `address` : Civic address of `Alert`
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Mandatory if `location` is not present.
-
-+ `eventObserved` : The date and time of this alert in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval.
+	
++ `dateTime` : The date and time of this alert in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval.
 	+ Attribute type: DateTime or an ISO8601 interval represented as Text.
 	+ Mandatory
 
-+ `severity` : Describe the severity of Alert (`0` = None, `1` = Low, `2` = Medium, `3 = High)
-	 + Attribute type: [Number](https://schema.org/Number)
++ `severity` : Describe the severity of Alert (0 = None, 1 = Low, 2 = Medium, 3 = High) 
+	 + Attribute type: integer
 	 + Optional
 
 + `description` : A description of alert (Traffic jam in Paseo de la Reforma. Emergency services at place).
 	 + Attribute type: text
 	 + Normative References: [https://schema.org/description](https://schema.org/description)
 	 + Optional	 
-
-+ `dateModified` : Last update timestamp of this entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
-
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
-    + Optional
-
-+ `refEvent` : Provide an external reference to the event providing more details.
+	 
++ `refUser` : reference to the User that generated an alert. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
     + Attribute type: `string`
-		+ Normative References: [https://schema.org/Event](https://schema.org/Event)
-    + Optional
+    + Mandatory	if `refDevice` is not present.
 
-+ `refUser` : reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
++ `refDevice` : reference to device that generate an alert.
     + Attribute type: `string`
-    + Mandatory
-
-
+    + Mandatory	if `refUser` is not present.
+	
+	
 ## Examples of use
+{
+	"id": "Alert:1",
+	"type": "Alert",
+	"alertType": "Traffic jam",
+	"location": {
+		"type": "Point",
+		"coordinates": [-3.712247222222222, 40.423852777777775]
+	},
+	"dateTime": "2017-01-02T09:25:55.00Z",
+	"severity": "1",
+	"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
+	"refUser": "https://account.lab.fiware.org/users/8",
+	"refDevice": ""
 
-```
-	{
-		"id": "Alert:1",
-		"type": "Alert",
-		"alertType": "traffic jam",
-		"location": {
-			"type": "Point",
-			"coordinates": [-3.712247222222222, 40.423852777777775]
-		},
-		"eventObserved": "2017-01-02T09:25:55.00Z",
-		"severity": 3,
-		"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
-		"refUser": "https://account.lab.fiware.org/users/8"
-	}
-```
+
+}  
+
 
 ## Use it with a real service
 T.B.D
