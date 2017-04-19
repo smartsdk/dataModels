@@ -50,7 +50,8 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 	
 	
 ## Examples of use
-{
+
+	{
 	"id": "Alert:1",
 	"type": "Alert",
 	"alertType": "Traffic jam",
@@ -63,9 +64,7 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 	"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
 	"refUser": "https://account.lab.fiware.org/users/8",
 	"refDevice": ""
-
-
-}  
+	}  
 
 
 ## Use it with a real service
