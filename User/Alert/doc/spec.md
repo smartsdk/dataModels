@@ -26,8 +26,8 @@ Currently, for smart city scenario a set of alerts have been detected, such as: 
 
 ###### Alert catalogue
 
-| Traffic| Accidents | Weather conditions |
-| Pollutions | Pollen |Asthma attacks |
+| Traffic| Accidents | Weather conditions | Pollutions | Pollen |Asthma attacks |
+| ------------- | ------------- |------------- | ------------- | ------------- |------------- |
 | Standstill Traffic Jam |Minor Accident|Rainfall|Visible pollution (smog)|Symptoms or discomforts of users| People with asthma attacks at specific point. |
 | Heavy Traffic Jam |Car Accident|Temperature (low, high)|Level of emissions|Level of pollen on air| |
 | Bumper to bumper traffic|Hazard On Road|Heat alert|Level of pollutants, such as O3.|Pollen concentration| |
