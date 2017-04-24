@@ -1,8 +1,8 @@
 	{
 		"id": "Alert:1",
 		"type": "Alert",
-		"alertType": “Weather condition",
-		"eventObserved": “Heat alert",
+		"alertType": "Weather condition",
+		"eventObserved": "Heat alert",
 		"location": {
 			"type": "Point",
 			"coordinates": [-3.712247222222222, 40.423852777777775]
