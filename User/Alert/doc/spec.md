@@ -18,9 +18,9 @@ A set of alerts have been detected for the project scenarios:
 | Traffic jam  | A car in opposite direction  |Fall of a patient |
 | Accident cars  | When a car suddenly stops  |Bump of a patient |
 | Weather condition  | Suspicious activities  | |
-| High level of pollution  | Assaults |------------- |
-| Pollen |------------- |------------- |
-| Asthma attacks |-------------|------------- |
+| High level of pollution  | Assaults | |
+| Pollen | | |
+| Asthma attacks || |
 
 
 ## Data model
