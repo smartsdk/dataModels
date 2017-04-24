@@ -1,13 +1,13 @@
 	{
 		"id": "Alert:1",
 		"type": "Alert",
-		"alertType": "TrafficJam",
+		"alertType": “Weather condition",
+		"eventObserved": “Heat alert",
 		"location": {
 			"type": "Point",
 			"coordinates": [-3.712247222222222, 40.423852777777775]
 		},
-		"dataTime": "2017-01-02T09:25:55.00Z",
-		"severity": 3,
-		"description": "Traffic jam in Paseo de la Reforma. Emergency services at place",
-		"refDevice": "Device:1"
+		"dateTime": "2017-01-02T09:25:55.00Z",
+		"description": "41–54 °C Heat cramps and heat exhaustion are likely; heat stroke is probable with continued activity.",
+		"refDevice": "Device1"
 	}
