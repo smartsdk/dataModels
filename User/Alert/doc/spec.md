@@ -114,21 +114,20 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 	
 	
 ## Examples of use
-{
+	{
 		"id": "Alert:1",
 		"type": "Alert",
-		"alertType": "Weather condition",
-		"eventObserved": "Heat wave",
+		"alertType": "Traffic jam",
+		"eventObserved": "Standstill traffic jam",
 		"location": {
 			"type": "feature",
 			"coordinates": [-3.712247222222222, 40.423852777777775]
-		},
-	
+		},	
 		"dateTime": "2017-01-02T09:25:55.00Z",
-		"description": "Extreme danger: heat stroke is imminent.",
+		"description": "There are emergency services at place",
 		"refuser":"",
 		"refDevice": "Device1"
-}  
+	}
   
 ## Use it with a real service
 T.B.D
