@@ -2,12 +2,12 @@
 		"id": "Alert:1",
 		"type": "Alert",
 		"alertType": "Weather condition",
-		"eventObserved": "Heat alert",
+		"eventObserved": "Rainfall",
 		"location": {
 			"type": "Point",
 			"coordinates": [-3.712247222222222, 40.423852777777775]
 		},
 		"dateTime": "2017-01-02T09:25:55.00Z",
-		"description": "41–54 °C Heat cramps and heat exhaustion are likely; heat stroke is probable with continued activity.",
+		"description": "Alert Orange: More than 15-30 mm rain (intense), alert for possible evacuation",
 		"refDevice": "Device1"
 	}
