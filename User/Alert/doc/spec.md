@@ -61,6 +61,7 @@ For instance, the Mobile Monitoring Unit detects 40 grades of temperature, then 
 		},
 		"dateTime": "2017-01-02T09:25:55.00Z",
 		"description": "41–54 °C Heat cramps and heat exhaustion are likely; heat stroke is probable with continued activity.",
+		"refuser":"",
 		"refDevice": “Device1"
 	}  
 
