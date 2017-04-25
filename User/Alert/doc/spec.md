@@ -125,8 +125,8 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 		},	
 		"dateTime": "2017-01-02T09:25:55.00Z",
 		"description": "There are emergency services at place",
-		"refuser":"",
-		"refDevice": "Device1"
+		"refuser":"https://account.lab.fiware.org/users/8",
+		"refDevice": ""
 	}
   
 ## Use it with a real service
