@@ -27,6 +27,6 @@ When a user or device detects an irregular situation sends an alert to a set of 
 		"dateTime": "2017-01-02T09:25:55.00Z",
 		"description": "Extreme danger: heat stroke is imminent.",
 		"refuser":"",
-		"refDevice": "Device1",
+		"refDevice": "Device1"
 	}  
 
