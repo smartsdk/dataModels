@@ -20,12 +20,26 @@
         "Question"
       ]
     },
+    "category": {
+      "description": "Different domine of interest.",
+      "type": "string",
+      "references": [
+        {
+          "value": "health",
+          "description": "This category involves all questions regarding health.",
+          "url": "http://purl.bioontology.org/ontology/SNOMEDCT/263775005"
+        }
+      ],
+      "enum": [
+        "Health"
+      ]
+    },
     "refQuestionnaire": {
       "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
     },
     "value": {
       "type": "string"
-      },
+    },
     "language": {
       "references": [
         {

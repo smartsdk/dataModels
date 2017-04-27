@@ -14,6 +14,11 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
     + Attribute type: `string`.
     + Mandatory.
 
++ `category` : A unique category value to specify the domain of the question.
+    + Attribute type: `string`
+    + Allowed value: (`health`). Please note that other option values can be included.
+    + Mandatory.
+
 + `value` : A single question written to provide specific information.
     + Attribute type: `string`.
     + Mandatory
@@ -33,6 +38,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 {
   "id": "ffffffffff9cbbf4465f0ef30033c587-question-7118",
   "type": "Question",
+  "category": "health",
   "refQuestionnaire": "ffffffffff9cbbf4465f0ef30033c587-questionnaire-7118",
   "value": "Did the participant require physical assistance to perform the test?",
   "language": "en",

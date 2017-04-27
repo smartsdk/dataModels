@@ -46,6 +46,14 @@
         "4-Stage Balance Test"
       ]
     },
+    "refQuestion": {
+      "type": "string",
+      "items": {
+        "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }, 
     "description": {
       "type": "string"
     },
