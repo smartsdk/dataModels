@@ -2,7 +2,7 @@
 
 ## Description
 
-Set of questions regarding the physical test performance.
+Set of questions regarding a specific topic.
 
 ## Examples of use
 
