@@ -6,7 +6,6 @@ These data models allow to perform health data tracking. They have been designed
 
 oHealth-Context data model defines the following entity:
 
-* [Control test](./ClinicalControl/)
 * [Physical test](./PhysicalTest/)
 * [Questionnaire](./Questionnaire/)
 * [Question](./Questionnaire/Question/)
