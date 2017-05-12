@@ -105,7 +105,11 @@ and which are not currently covered by the standard attributes defined by this m
 
 + `refDeviceModel` : The device's model.
     + Attribute type: Reference to an entity of type [DeviceModel](../../DeviceModel/doc/spec.md).
-    + Optional
+    + Mandatory
+
++ `refSensor` : The sensor component.
+    + Attribute type: List of reference to an entity of type [DeviceModel](../../DeviceModel/doc/spec.md).
+    + Mandatory
 
 + `batteryLevel` : Device's battery level. It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty.
 `null` when cannot be determined. 
