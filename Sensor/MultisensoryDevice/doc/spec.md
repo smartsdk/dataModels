@@ -108,7 +108,7 @@ and which are not currently covered by the standard attributes defined by this m
     + Mandatory
 
 + `refSensor` : The sensor component.
-    + Attribute type: List of reference to an entity of type [DeviceModel](../../DeviceModel/doc/spec.md).
+    + Attribute type: List of reference to an entity of type [Sensor](../../SensorModel/doc/spec.md).
     + Mandatory
 
 + `batteryLevel` : Device's battery level. It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty.
@@ -147,7 +147,7 @@ and which are not currently covered by the standard attributes defined by this m
       "id": "device-9845A",
       "type": "MultisensoryDevice",
       "category": ["smartphone"],
-      "refDeviceModel": "myDevice-wastecontainer-sensor-345",
+      "refDeviceModel": "mySensor-sensor-345",
       "serialNumer": "9845A",
       "description": "Smarthphone",
       "refSensor":[
