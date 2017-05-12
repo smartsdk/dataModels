@@ -16,13 +16,6 @@ This entity captures the static properties of a Sensor component.
         + `motion` : Are useful for monitoring physical movement, such as tilt, shake, rotation, or swing. The movement is usually a reflection of direct user input, but it can also be a reflection of the physical environment in which the sensor is sitting. 
            [http://ontology.tno.nl/saref/#Sensor](http://ontology.tno.nl/saref/#Sensor).
     + Mandatory
-    
-+ `deviceClass` : Class of constrained device as specified by RFC 7228.
-If the device is not a constrained device this property can be left as `null` or undefined. 
-    + Attribute type: [Text](https://schema.org/Text)
-    + Normative References: [RFC7228](https://tools.ietf.org/html/rfc7228#section-3)
-    + Allowed values: (`C0`, `C1`, `C2`)
-    + Optional
 
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
     + Attribute type: List of [Text](https://schema.org/Text)
@@ -35,23 +28,11 @@ If the device is not a constrained device this property can be left as `null` or
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values: (`levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`), from SAREF.
     + Optional
-    
-+ `supportedProtocol` : Supported protocol(s) or networks.
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: (`ul20`, `mqtt`, `lwm2m`, `http`, `websocket`, `onem2m`, `sigfox`, `lora`,
-    `nb-iot`, `ec-gsm-iot`, `lte-m`, `cat-m`, `3g`, `grps`)  or any other value meaningful for an application. 
-    + Optional
-    
+        
 + `supportedUnits` : Units of measurement supported by the sensor.
     + Attribute type: List of [Text](https://schema.org/Text).
     + Allowed values: The unit code (text) of measurement given using the
         [UN/CEFACT Common Code](http://wiki.goodrelations-vocabulary.org/Documentation/UN/CEFACT_Common_Codes) (max. 3 characters).
-    + Optional
-    
-+ `energyLimitationClass` : Sensor's class of energy limitation as per RFC 7228.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Normative References: [RFC7228](https://tools.ietf.org/html/rfc7228#page-11)
-    + Allowed values: (`E0`, `E1`, `E2`, `E9`)
     + Optional
 
 + `brandName` : Sensor's brand name.
