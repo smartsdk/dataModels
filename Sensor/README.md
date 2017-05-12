@@ -4,3 +4,4 @@ This set of data models allow to represent a single sensor provided with network
 
 + [Sensor](../Sensor/doc/spec.md). It represents a physical sensor (i.e., hardware + software + firmware) intended to accomplish a particular task (e.g., to sense acceleration, gyroscope, temperature, an so on).
 + [SensorModel](../SensorModel/doc/spec.md). It captures the static properties common to multiple instances of a Sensor component. 
+
