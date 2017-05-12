@@ -96,7 +96,7 @@ If the device is not a constrained device this property can be left as `null` or
 ## Examples
 
     {
-      "id": "mySensor-wastecontainer-sensor-345",
+      "id": "mySensor-sensor-345",
       "type": "SensorModel",
       "name": "mySensor Sensor for sensing acceleration 345",
       "brandName": "mySensor",

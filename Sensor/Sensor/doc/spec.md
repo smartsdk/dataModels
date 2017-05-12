@@ -19,31 +19,6 @@ A Sensor is a tangible object which contains some logic and is producer and/or c
         
 + `controlledProperty` : See attribute `controlledProperty` from [SensorModel](../../SensorModel/doc/spec.md). Optional but recommended to optimize queries.
 
-+ `controlledAsset` : The asset(s) (building, object, etc.) controlled by the sensor.
-    + Attribute type: List of [Text](https://schema.org) or Reference(s) to another entity.
-    + Optional
-
-+ `mnc` : This property identifies the Mobile Network Code (MNC) of the network the sensor is attached to.
-The MNC is used in combination with a Mobile Country Code (MCC) (also known as a "MCC / MNC tuple")
-to uniquely identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA
-and 3G / 4G public land mobile networks and some satellite mobile networks.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-
-+ `mcc` : Mobile Country Code - This property identifies univoquely the country of the mobile network the sensor is attached to.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-    
-+ `macAddress` : The MAC address of the sensor.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-    
-+ `ipAddress` : The IP address of the sensor. It can be a comma separated list of values if the sensor has more than one IP address. 
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-
-+ `supportedProtocol` : See attribute `supportedProtocol` from [SensorModel](../../SensorModel/doc/spec.md). Needed if due to a software update new protocols are supported. Otherwise it is better to convey it at `SensorModel` level. 
-
 + `configuration` : Sensor's technical configuration. This attribute is intended to be a dictionary of properties which capture
 parameters which have to do with the configuration of a sensor (timeouts, reporting periods, etc.)
 and which are not currently covered by the standard attributes defined by this model. 
@@ -78,19 +53,7 @@ and which are not currently covered by the standard attributes defined by this m
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
-+ `hardwareVersion` : The hardware version of this sensor.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-
-+ `softwareVersion` : The software version of this sensor.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-
 + `firmwareVersion` : The firmware version of this sensor.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Optional
-
-+ `osVersion` : The version of the host operating system sensor.
     + Attribute type: [Text](https://schema.org/Text)
     + Optional
 
@@ -108,16 +71,6 @@ and which are not currently covered by the standard attributes defined by this m
 
 + `refSensorModel` : The sensor's model.
     + Attribute type: Reference to an entity of type [SensorModel](../../SensorModel/doc/spec.md).
-    + Optional
-
-+ `batteryLevel` : Sensor's battery level. It must be equal to `1.0` when battery is full. `0.0` when battery ìs empty.
-`null` when cannot be determined. 
-    + Type: [Number](https://schema.org/Number)
-    + Allowed values: Interval [0,1]
-    + Attribute metadata:
-        + `timestamp`: Timestamp when the last update of the attribute happened.
-        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
-            + Type: [DateTime](http://schema.org/DateTime)
     + Optional
     
 + `sensorState` : State of this sensor from an operational point of view. Its value can be vendor dependent.  
@@ -158,15 +111,11 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
       "category": ["motion"],
       "controlledProperty": ["acceleration"],
       "controlledAsset": ["wastecontainer-Osuna-100"],
-      "ipAddress": "192.14.56.78",
-      "mcc": "214",
-      "mnc": "07",
       "batteryLevel": 0.75,
       "serialNumer": "9845A",
       "refSensorModel": "myDevice-wastecontainer-sensor-345",
       "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
-      "deviceState": "ok",
-      "dateFirstUsed": "2014-09-11",
+      "dateCreated": "2014-09-11",
     }
 
 
