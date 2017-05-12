@@ -1,15 +1,15 @@
-# PhysicalTest
+# MotorPhysicalTest
 
 ## Description
 
-Sensor data collected along a physical test in the scope of health. This model has been developed inspired by [Open mHealth](http://www.openmhealth.org/).
+Sensor data collected along a physical test in the scope of health. This model has been developed inspired by the [Open mHealth](http://www.openmhealth.org/).
 
 ## Examples of use
 
 ```
 {  
   "id": "test-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
-  "type": "PhysicalTest",
+  "type": "MotorPhysicalTest",
   "testType": "Timed Up and Go",
   "refUser": "http://207.249.127.162:1234/users/1",
   "category": "smartphone",
