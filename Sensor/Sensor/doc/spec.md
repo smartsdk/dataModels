@@ -110,10 +110,8 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
       "type": "Sensor",
       "category": ["motion"],
       "controlledProperty": ["acceleration"],
-      "controlledAsset": ["wastecontainer-Osuna-100"],
-      "batteryLevel": 0.75,
       "serialNumer": "9845A",
-      "refSensorModel": "myDevice-wastecontainer-sensor-345",
+      "refSensorModel": "mySensor-sensor-345",
       "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
       "dateCreated": "2014-09-11",
     }
