@@ -1,15 +1,9 @@
-# Device
+# Multisensory Device 
 
 ## Description
 
-An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).
-A Device is a tangible object which contains some logic and is producer and/or consumer of data.
-A Device is always assumed to be capable of communicating electronically via a network.
+This model is built based on the Device & DeviceModel entities [DEVICE](../Device), however, rather than contextualise in the IoT scope, this model is referenced aims to overcome bonding to cover a larger variety of objects. In this context, an apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.). A MultisensoryDevice is constituted by a set of tangible sensors  which contains some logic and is producer and/or consumer of data, and it is assumed to be capable of communicating electronically via a network.
 
-This data model has been partially developed in cooperation with mobile operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
-
-This data model reuses concepts coming from the [SAREF Ontology](http://www.etsi.org/deliver/etsi_ts/103200_103299/103264/01.01.01_60/ts_103264v010101p.pdf)
-part of [ETSI](http://www.etsi.org) standards.
 
 ## Data Model
 
@@ -17,7 +11,7 @@ part of [ETSI](http://www.etsi.org) standards.
 
 + `type` : Entity type. It must be equal to `Device`.
 
-+ `category` : See attribute `category` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
++ `category` : See attribute `category` from [DeviceModel](../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
         
 + `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../../DeviceModel/doc/spec.md). Optional but recommended to optimize queries.
 
@@ -135,16 +129,6 @@ and which are not currently covered by the standard attributes defined by this m
     + Attribute type: [DateTime](https://schema.org/)
     + Optional
 
-+ `value` : A observed or reported value. For actuator devices, it is an attribute that allows
-a controlling application to change the actuation setting. For instance, a switch device which is currently *on* can report a value `"on"`of type `Text`.
-Obviously, in order to toggle the referred switch, this attribute value will have to be changed to `"off"`.
-    + Attribute type: Any type, depending on the device. Usually [Text](https://schema.org/Text) or [QuantitativeValue](https://schema.org/QuantitativeValue).
-    + Attribute metadata:
-        + `timestamp`: Timestamp when the last update of the attribute happened.
-        This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant)
-            + Type: [DateTime](http://schema.org/DateTime)
-    + Optional
-    
 + `dateModified` : Last update timestamp of this entity.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
@@ -157,19 +141,17 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
 
     {
       "id": "device-9845A",
-      "type": "Device",
-      "category": ["sensor"],
-      "controlledProperty": ["fillingLevel","temperature"],
-      "controlledAsset": ["wastecontainer-Osuna-100"],
-      "ipAddress": "192.14.56.78",
-      "mcc": "214",
-      "mnc": "07",
-      "batteryLevel": 0.75,
-      "serialNumer": "9845A",
+      "type": "MultisensoryDevice",
+      "category": ["smartphone"],
       "refDeviceModel": "myDevice-wastecontainer-sensor-345",
-      "value": "l=0.22;t=21.2",
-      "deviceState": "ok",
-      "dateFirstUsed": "2014-09-11",
+      "serialNumer": "9845A",
+      "description": "Smarthphone",
+      "refSensor":[
+        "sensor-9845A",
+        "sensor-9845B",
+        "sensor-9845C"
+      ]
+      "dateInstalled": "2016-08-22T10:18:16Z"
     }
 
 
@@ -179,6 +161,4 @@ T.B.D.
 
 ## Issues
 
-+ Is `function` really needed?
-+ Do we need a `state` attribute as it happens in SAREF?
-+ Check consistency with oneM2M and SAREF ontologies. 
+T.B.D.

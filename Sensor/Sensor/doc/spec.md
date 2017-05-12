@@ -1,6 +1,6 @@
 # Sensor
 
-This model is built based on the Device & DeviceModel entities [DEVICE](./Device). The motivation for developing this model relies on the need of describe attributes values from each sensor embebed into a device. Thus rather than considering a device as a whole entity, Sensor & SensorModel split an apparatus (i.e., device) into separated elements (i.e., sensors) taking into account a more descriptive information.
+The motivation for developing this model relies on the need of describe attributes values from each sensor embebed into a device. Thus rather than considering a device as a whole entity, Sensor & SensorModel split an apparatus (i.e., device) into separated elements (i.e., sensors) taking into account a more descriptive information.
 
 ## Description
 
