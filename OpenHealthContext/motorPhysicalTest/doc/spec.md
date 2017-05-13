@@ -1,66 +1,38 @@
-# PhysicalTest
+# MotorPhysicalTest
 
 ## Data Model
 
 A JSON Schema corresponding to this data model can be found [here](../schema.json).
 
-+ `id` : Entity's unique identifier which must follow a specific format (i.e., \<DEVICE UNIQUE ID\>-\<SENSOR\>-\<TEST NUMBER\>; without blank spaces in between and using capital letters).
++ `id` : Entity's unique identifier which must follow a specific format (i.e., \<DEVICE UNIQUE ID\>-\<TEST NUMBER\>; without blank spaces in between and using capital letters).
+   + Attribute type: [Identifier](https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType).
    + Mandatory.
 
 + `type` : Entity type. It must be equal to `PhysicalTest`.
+   + Attribute type: [Text](https://schema.org/Text).
    + Mandatory.
 
 + `testType` : Name of physical test.
-   + Attribute type: `string`
+   + Attribute type: [Text](https://schema.org/Text).
    + Allowed values: (`Timed Up and Go`, `30 second sit to stand test`, `4-Stage Balance Test`).
    + Mandatory.
 
 + `balanceTestType` : Name of the balance test type.
-   + Attribute type: `string`
+   + Attribute type: [Text](https://schema.org/Text).
    + Allowed values: (`Side by Side`, `Semi-Tandem`, `Tandem (Full)`, `Single-Leg Stance`).
    + Optional.
 
 + `refUser` : Reference to the actual User, sheltered by an independent service.
-   + Attribute type: `string`.
+   + Attribute type: [Text](https://schema.org/Text).
    + Mandatory.
 
-+ `category` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
-   + Attribute type: `string`.
++ `refMultisensoryDevice` : Reference to the device that consist on a collection of sensors.
+   + Attribute type: [MultisensoryDevice](../Sensor/MultisensoryDevice/doc/spec.md).
    + Mandatory.
 
-+ `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
-   + Attribute type: `string`.
-   + Mandatory.
-
-+ `osVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
-   + Mandatory.
-
-+ `softwareVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
-   + Mandatory.
-
-+ `hardwareVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
-   + Mandatory.
-
-+ `firmwareVersion` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
-   + Mandatory.
-
-+ `function` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
-   + Mandatory.
-
-+ `brandName` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
-   + Mandatory.
-
-+ `modelName` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
-   + Mandatory.
-
-+ `manufacturerName` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
-   + Mandatory.
-
-+ `value` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md).
-   + Mandatory.
-
-+ `configuration` : See attribute `category` from [Device](../../../Device/Device/doc/spec.md). 
-   + Mandatory.
++ `configuration` : Description to enrich provided information along the MultisensoryDevice references. This attribute is intended to be a dictionary of properties which capture parameters related with the test's design.
+    + Attribute type: [StructuredValue](https://schema.org/StructuredValue).
+    + Optional.
 
 + `dateTestStarted` : Timestamp to denotes when the test started.
    + Attribute type: [DateTime](https://schema.org/DateTime).
@@ -73,35 +45,35 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 
 
 ## Examples of use
-### Creation of PhysicalTest entity
+### Creation of MotorPhysicalTest entity
 
 ```
 {  
-  "id": "test-ffffffffff9cbbf4465f0ef30033c587-acc-7118",
-  "type": "PhysicalTest",
+  "id": "ffffffffff9cbbf4465f0ef30033c587-7118",
+  "type": "MotorPhysicalTest",
   "testType": "Timed Up and Go",
   "refUser": "http://207.249.127.162:1234/users/1",
-  "category": ["smartphone"],
-  "controlledProperty": ["accelerometer"],
-  "osVersion": "Android 4.0",
-  "softwareVersion": "MA-Test 1.6",
-  "hardwareVersion": "GP-P9872",
-  "firmwareVersion": "SM-A310F",
-  "function": ["sensing"],
-  "brandName": "Xioami",
-  "modelName": "MI 5",
-  "manufacturerName": "Samsung",
-  "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
+  "refMultisensoryDevice": [
+                              "device-9845A", 
+                              "device-9845B", 
+                              "device-9845C"
+                            ],
   "configuration": {
-    "data": {  
-      "format": "csv"
-    },
-    "sensor": {  
-      "sampleRate": {
-        "value": "60",
-        "type": "hz"
+    "relationship": "device-limbs",
+    "data":[
+      {
+        "device": "device-9845A",
+        "position": "right-leg"
+      },
+      {
+        "device": "device-9845B",
+        "position": "left-leg"
+      },
+      {
+        "device": "device-9845C",
+        "position": "lower-back"
       }
-    }
+    ]
   },
   "dateTestStarted": "2017-01-18T20:45:58.447Z",
   "dateTestEnded": "2017-01-18T20:45:42.697Z"

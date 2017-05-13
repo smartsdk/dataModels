@@ -70,9 +70,7 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
             + Type: [DateTime](http://schema.org/DateTime).
     + Optional.
 
-+ `configuration` : Sensor's technical configuration. This attribute is intended to be a dictionary of properties which capture
-parameters which have to do with the configuration of a sensor (timeouts, reporting periods, etc.)
-and which are not currently covered by the standard attributes defined by this model. 
++ `configuration` : Sensor's technical configuration. This attribute is intended to be a dictionary of properties which capture parameters which have to do with the configuration of a sensor (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model. 
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue).
     + Attribute metadata:
         + `dateModified` :  It captures the last modification timestamp of this attribute.
