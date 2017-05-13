@@ -8,7 +8,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
    + Attribute type: [Identifier](https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType).
    + Mandatory.
 
-+ `type` : Entity type. It must be equal to `PhysicalTest`.
++ `type` : Entity type. It must be equal to `MotorPhysicalTest`.
    + Attribute type: [Text](https://schema.org/Text).
    + Mandatory.
 
