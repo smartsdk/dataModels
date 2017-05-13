@@ -2,7 +2,7 @@
 
 ## Description
 
-It represents a physical sensor intended to accomplish a particular sensing task (e.g., acceleration, gyroscope, temperature, etc.). In this context, a Sensor is a tangible object which serve for a specific purpose and is producer and/or consumer of data. It can be considered as a single object, or as a part of a collection of sensors connected to a single communication mechanism, such as Smartphones or Smartwatches.
+It represents a physical sensor intended to sense a particular category of data (e.g., acceleration, gyroscope, temperature, etc.). In this context, a Sensor is a tangible object which serve for a specific purpose and is producer and/or consumer of data. It can be considered as a single object, or as a part of a collection of sensors connected to a single communication mechanism, such as Smartphones or Smartwatches.
 
 
 ## Data Model
