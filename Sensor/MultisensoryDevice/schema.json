@@ -28,10 +28,12 @@
       "type": "string"
     },
     "category": {
-      "type": "string"
+      "type": "string",
+      "description": "Please refere to attribute description of the entity: DeviceModel, for detailed description."
     },
     "controlledProperty": {
-      "type": "string"
+      "type": "string",
+      "description": "Please refere to attribute description of the entity: DeviceModel, for detailed description."
     },
     "mnc": {
       "type": "string"

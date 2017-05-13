@@ -9,6 +9,7 @@ The motivation for developing this model relies on the need of describe attribut
   "id": "sensor-9845A",
   "type": "Sensor",
   "category": "motion",
+  "classification": "accelerometer",
   "controlledProperty": "acceleration",
   "serialNumber": "9845A",
   "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",

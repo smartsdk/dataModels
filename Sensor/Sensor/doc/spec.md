@@ -26,6 +26,10 @@ It represents a physical sensor intended to sense a particular category of data 
 + `category` : See attribute `category` from [SensorModel](../../SensorModel/doc/spec.md). 
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
+
++ `classification` : See attribute `classification` from [SensorModel](../../SensorModel/doc/spec.md). 
+    + Attribute type: [Text](https://schema.org/Text).
+    + Optional.
         
 + `controlledProperty` : See attribute `controlledProperty` from [SensorModel](../../SensorModel/doc/spec.md).
     + Attribute type: [Text](https://schema.org/Text).
@@ -105,6 +109,7 @@ and which are not currently covered by the standard attributes defined by this m
       "id": "sensor-9845A",
       "type": "Sensor",
       "category": "motion",
+      "classification": "accelerometer"
       "controlledProperty": "acceleration",
       "serialNumber": "9845A",
       "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",

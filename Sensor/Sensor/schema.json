@@ -28,10 +28,16 @@
       "type": "string"
     },
     "category": {
-      "type": "string"
+      "type": "string",
+      "description": "Please refere to attribute description of the entity: SensorModel, for detailed description."
+    },
+    "classification": {
+      "type": "string",
+      "description": "Please refere to attribute description of the entity: SensorModel, for detailed description."
     },
     "controlledProperty": {
-      "type": "string"
+      "type": "string",
+      "description": "Please refere to attribute description of the entity: SensorModel, for detailed description."
     },
     "firmwareVersion": {
       "type": "string"
@@ -96,6 +102,9 @@
     },
     "category": {
       "$ref": "#/definitions/category"
+    },
+    "classification": {
+      "$ref": "#/definitions/classification"
     },
     "controlledProperty": {
       "$ref": "#/definitions/controlledProperty"
