@@ -21,7 +21,7 @@ This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE]
     "sensor-9845A",
     "sensor-9845B",
     "sensor-9845C"
-  ]
+  ],
   "dateCreated": "2016-08-22T10:18:16Z"
 }
 ```
