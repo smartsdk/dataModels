@@ -2,7 +2,7 @@
 
 ## Description
 
-This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE](../Device), however, unlike the aforementioned models, this entity aims to provide a detailed description of a device by splitting it into respective sensors. In this context, a multysensory device is an apparatus (hardware + software + firmware) built based on a collection of sensor, which contains some logic and is producer and/or consumer of data, and it is assumed to be capable of communicating electronically via a network.
+This model is built based on the FIWARE's Device entity [DEVICE](../Device), however, unlike the aforementioned model, this entity aims to provide a detailed description of a device by splitting it into integrated sensors. In this context, a multysensory device is an apparatus (hardware + software + firmware) built based on a collection of sensor, which contains some logic and is producer and / or consumer of data, and it is assumed to be capable of communicating electronically via a network.
 
 
 ## Data Model
@@ -12,7 +12,7 @@ This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE]
     + Mandatory.
 
 + `type` : Entity type. It must be equal to `MultisensoryDevice`.
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Mandatory.
 
 + `name` : A mnemonic name given to the device.
@@ -22,13 +22,13 @@ This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE]
 + `description` : Device's description.
     + Normative References: [description](https://schema.org/description).
     + Optional.
-    
+
 + `category` : See attribute `category` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
 + `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
 + `mnc` : This property identifies the Mobile Network Code (MNC) of the network the device is attached to.
@@ -65,21 +65,17 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
-+ `firmwareVersion` : The firmware version of this device.
-    + Attribute type: [Text](https://schema.org/Text).
-    + Optional.
-
 + `osVersion` : The version of the host operating system device.
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
-+ `dateLastCalibration` : A timestamp which denotes when the last calibration of the device happened.
-    + Attribute type: [DateTime](https://schema.org/DateTime).
++ `firmwareVersion` : The firmware version of this device.
+    + Attribute type: [Text](https://schema.org/Text).
     + Optional.
     
 + `serialNumber` : The serial number assigned by the manufacturer.
     + Normative References: [https://schema.org/serialNumber](https://schema.org/serialNumber).
-    + Mandatory.
+    + Optional.
     
 + `provider` : The provider of the device.
     + Normative References: [https://schema.org/provider](https://schema.org/provider).
@@ -104,7 +100,7 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
     + Optional.
 
 + `refDeviceModel` : The device's model.
-    + Attribute type: Reference to an entity of type [DeviceModel](../../DeviceModel/doc/spec.md).
+    + Attribute type: A single reference to an entity of type [DeviceModel](../../DeviceModel/doc/spec.md).
     + Mandatory.
 
 + `refSensor` : The sensor component.
@@ -118,20 +114,16 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
             + Type: [DateTime](https://schema.org/DateTime).
     + Optional.
 
-+ `dateInstalled` : A timestamp which denotes when the device was installed (if it requires installation).
-    + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Optional.
-
-+ `dateFirstUsed` : A timestamp which denotes when the device was first used.
-    + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Optional.
-
 + `dateManufactured` : A timestamp which denotes when the device was manufactured.
     + Attribute type: [DateTime](https://schema.org/DateTime).
     + Optional.
 
-+ `dateLastValueReported` : A timestamp which denotes the last time when the device successfully reported data to the cloud.
-    + Attribute type: [DateTime](https://schema.org/).
++ `dateInstalled` : A timestamp which denotes when the device was installed (if it requires installation).
+    + Attribute type: [DateTime](https://schema.org/DateTime).
+    + Optional.
+
++ `dateLastCalibration` : A timestamp which denotes when the last calibration of the device happened.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Optional.
 
 + `dateModified` : Last update timestamp of this entity.
