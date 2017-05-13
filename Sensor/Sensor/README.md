@@ -2,7 +2,7 @@
 
 ## Description
 
-The motivation for developing this model relies on the need of describe attributes values from each sensor embebed into a device. Thus, rather than considering a device as a whole entity, Sensor & SensorModel split an apparatus (i.e., device) into separated elements (i.e., sensors).
+The motivation for developing this model relies on the need of describe attributes values from each sensor embedded into a device. Thus, rather than considering a device as a whole entity, Sensor & SensorModel split an apparatus (i.e., device) into separated elements (i.e., sensors).
 
 ```
 {
