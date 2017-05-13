@@ -24,15 +24,20 @@ This entity captures the static properties of a Sensor component.
 
 + `category` : Sensor's category(ies).
     + Attribute type: `string`.
-    + Allowed values, one of the following or any other meaningful to the application:
+    + Allowed values: One of the following or any other meaningful to the application.
         + `motion` : Are useful for monitoring physical movement, such as tilt, shake, rotation, or swing. The movement is usually a reflection of direct user input, but it can also be a reflection of the physical environment in which the sensor is sitting. 
         [http://ontology.tno.nl/saref/#Sensor](http://ontology.tno.nl/saref/#Sensor).
     + Mandatory.
 
++ `classification` : Component description.
+    + Attribute type: `string`.
+    + Allowed values: One of the following of any other meaningful to the application.
+        + `accelerometer`, `gyroscope`.
+
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
     + Attribute type: `string`.
     + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
-        + (`temperature`, `humidity`, `light`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`, `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`, `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`, `gasComsumption`, `electricityConsumption`, `acceleration`, `orientation`).
+        + (`acceleration`, `orientation`).
     + Mandatory.
 
 + `function` :  The functionality necessary to accomplish the task for which a Sensor is designed.
@@ -84,6 +89,7 @@ This entity captures the static properties of a Sensor component.
       "id": "mySensor-sensor-345",
       "type": "SensorModel",
       "category": "motion",
+      "classification": "accelerometer"
       "controlledProperty": "acceleration",
       "function": ["sensing"],
       "brandName": "mySensor",

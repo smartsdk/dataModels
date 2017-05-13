@@ -1,11 +1,176 @@
 {
-  "id": "mySensor-sensor-345",
-  "type": "SensorModel",
-  "category": "motion",
-  "controlledProperty": "acceleration",
-  "function": ["sensing"],
-  "brandName": "mySensor",
-  "modelName": "S4Container 345",
-  "manufacturerName": "mySensor Inc.",
-  "dateCreated": "2014-09-11",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://smartsdk.github.io/dataModels/Sensor/SensorModel/schema.json",
+  "title": "FIWARE - SensorModel schema",
+  "description": "Represents the static properties of a Sensor component.",
+  "type": "object",
+  "references": [
+    {
+      "description": "This schema has been created as complement of the Sensor model to describe sensor's static properties.",
+      "url": "Pending to be included."
+    }
+  ],
+  "definitions": {
+    "id": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "type": {
+      "description": "NGSI Entity type",
+      "type": "string",
+      "enum": [
+        "SensorModel"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "description": "Device's category(ies).",
+      "type": "string",
+      "references": [
+        {
+          "value": "motion",
+          "description": "Are useful for monitoring physical movement, such as tilt, shake, rotation, or swing. The movement is usually a reflection of direct user input, but it can also be a reflection of the physical environment in which the sensor is sitting.",
+          "url": "http://ontology.tno.nl/saref/#Sensor"
+        }
+      ],
+      "enum": [
+        "motion"
+      ]
+    },
+    "classification": {
+      "description": "Component description",
+      "type": "string",
+      "enum": [
+        "accelerometer",
+        "gyroscope"
+      ]
+    },
+    "controlledProperty": {
+      "description": "Anything that can be sensed, measured or controlled by.",
+      "type": "string",
+      "enum": [
+        "acceleration",
+        "orientation"
+      ]
+    },
+    "firmwareVersion": {
+      "type": "string"
+    },
+    "serialNumber": {
+      "type": "number"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "sensorState": {
+      "type": "string"
+    },
+    "location": {
+      "type": "array",
+      "items": { 
+        "$ref": "http://json-schema.org/geojson/geometry.json#" 
+      }
+    },
+    "value": {
+      "type": "string"
+    },
+    "configuration": {
+      "type": "object"
+    },
+    "refSensorModel": {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+    },
+    "dateManufactured": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateInstalled": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateLastCalibration": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/id"
+    },
+    "type": {
+      "$ref": "#/definitions/type"
+    },
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "description": {
+      "$ref": "#/definitions/description"
+    },
+    "category": {
+      "$ref": "#/definitions/category"
+    },
+    "classification": {
+      "$ref": "#/definitions/classification"
+    },
+    "controlledProperty": {
+      "$ref": "#/definitions/controlledProperty"
+    },
+    "firmwareVersion": {
+      "$ref": "#/definitions/firmwareVersion"
+    },
+    "serialNumber": {
+      "$ref": "#/definitions/serialNumber"
+    },
+    "provider": {
+      "$ref": "#/definitions/provider"
+    },
+    "sensorState": {
+      "$ref": "#/definitions/sensorState"
+    },
+    "location": {
+      "$ref": "#/definitions/location"
+    },
+    "value": {
+      "$ref": "#/definitions/value"
+    },
+    "configuration": {
+      "$ref": "#/definitions/configuration"
+    },
+    "refSensorModel": {
+      "$ref": "#/definitions/refSensorModel"
+    },
+    "dateManufactured": {
+      "$ref": "#/definitions/dateManufactured"
+    },
+    "dateInstalled": {
+      "$ref": "#/definitions/dateInstalled"
+    },
+    "dateLastCalibration": {
+      "$ref": "#/definitions/dateLastCalibration"
+    },
+    "dateModified": {
+      "$ref": "#/definitions/dateModified"
+    },
+    "dateCreated": {
+      "$ref": "#/definitions/dateCreated"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "refSensorModel",
+    "dateCreated"
+  ]
 }

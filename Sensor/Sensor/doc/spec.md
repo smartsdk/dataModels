@@ -30,46 +30,30 @@ It represents a physical sensor intended to sense a particular category of data 
 + `controlledProperty` : See attribute `controlledProperty` from [SensorModel](../../SensorModel/doc/spec.md).
     + Attribute type: `string`.
     + Optional.
-    
-+ `location` : Location of this sensor represented by a GeoJSON geometry of type point. 
-    + Attribute type: `geo:json`.
-    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946).
-    + Optional.
-
-+ `dateInstalled` : A timestamp which denotes when the sensor was installed (if it requires installation).
-    + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Optional.
-
-+ `dateFirstUsed` : A timestamp which denotes when the sensor was first used.
-    + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Optional.
-
-+ `dateManufactured` : A timestamp which denotes when the sensor was manufactured.
-    + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Optional.
 
 + `firmwareVersion` : The firmware version of this sensor.
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
-
-+ `dateLastCalibration` : A timestamp which denotes when the last calibration of the sensor happened.
-    + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Optional.
     
 + `serialNumber` : The serial number assigned by the manufacturer.
     + Normative References: [https://schema.org/serialNumber](https://schema.org/serialNumber).
-    + Mandatory.
+    + Optional.
     
 + `provider` : The provider of the sensor.
     + Normative References: [https://schema.org/provider](https://schema.org/provider).
     + Optional.
-    
+
 + `sensorState` : State of this sensor from an operational point of view. Its value can be vendor dependent.  
     + Type: [Text](https://schema.org/Text).
     + Attribute metadata:
         + `timestamp`: Timestamp when the last update of the attribute happened.
         This value can also appear as a FIWARE [TimeInstant](https://github.com/telefonicaid/iotagent-node-lib#TimeInstant).
             + Type: [DateTime](http://schema.org/DateTime).
+    + Optional.
+    
++ `location` : Location of this sensor represented by a GeoJSON geometry of type point. 
+    + Attribute type: `geo:json`.
+    + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946).
     + Optional.
 
 + `value` : A observed or reported value. For actuator sensors, it is an attribute that allows
@@ -92,11 +76,19 @@ and which are not currently covered by the standard attributes defined by this m
     + Optional.
    
 + `refSensorModel` : The sensor's model.
-    + Attribute type: Reference to an entity of type [SensorModel](../../SensorModel/doc/spec.md).
+    + Attribute type: Reference to a single entity of type [SensorModel](../../SensorModel/doc/spec.md).
     + Optional.
 
-+ `dateLastValueReported` : A timestamp which denotes the last time when the sensor successfully reported data to the cloud.
-    + Attribute type: [DateTime](https://schema.org/).
++ `dateManufactured` : A timestamp which denotes when the sensor was manufactured.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
+    + Optional.
+
++ `dateInstalled` : A timestamp which denotes when the sensor was installed (if it requires installation).
+    + Attribute type: [DateTime](https://schema.org/DateTime).
+    + Optional.
+
++ `dateLastCalibration` : A timestamp which denotes when the last calibration of the sensor happened.
+    + Attribute type: [DateTime](https://schema.org/DateTime).
     + Optional.
 
 + `dateModified` : Last update timestamp of this entity.
@@ -105,7 +97,7 @@ and which are not currently covered by the standard attributes defined by this m
 
 + `dateCreated` : Entity's creation timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime).
-    + Optional.
+    + Mandatory.
 
 ## Examples
 
