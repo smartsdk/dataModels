@@ -11,7 +11,7 @@ This entity captures the static properties of a Sensor component.
     + Mandatory.
 
 + `type` : Entity type. It must be equal to `SensorModel`.
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Mandatory.
 
 + `name` : Name given to this sensor model.
@@ -23,19 +23,19 @@ This entity captures the static properties of a Sensor component.
     + Optional.
 
 + `category` : Sensor's category(ies).
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Allowed values: One of the following or any other meaningful to the application.
         + `motion` : Are useful for monitoring physical movement, such as tilt, shake, rotation, or swing. The movement is usually a reflection of direct user input, but it can also be a reflection of the physical environment in which the sensor is sitting. 
         [http://ontology.tno.nl/saref/#Sensor](http://ontology.tno.nl/saref/#Sensor).
     + Mandatory.
 
 + `classification` : Component description.
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Allowed values: One of the following of any other meaningful to the application.
         + `accelerometer`, `gyroscope`.
 
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
         + (`acceleration`, `orientation`).
     + Mandatory.

@@ -12,7 +12,7 @@ It represents a physical sensor intended to sense a particular category of data 
     + Mandatory.
 
 + `type` : Entity type. It must be equal to `Sensor`.
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Mandatory.
 
 + `name` : A mnemonic name given to the sensor.
@@ -24,11 +24,11 @@ It represents a physical sensor intended to sense a particular category of data 
     + Optional.
 
 + `category` : See attribute `category` from [SensorModel](../../SensorModel/doc/spec.md). 
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Optional.
         
 + `controlledProperty` : See attribute `controlledProperty` from [SensorModel](../../SensorModel/doc/spec.md).
-    + Attribute type: `string`.
+    + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
 + `firmwareVersion` : The firmware version of this sensor.

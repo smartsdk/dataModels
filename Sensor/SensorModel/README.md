@@ -11,6 +11,7 @@ This entity captures the static properties of a Sensor component.
   "id": "mySensor-sensor-345",
   "type": "SensorModel",
   "category": "motion",
+  "classification": "accelerometer",
   "controlledProperty": "acceleration",
   "function": ["sensing"],
   "brandName": "mySensor",
