@@ -14,31 +14,31 @@ This entity captures the static properties of a Sensor component.
     + Attribute type: `string`.
     + Mandatory.
 
-+ `category` : Sensor's category(ies).
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values, one of the following or any other meaningful to the application:
-        + `motion` : Are useful for monitoring physical movement, such as tilt, shake, rotation, or swing. The movement is usually a reflection of direct user input, but it can also be a reflection of the physical environment in which the sensor is sitting. 
-        [http://ontology.tno.nl/saref/#Sensor](http://ontology.tno.nl/saref/#Sensor).
-    + Mandatory.
-
-+ `function` :  The functionality necessary to accomplish the task for which a Sensor is designed.
-    Defined by [SAREF](https://w3id.org/saref#Function).
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: (`levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`), from SAREF.
-    + Optional.
-    
-+ `controlledProperty` : Anything that can be sensed, measured or controlled by.
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
-        + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`, `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`, `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`, `gasComsumption`, `electricityConsumption`, `acceleration`, `orientation`).
-    + Mandatory.
-
 + `name` : Name given to this sensor model.
     + Normative References: [https://schema.org/name](https://schema.org/name).
     + Mandatory.
     
 + `description` : Sensor's description.
     + Normative References: [description](https://schema.org/description).
+    + Optional.
+
++ `category` : Sensor's category(ies).
+    + Attribute type: `string`.
+    + Allowed values, one of the following or any other meaningful to the application:
+        + `motion` : Are useful for monitoring physical movement, such as tilt, shake, rotation, or swing. The movement is usually a reflection of direct user input, but it can also be a reflection of the physical environment in which the sensor is sitting. 
+        [http://ontology.tno.nl/saref/#Sensor](http://ontology.tno.nl/saref/#Sensor).
+    + Mandatory.
+
++ `controlledProperty` : Anything that can be sensed, measured or controlled by.
+    + Attribute type: `string`.
+    + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
+        + (`temperature`, `humidity`, `light`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`, `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`, `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`, `gasComsumption`, `electricityConsumption`, `acceleration`, `orientation`).
+    + Mandatory.
+
++ `function` :  The functionality necessary to accomplish the task for which a Sensor is designed.
+    Defined by [SAREF](https://w3id.org/saref#Function).
+    + Attribute type: List of [Text](https://schema.org/Text).
+    + Allowed values: (`levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`), from SAREF.
     + Optional.
   
 + `supportedUnits` : Units of measurement supported by the sensor.
@@ -80,18 +80,17 @@ This entity captures the static properties of a Sensor component.
 
 ## Examples
 
-    {
-      "id": "mySensor-sensor-345",
-      "type": "SensorModel",
-      "category": ["motion"],
-      "function": ["sensing"],
-      "controlledProperty": ["acceleration"]
-      "name": "Sensor for sensing linear acceleration",
-      "function": "sensing",
-      "brandName": "mySensor",
-      "modelName": "S4Container 345",
-      "manufacturerName": "mySensor Inc.",
-    }
+{
+  "id": "mySensor-sensor-345",
+  "type": "SensorModel",
+  "category": "motion",
+  "controlledProperty": "acceleration",
+  "function": ["sensing"],
+  "brandName": "mySensor",
+  "modelName": "S4Container 345",
+  "manufacturerName": "mySensor Inc.",
+  "dateCreated": "2014-09-11",
+}
 
 ## Test it with a real service
 

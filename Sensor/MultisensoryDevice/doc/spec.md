@@ -2,7 +2,7 @@
 
 ## Description
 
-This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE](../Device), however, unlike the aforementioned model, this entity aims to provide a detailed description of a device by splitting it into respective sensors. In this context, a multysensory device is an apparatus (hardware + software + firmware) built based on a collection of sensor, which contains some logic and is producer and/or consumer of data, and it is assumed to be capable of communicating electronically via a network.
+This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE](../Device), however, unlike the aforementioned models, this entity aims to provide a detailed description of a device by splitting it into respective sensors. In this context, a multysensory device is an apparatus (hardware + software + firmware) built based on a collection of sensor, which contains some logic and is producer and/or consumer of data, and it is assumed to be capable of communicating electronically via a network.
 
 
 ## Data Model
@@ -15,20 +15,20 @@ This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE]
     + Attribute type: `string`.
     + Mandatory.
 
-+ `category` : See attribute `category` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
-    + Attribute type: `string`.
-    + Optional.
-
-+ `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
-    + Attribute type: `string`.
-    + Optional.
-
 + `name` : A mnemonic name given to the device.
     + Normative References: [name](https://schema.org/name).
     + Optional.
 
 + `description` : Device's description.
     + Normative References: [description](https://schema.org/description).
+    + Optional.
+    
++ `category` : See attribute `category` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
+    + Attribute type: `string`.
+    + Optional.
+
++ `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
+    + Attribute type: `string`.
     + Optional.
 
 + `mnc` : This property identifies the Mobile Network Code (MNC) of the network the device is attached to.
@@ -144,23 +144,23 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
 
 ## Examples
 
-    {
-      "id": "device-9845A",
-      "type": "MultisensoryDevice",
-      "category": ["smartphone"],
-      "controlledProperty": "accelerometer",
-      "osVersion": "Android 4.0",
-      "softwareVersion": "MA-Test 1.6",
-      "hardwareVersion": "GP-P9872",
-      "firmwareVersion": "SM-A310F",
-      "refDeviceModel": "mySensor-sensor-345",
-      "refSensor":[
-        "sensor-9845A",
-        "sensor-9845B",
-        "sensor-9845C"
-      ]
-      "dateCreated": "2016-08-22T10:18:16Z"
-    }
+{
+  "id": "device-9845A",
+  "type": "MultisensoryDevice",
+  "category": "smartphone",
+  "controlledProperty": "accelerometer",
+  "osVersion": "Android 4.0",
+  "softwareVersion": "MA-Test 1.6",
+  "hardwareVersion": "GP-P9872",
+  "firmwareVersion": "SM-A310F",
+  "refDeviceModel": "mySensor-sensor-345",
+  "refSensor":[
+    "sensor-9845A",
+    "sensor-9845B",
+    "sensor-9845C"
+  ]
+  "dateCreated": "2016-08-22T10:18:16Z"
+}
 
 
 ## Test it with a real service

@@ -1,7 +1,5 @@
 # Sensor
 
-The motivation for developing this model relies on the need of describe attributes values from each sensor embebed into a device. Thus, rather than considering a device as a whole entity, Sensor & SensorModel split an apparatus (i.e., device) into separated elements (i.e., sensors).
-
 ## Description
 
 It represents a physical sensor intended to accomplish a particular sensing task (e.g., acceleration, gyroscope, temperature, etc.). In this context, a Sensor is a tangible object which serve for a specific purpose and is producer and/or consumer of data. It can be considered as a single object, or as a part of a collection of sensors connected to a single communication mechanism, such as Smartphones or Smartwatches.
@@ -17,6 +15,14 @@ It represents a physical sensor intended to accomplish a particular sensing task
     + Attribute type: `string`.
     + Mandatory.
 
++ `name` : A mnemonic name given to the sensor.
+    + Normative References: [name](https://schema.org/name).
+    + Optional.
+
++ `description` : Sensor's description.
+    + Normative References: [description](https://schema.org/description).
+    + Optional.
+
 + `category` : See attribute `category` from [SensorModel](../../SensorModel/doc/spec.md). 
     + Attribute type: `string`.
     + Optional.
@@ -28,14 +34,6 @@ It represents a physical sensor intended to accomplish a particular sensing task
 + `location` : Location of this sensor represented by a GeoJSON geometry of type point. 
     + Attribute type: `geo:json`.
     + Normative References: [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946).
-    + Optional.
-    
-+ `name` : A mnemonic name given to the sensor.
-    + Normative References: [name](https://schema.org/name).
-    + Optional.
-
-+ `description` : Sensor's description.
-    + Normative References: [description](https://schema.org/description).
     + Optional.
 
 + `dateInstalled` : A timestamp which denotes when the sensor was installed (if it requires installation).
@@ -111,27 +109,27 @@ and which are not currently covered by the standard attributes defined by this m
 
 ## Examples
 
-    {
-      "id": "sensor-9845A",
-      "type": "Sensor",
-      "category": ["motion"],
-      "controlledProperty": ["acceleration"],
-      "serialNumber": "9845A",
-      "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
-      "configuration": {
-        "data": {  
-          "format": "csv"
-        },
-        "sensor": {  
-          "sampleRate": {
-            "value": "60",
-            "type": "hz"
-          }
-        }
-      },
-      "refSensorModel": "mySensor-sensor-345",
-      "dateCreated": "2014-09-11",
+{
+  "id": "sensor-9845A",
+  "type": "Sensor",
+  "category": "motion",
+  "controlledProperty": "acceleration",
+  "serialNumber": "9845A",
+  "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
+  "configuration": {
+    "data": {  
+      "format": "csv"
+    },
+    "sensor": {  
+      "sampleRate": {
+        "value": "60",
+        "type": "hz"
+      }
     }
+  },
+  "refSensorModel": "mySensor-sensor-345",
+  "dateCreated": "2014-09-11",
+}
 
 
 ## Test it with a real service
