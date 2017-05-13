@@ -36,8 +36,8 @@ This entity captures the static properties of a Sensor component.
 
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
     + Attribute type: [Text](https://schema.org/Text).
-    + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
-        + (`acceleration`, `orientation`).
+    + Allowed values: One of the following or any other meaningful to the application.
+        + `acceleration`, `orientation`.
     + Mandatory.
 
 + `function` :  The functionality necessary to accomplish the task for which a Sensor is designed.
