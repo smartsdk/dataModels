@@ -80,17 +80,17 @@ This entity captures the static properties of a Sensor component.
 
 ## Examples
 
-{
-  "id": "mySensor-sensor-345",
-  "type": "SensorModel",
-  "category": "motion",
-  "controlledProperty": "acceleration",
-  "function": ["sensing"],
-  "brandName": "mySensor",
-  "modelName": "S4Container 345",
-  "manufacturerName": "mySensor Inc.",
-  "dateCreated": "2014-09-11",
-}
+    {
+      "id": "mySensor-sensor-345",
+      "type": "SensorModel",
+      "category": "motion",
+      "controlledProperty": "acceleration",
+      "function": ["sensing"],
+      "brandName": "mySensor",
+      "modelName": "S4Container 345",
+      "manufacturerName": "mySensor Inc.",
+      "dateCreated": "2014-09-11",
+    }
 
 ## Test it with a real service
 
