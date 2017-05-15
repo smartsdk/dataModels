@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/PhysicalTest/schema.json",
+  "id": "https://smartsdk.github.io/dataModels/OpenHealthContext/MotorPhysicalTest/schema.json",
   "title": "FIWARE - Motor physical test schema",
   "description": "Represents a physical test performed. It concentrates sensor data collected along a controlled test from a physical device carried/worn by a user while performing a supervised physical test.",
   "type": "object",
@@ -47,8 +47,8 @@
         "4-Stage Balance Test"
       ]
     },
-    "balanceTestType": {
-      "description": "Physical test to measure risk of fall by assess static balance.",
+    "subCategoryTestType": {
+      "description": "Physical test's subcategory(ies).",
       "type": "string",
       "references": [
         {
@@ -113,8 +113,8 @@
     "testType": {
       "$ref": "#/definitions/testType"
     },
-    "balanceTestType": {
-      "$ref": "#/definitions/balanceTestType"
+    "subCategoryTestType": {
+      "$ref": "#/definitions/subCategoryTestType"
     },
     "refUser": {
       "$ref": "#/definitions/refUser"
