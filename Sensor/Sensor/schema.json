@@ -28,16 +28,13 @@
       "type": "string"
     },
     "category": {
-      "type": "string",
-      "description": "Please refere to attribute description of the entity: SensorModel, for detailed description."
+      "type": "string"
     },
     "classification": {
-      "type": "string",
-      "description": "Please refere to attribute description of the entity: SensorModel, for detailed description."
+      "type": "string"
     },
     "controlledProperty": {
-      "type": "string",
-      "description": "Please refere to attribute description of the entity: SensorModel, for detailed description."
+      "type": "string"
     },
     "firmwareVersion": {
       "type": "string"
@@ -52,10 +49,7 @@
       "type": "string"
     },
     "location": {
-      "type": "array",
-      "items": { 
-        "$ref": "http://json-schema.org/geojson/geometry.json#" 
-      }
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
     },
     "value": {
       "type": "string"

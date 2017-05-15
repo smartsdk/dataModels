@@ -2,7 +2,7 @@
 
 ## Description
 
-It represents a physical sensor intended to sense a particular category of data (e.g., acceleration, gyroscope, temperature, etc.). In this context, a Sensor is a tangible object which serve for a specific purpose and is producer and / or consumer of data. It can be considered as a single object, or as a part of a collection of sensors connected to a single communication mechanism, such as Smartphones or Smartwatches among others.
+It represents a physical sensor intended to sense a particular set of data (e.g., acceleration, gyroscope, temperature, etc.). In this context, a Sensor is a tangible object which serve for a specific purpose and is producer and / or consumer of data. It can be considered as a single object, or as a part of a collection of sensors connected to a single communication mechanism, such as Smartphones, Smartwatches, among others.
 
 
 ## Data Model
@@ -16,11 +16,11 @@ It represents a physical sensor intended to sense a particular category of data 
     + Mandatory.
 
 + `name` : A mnemonic name given to the sensor.
-    + Normative References: [name](https://schema.org/name).
+    + Normative References: [Name](https://schema.org/name).
     + Optional.
 
 + `description` : Sensor's description.
-    + Normative References: [description](https://schema.org/description).
+    + Normative References: [Description](https://schema.org/description).
     + Optional.
 
 + `category` : See attribute `category` from [SensorModel](../../SensorModel/doc/spec.md). 

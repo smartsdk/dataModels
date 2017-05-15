@@ -15,24 +15,24 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
 + `testType` : Name of physical test.
    + Attribute type: [Text](https://schema.org/Text).
    + Allowed values: One of the following of any other meaningful to the application.
-    + `Timed Up and Go`, `30 second sit to stand test`, `4-Stage Balance Test`.
+      + `Timed Up and Go`, `30 second sit to stand test`, `4-Stage Balance Test`.
    + Mandatory.
 
 + `subCategoryTestType` : This field helpd to specify testType value, by allowing to provide a specific subcategory if needed.
    + Attribute type: [Text](https://schema.org/Text).
    + Allowed values: One of the following of any other meaningful to the application.
-    + `Side by Side`, `Semi-Tandem`, `Tandem (Full)`, `Single-Leg Stance`.
+      + `Side by Side`, `Semi-Tandem`, `Tandem (Full)`, `Single-Leg Stance`.
    + Optional.
 
-+ `refUser` : Reference to the actual User, sheltered by an independent service.
++ `refUser` : A sigle reference to the actual User entity.
    + Attribute type: [Text](https://schema.org/Text).
    + Mandatory.
 
-+ `refMultisensoryDevice` : Reference to the device instance which consists on a collection of sensors.
++ `refMultisensoryDevice` : List of references to multi-sensory device instances; which consist on a collection of sensors.
    + Attribute type: [MultisensoryDevice](../../../Sensor/MultisensoryDevice/doc/spec.md).
    + Mandatory.
 
-+ `configuration` : Description to enrich provided information along the MultisensoryDevice references. This attribute is intended to be a dictionary of properties which capture parameters related with the test's design.
++ `configuration` : Description to enrich provided information along the `MultisensoryDevice` references. This attribute is intended to be a dictionary of properties which capture parameters related with the test's design.
     + Attribute type: [StructuredValue](https://schema.org/StructuredValue).
     + Optional.
 

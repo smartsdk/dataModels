@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://smartsdk.github.io/dataModels/Sensor/MultisensoryDevice/schema.json",
-  "title": "FIWARE - Multisensory device schema",
+  "title": "FIWARE - Multi-sensory device schema",
   "description": "Represents a device that consist on a collection of sensors.",
   "type": "object",
   "references": [
     {
-      "description": "This schema has been created to fulfil the need of provide a detailed description for each of the collection of sensor embebed into a device.",
+      "description": "This schema has been created to fulfil the need of providing a detailed description for each of the sensor embebed into a device.",
       "url": "Pending to be included."
     }
   ],
@@ -28,12 +28,10 @@
       "type": "string"
     },
     "category": {
-      "type": "string",
-      "description": "Please refere to attribute description of the entity: DeviceModel, for detailed description."
+      "type": "string"
     },
     "controlledProperty": {
-      "type": "string",
-      "description": "Please refere to attribute description of the entity: DeviceModel, for detailed description."
+      "type": "string"
     },
     "mnc": {
       "type": "string"
@@ -51,10 +49,7 @@
       "type": "string"
     },
     "location": {
-      "type": "array",
-      "items": { 
-        "$ref": "http://json-schema.org/geojson/geometry.json#" 
-      }
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/Location-Commons"
     },
     "hardwareVersion": {
       "type": "string"

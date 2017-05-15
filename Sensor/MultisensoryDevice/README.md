@@ -2,7 +2,7 @@
 
 ## Description
 
-This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE](../Device), however, unlike the aforementioned models, this entity aims to provide a detailed description of a device by splitting it into respective sensors.
+This model is built based on the FIWARE's Device & DeviceModel entities [DEVICE](../../../Device), however, unlike the aforementioned models, this entity aims to provide a detailed description of a device by splitting it into respective sensors.
 
 ## Example of use
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-This model is built based on the FIWARE's Device entity [DEVICE](../Device), however, unlike the aforementioned model, this entity aims to provide a detailed description of a device by splitting it into integrated sensors. In this context, a multysensory device is an apparatus (hardware + software + firmware) built based on a collection of sensor, which contains some logic and is producer and / or consumer of data, and it is assumed to be capable of communicating electronically via a network.
+This model is built based on the FIWARE's Device entity [DEVICE](../../../Device), however, unlike the aforementioned model, this entity aims to provide a detailed description of a device by splitting it into integrated sensors. In this context, a multi-sensory device is an apparatus (hardware + software + firmware) built based on a collection of sensor, which contains some logic and is producer and / or consumer of data, and it is assumed to be capable of communicating electronically via a network.
 
 
 ## Data Model
@@ -16,25 +16,23 @@ This model is built based on the FIWARE's Device entity [DEVICE](../Device), how
     + Mandatory.
 
 + `name` : A mnemonic name given to the device.
-    + Normative References: [name](https://schema.org/name).
+    + Normative References: [Name](https://schema.org/name).
     + Optional.
 
 + `description` : Device's description.
-    + Normative References: [description](https://schema.org/description).
+    + Normative References: [Description](https://schema.org/description).
     + Optional.
 
-+ `category` : See attribute `category` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
++ `category` : See attribute `category` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
-+ `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../Device/DeviceModel/doc/spec.md). 
++ `controlledProperty` : See attribute `controlledProperty` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). 
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
 + `mnc` : This property identifies the Mobile Network Code (MNC) of the network the device is attached to.
-The MNC is used in combination with a Mobile Country Code (MCC) (also known as a "MCC / MNC tuple")
-to uniquely identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA
-and 3G / 4G public land mobile networks and some satellite mobile networks.
+The MNC is used in combination with a Mobile Country Code (MCC) (also known as a "MCC / MNC tuple") to uniquely identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and 3G / 4G public land mobile networks and some satellite mobile networks.
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
@@ -50,7 +48,7 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
     + Attribute type: [Text](https://schema.org/Text).
     + Optional.
 
-+ `supportedProtocol` : See attribute `supportedProtocol` from [DeviceModel](../../DeviceModel/doc/spec.md). Needed if due to a software update new protocols are supported. Otherwise it is better to convey it at `DeviceModel` level.
++ `supportedProtocol` : See attribute `supportedProtocol` from [DeviceModel](../../../Device/DeviceModel/doc/spec.md). Needed if due to a software update new protocols are supported. Otherwise it is better to convey it at `DeviceModel` level.
     
 + `location` : Location of this device represented by a GeoJSON geometry of type point. 
     + Attribute type: `geo:json`.
@@ -104,7 +102,7 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
     + Mandatory.
 
 + `refSensor` : The sensor component.
-    + Attribute type: List of reference to an entity of type [Sensor](../../SensorModel/doc/spec.md).
+    + Attribute type: List of references to an entity of type [Sensor](../../SensorModel/doc/spec.md).
     + Mandatory.
 
 + `configuration` : Device's technical configuration. This attribute is intended to be a dictionary of properties which capture parameters which have to do with the configuration of a device (timeouts, reporting periods, etc.) and which are not currently covered by the standard attributes defined by this model. 
@@ -136,24 +134,25 @@ and 3G / 4G public land mobile networks and some satellite mobile networks.
 
 ## Examples
 
-    {
-      "id": "device-9845A",
-      "type": "MultisensoryDevice",
-      "category": "smartphone",
-      "controlledProperty": "accelerometer",
-      "osVersion": "Android 4.0",
-      "softwareVersion": "MA-Test 1.6",
-      "hardwareVersion": "GP-P9872",
-      "firmwareVersion": "SM-A310F",
-      "refDeviceModel": "mySensor-sensor-345",
-      "refSensor":[
+```
+{
+    "id": "device-9845A",
+    "type": "MultisensoryDevice",
+    "category": "smartphone",
+    "controlledProperty": "accelerometer",
+    "osVersion": "Android 4.0",
+    "softwareVersion": "MA-Test 1.6",
+    "hardwareVersion": "GP-P9872",
+    "firmwareVersion": "SM-A310F",
+    "refDeviceModel": "mySensor-sensor-345",
+    "refSensor":[
         "sensor-9845A",
         "sensor-9845B",
         "sensor-9845C"
-      ]
-      "dateCreated": "2016-08-22T10:18:16Z"
-    }
-
+    ]
+    "dateCreated": "2016-08-22T10:18:16Z"
+}
+```
 
 ## Test it with a real service
 

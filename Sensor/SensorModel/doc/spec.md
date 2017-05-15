@@ -19,7 +19,7 @@ This entity captures the static properties of a Sensor component.
     + Mandatory.
     
 + `description` : Sensor's description.
-    + Normative References: [description](https://schema.org/description).
+    + Normative References: [Description](https://schema.org/description).
     + Optional.
 
 + `category` : Sensor's category(ies).
@@ -43,7 +43,8 @@ This entity captures the static properties of a Sensor component.
 + `function` :  The functionality necessary to accomplish the task for which a Sensor is designed.
     Defined by [SAREF](https://w3id.org/saref#Function).
     + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: (`levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`), from SAREF.
+    + Allowed values: Taken from from SAREF.
+        + `levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`.
     + Optional.
   
 + `supportedUnits` : Units of measurement supported by the sensor.
@@ -85,18 +86,20 @@ This entity captures the static properties of a Sensor component.
 
 ## Examples
 
-    {
-      "id": "mySensor-sensor-345",
-      "type": "SensorModel",
-      "category": "motion",
-      "classification": "accelerometer"
-      "controlledProperty": "acceleration",
-      "function": ["sensing"],
-      "brandName": "mySensor",
-      "modelName": "S4Container 345",
-      "manufacturerName": "mySensor Inc.",
-      "dateCreated": "2014-09-11",
-    }
+```
+{
+    "id": "mySensor-sensor-345",
+    "type": "SensorModel",
+    "category": "motion",
+    "classification": "accelerometer"
+    "controlledProperty": "acceleration",
+    "function": ["sensing"],
+    "brandName": "mySensor",
+    "modelName": "S4Container 345",
+    "manufacturerName": "mySensor Inc.",
+    "dateCreated": "2014-09-11",
+}
+```
 
 ## Test it with a real service
 
