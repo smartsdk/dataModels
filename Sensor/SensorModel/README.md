@@ -13,7 +13,6 @@ This entity captures the static properties of a Sensor component.
   "category": "motion",
   "classification": "accelerometer",
   "controlledProperty": "acceleration",
-  "function": ["sensing"],
   "brandName": "mySensor",
   "modelName": "S4Container 345",
   "manufacturerName": "mySensor Inc.",

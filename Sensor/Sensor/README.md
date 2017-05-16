@@ -17,11 +17,9 @@ The motivation for developing this model relies on the need of describe attribut
     "data": {  
       "format": "csv"
     },
-    "sensor": {  
-      "sampleRate": {
-        "value": "60",
-        "type": "hz"
-      }
+    "sampleRate": {
+      "value": "60",
+      "type": "hz"
     }
   },
   "refSensorModel": "mySensor-sensor-345",

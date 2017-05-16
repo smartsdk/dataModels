@@ -102,30 +102,28 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
     + Mandatory.
 
 ## Examples
-
-    {
-      "id": "sensor-9845A",
-      "type": "Sensor",
-      "category": "motion",
-      "classification": "accelerometer"
-      "controlledProperty": "acceleration",
-      "serialNumber": "9845A",
-      "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
-      "configuration": {
-        "data": {  
-          "format": "csv"
-        },
-        "sensor": {  
-          "sampleRate": {
-            "value": "60",
-            "type": "hz"
-          }
-        }
-      },
-      "refSensorModel": "mySensor-sensor-345",
-      "dateCreated": "2014-09-11",
+```
+{
+  "id": "sensor-9845A",
+  "type": "Sensor",
+  "category": "motion",
+  "classification": "accelerometer",
+  "controlledProperty": "acceleration",
+  "serialNumber": "9845A",
+  "value": "-69.895,72.0493,4.90137,2017-01-18T20:45:43.765Z-0800 -69.844,72.0726,4.85817,2017-01-18T20:45:43.799Z-0800...",
+  "configuration": {
+    "data": {  
+      "format": "csv"
+    },
+    "sampleRate": {
+      "value": "60",
+      "type": "hz"
     }
-
+  },
+  "refSensorModel": "mySensor-sensor-345",
+  "dateCreated": "2014-09-11",
+}
+```
 
 ## Test it with a real service
 

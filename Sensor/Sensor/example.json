@@ -10,11 +10,9 @@
     "data": {  
       "format": "csv"
     },
-    "sensor": {  
-      "sampleRate": {
-        "value": "60",
-        "type": "hz"
-      }
+    "sampleRate": {
+      "value": "60",
+      "type": "hz"
     }
   },
   "refSensorModel": "mySensor-sensor-345",

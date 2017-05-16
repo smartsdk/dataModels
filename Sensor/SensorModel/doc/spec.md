@@ -16,7 +16,7 @@ This entity captures the static properties of a Sensor component.
 
 + `name` : Name given to this sensor model.
     + Normative References: [https://schema.org/name](https://schema.org/name).
-    + Mandatory.
+    + Optional.
     
 + `description` : Sensor's description.
     + Normative References: [Description](https://schema.org/description).
@@ -33,19 +33,13 @@ This entity captures the static properties of a Sensor component.
     + Attribute type: [Text](https://schema.org/Text).
     + Allowed values: One of the following of any other meaningful to the application.
         + `accelerometer`, `gyroscope`.
+    + Mandatory.
 
 + `controlledProperty` : Anything that can be sensed, measured or controlled by.
     + Attribute type: [Text](https://schema.org/Text).
     + Allowed values: One of the following or any other meaningful to the application.
         + `acceleration`, `orientation`.
     + Mandatory.
-
-+ `function` :  The functionality necessary to accomplish the task for which a Sensor is designed.
-    Defined by [SAREF](https://w3id.org/saref#Function).
-    + Attribute type: List of [Text](https://schema.org/Text).
-    + Allowed values: Taken from from SAREF.
-        + `levelControl`, `sensing`, `onOff`, `openClose`, `metering`, `eventNotification`.
-    + Optional.
   
 + `supportedUnits` : Units of measurement supported by the sensor.
     + Attribute type: List of [Text](https://schema.org/Text).
@@ -56,17 +50,17 @@ This entity captures the static properties of a Sensor component.
 + `brandName` : Sensor's brand name.
     + Attribute type: [Text](https://schema.org/Text).
     + See also: [https://schema.org/brand](https://schema.org/brand).
-    + Mandatory.
+    + Optional.
 
 + `modelName` : Sensor's model name.
     + Attribute type: [Text](https://schema.org/Text).
     + See also: [https://schema.org/model](https://schema.org/model).
-    + Mandatory.
+    + Optional.
 
 + `manufacturerName` : Sensor's manufacturer name.
     + Attribute type: [Text](https://schema.org/Text).
     + See also: [https://schema.org/model](https://schema.org/model).
-    + Mandatory.
+    + Optional.
 
 + `documentation` : A link to sensor's documentation.
     + Attribute type: [URL](https://schema.org/URL).
