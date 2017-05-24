@@ -112,9 +112,23 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 + `refDevice` : reference to device that generate an alert.
     + Attribute type: `string`
     + Mandatory	if `refUser` is not present.
+    
++ `data` : used to carry additional data for the alert.
+    + Attribute type: `StructuredValue`
+    + optional.
+    
++ `severity` : a catalogue created by the application owner to describe the scale of an Alert reported in severityIndex expressed as a Text array . (Ex. Severity: 0:Informational, 1:Low, 2:Medium, 3:High, 4:Critical).
+    + Attribute type: `Text`
+    + optional. Mandatory if `severityIndex` is present.
+
++ `severityIndex` : number used to describe the severity of an Alert . (Ex. severityIndex: integer in range 0-4).
+    + Attribute type: `Number`
+    + optional. Mandatory if `severity` is present.
+    
 	
 	
-## Examples of use
+## Examples of use (Smart City)
+
 	{
 		"id": "Alert:1",
 		"type": "Alert",
@@ -129,6 +143,31 @@ A JSON Schema corresponding to this data model can be found [JSON Schema]
 		"refuser":"https://account.lab.fiware.org/users/8",
 		"refDevice": ""
 	}
+## Examples of use (Smart Security)
+
+	{
+		"id": "VisualEvent123",
+		"type": "Alert",
+		"alertType": "Accidents",
+		"eventObserved": "Car Accident",
+		"location": {
+			"type": "feature",
+			"coordinates": [-3.712247222222222, 40.423852777777775]
+		},	
+		"dateTime": "2017-04-25T09:25:55.00Z",
+		"description": "Car collision",
+		"refuser":"",
+		"refDevice": "Camera1234",
+		"data": {
+			"videoURL": "www.smartsecurity.com/video123.mp4",
+			"initialFrame": "80",
+			"finalFrame": "120"
+		},
+		"severity" : ["informational", "low", "medium", "high", "critical"],
+		"severityIndex": 4
+	}
+	
+
   
 ## Use it with a real service
 T.B.D
