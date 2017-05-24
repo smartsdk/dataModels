@@ -35,10 +35,21 @@ pages:
       - 'ParkingGroup'         : 'Parking/ParkingGroup/doc/spec.md'
       - 'ParkingAccess'        : 'Parking/ParkingAccess/doc/spec.md' 
       - 'ParkingSpot'          : 'Parking/ParkingSpot/doc/spec.md'
-  - 'Parks & Gardens'          : 'ParksAndGardens/doc/introduction.md'          
-  - 'Points of Interest': 
+  - 'Parks & Gardens':
+      - 'Introduction'         : 'ParksAndGardens/doc/introduction.md'
+      - 'Garden'               : 'ParksAndGardens/Garden/doc/spec.md'
+      - 'GreenspaceRecord'     : 'ParksAndGardens/GreenspaceRecord/doc/spec.md'
+      - 'FlowerBed'            : 'ParksAndGardens/FlowerBed/doc/spec.md'
+  - 'Points of Interest':
+      - 'Introduction'         : 'PointOfInterest/doc/introduction.md'
+      - 'PointOfInterest'      : 'PointOfInterest/PointOfInterest/doc/spec.md'
+      - 'Beach'                : 'PointOfInterest/Beach/doc/spec.md'
+      - 'Museum'               : 'PointOfInterest/Museum/doc/spec.md'
       - 'WeatherStation'       : 'PointOfInterest/WeatherStation/doc/spec.md'
       - 'AirQualityStation'    : 'PointOfInterest/AirQualityStation/doc/spec.md'
+  -  'Point Of Interacion':
+      - 'SmartPointOfInteraction' : 'PointOfInteraction/SmartPointOfInteraction/doc/spec.md'
+      - 'SmartSpot'               : 'PointOfInteraction/SmartSpot/doc/spec.md'
   -  'Street Lighting':
       - 'Introduction'              : 'StreetLighting/doc/introduction.md'
       - 'Streetlight'               : 'StreetLighting/Streetlight/doc/spec.md'

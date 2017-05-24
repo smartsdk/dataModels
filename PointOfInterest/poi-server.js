@@ -1,15 +1,10 @@
-const PORT = 1027;    // Port on which the proxy will be listening to
+const PORT = 1050;    // Port on which the proxy will be listening to
 
 var URL = require('url');
 var fs = require('fs');
 
 var Orion = require('fiware-orion-client');
 var OrionHelper = Orion.NgsiHelper;
-const ORION_SERVER = 'http://130.206.83.68:1026/v1';
-OrionClient = new Orion.Client({
-  url: ORION_SERVER,
-  userAgent: 'Test'
-});
 
 var OportoOST = require('./oporto-ost-module.js');
 
@@ -36,11 +31,12 @@ var typesMap = {
 };
 
 var categoriesMap = {
-  'ParkingLot': '418',
-  'Restaurant': '347',
-  'Hotel': '436',
-  'WeatherStation': 'WeatherStation',
-  'AirQualityStation': 'AirQualityStation'
+  'OffStreetParking':         '418',
+  'Restaurant':               '347',
+  'Hotel':                    '436',
+  'Museum':                   '311',
+  'Beach':                    '113',
+  'TouristInformationCenter': '439'
 };
 
 app.get('/v2/entities', function (req, resp) {
@@ -57,8 +53,12 @@ app.get('/v2/entities', function (req, resp) {
   
   console.log('Type Requested: ', type);
   
-  var category = '';
-  
+  var category = categoriesMap[type];
+
+  if (!category && type !== 'PointOfInterest') {
+    resp.sendStatus(404);
+    return;
+  } 
   
   var geoRel = req.query.georel;
   var locationOptions = null;
@@ -84,34 +84,12 @@ app.get('/v2/entities', function (req, resp) {
     tokens.forEach(function(aToken) {
       var queryFields = aToken.split(':');
       if (queryFields[0] === 'category') {
-        category = categoriesMap[queryFields[1]];
+        category = queryFields[1];
       }
     });
-    
-    if (category === 'WeatherStation' || category === 'AirQualityStation') {
-      var pattern = category + '-.*';
-      
-      var options = {
-        GeoJSON: true
-      };
-      
-      if (locationOptions) {
-        options.location = locationOptions;
-      }
-      
-      console.log(JSON.stringify(locationOptions));
-      
-      OrionClient.queryContext({
-        pattern: pattern
-      }, options).then(function(data) {
-          resp.json(data);
-      });
-      
-      return;
-    }
   }
-  
-  OportoOST.getData(typesMap[type], category, limit, offset, locationOptions).then(function(result) {
+    
+  OportoOST.getData('pois', category, limit, offset, locationOptions).then(function(result) {
     var limited = result.data.slice(0, limit);
     var linkHeader;
     if (!offset) {
