@@ -2,17 +2,17 @@
 
 This folder contains a set of scripts which allow to expose a NGSIv2 endpoint intended to provide weather forecasts.
 
-Source of weather forecast are the [Spanish National Meteorology Agency](http://aemet.es) (AEMET) 
+Source of weather forecast are the [Spanish National Meteorology Agency](http://aemet.es) (AEMET)
 and the [Portuguese Institute for Sea and Atmosphere](http://ipma.pt) (IPMA).
 
 The scripts present in this folder are the following:
 
 * `aemet.py` is the main entry point for providing weather information (outdated)
 * `ipma.py` contains the Python code for getting and formatting the IPMA data (outdated)
-* `spain_weather_forecast_harvest.py` a script for performing data harvesting for weather forecasts in Spain and publishing the data on an instance of Orion Context Broker. 
-* `portugal_weather_forecast_harvest.py` a script for performing data harvesting for weather forecasts in Portugal and publishing the data on an instance of Orion Context Broker. 
+* `spain_weather_forecast_harvest.py` a script for performing data harvesting for weather forecasts in Spain and publishing the data on an instance of Orion Context Broker.
+* `portugal_weather_forecast_harvest.py` a script for performing data harvesting for weather forecasts in Portugal and publishing the data on an instance of Orion Context Broker.
 
-Please check data licenses at the original data sources before using this data in an application. 
+Please check data licenses at the original data sources before using this data in an application.
 
 ## Examples of use
 
@@ -24,7 +24,6 @@ What is the weather forecast today in Valencia (Spain) from 17:00 UTC on?
 http://130.206.118.244:1027/v2/entities?type=WeatherForecast&options=keyValues&q=address.addressLocality:Valencia;validFrom:2016-12-01T17```
 
 ```
-
 {
         "id": "Spain-WeatherForecast-46005_2016-12-01T18:00:00_2016-12-02T00:00:00",
         "type": "WeatherForecast",
@@ -60,6 +59,4 @@ http://130.206.118.244:1027/v2/entities?type=WeatherForecast&options=keyValues&q
         "weatherType": "overcast",
         "windDirection": null,
         "windSpeed": 0
-    }
-
-```
+    }```
