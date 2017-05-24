@@ -12,7 +12,7 @@ Sensor data collected along a physical test in the scope of health. This model h
   "type": "MotorPhysicalTest",
   "testType": "Timed Up and Go",
   "refUser": "http://207.249.127.162:1234/users/1",
-  "refMultisensoryDevice": [
+  "refDevice": [
                               "device-9845A", 
                               "device-9845B", 
                               "device-9845C"

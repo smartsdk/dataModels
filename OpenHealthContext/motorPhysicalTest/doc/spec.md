@@ -28,8 +28,8 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
    + Attribute type: [Text](https://schema.org/Text).
    + Mandatory.
 
-+ `refMultisensoryDevice` : List of references to multi-sensory device instances; which consist on a collection of sensors.
-   + Attribute type: [MultisensoryDevice](../../../Sensor/MultisensoryDevice/doc/spec.md).
++ `refDevice` : List of references to multi-sensory device instances; which consist on a collection of sensors.
+   + Attribute type: [Device](../../../Device/doc/spec.md).
    + Mandatory.
 
 + `configuration` : Description to enrich provided information along the `MultisensoryDevice` references. This attribute is intended to be a dictionary of properties which capture parameters related with the test's design.
