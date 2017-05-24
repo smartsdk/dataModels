@@ -10,4 +10,4 @@ The following entity types are supported:
 
 - `UserContext` - An Entity that represents the context of a given user.
 - `Activity` - An Entity that represents an activity performed by a given user.
-- `Alert` - An Entity that represents an alert of an event provided by a user.
+- `Alert` - An Entity that represents an alert of an event provided by a user or device.
