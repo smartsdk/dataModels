@@ -65,7 +65,11 @@ A JSON Schema corresponding to this data model can be found [here](https://fiwar
   "activityStart": "2016-11-30T07:00:00.00Z",
   "refObject": "Car1",
   "refTarget": "Office1",
+<<<<<<< HEAD
   "refActor": "UserId1"
+=======
+  "refActor": "https://account.lab.fiware.org/users/1"
+>>>>>>> cleaned version of the User Data model
 }
 ```
 
