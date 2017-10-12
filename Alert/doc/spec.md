@@ -43,8 +43,7 @@ In order to represent at data model the subtype of alert, the attribute "eventOb
 
 ## Data model
 
-A JSON Schema corresponding to this data model can be found [JSON Schema]
-(https://github.com/smartsdk/dataModels/blob/master/UserDataModels/datamodels/User%20event%20entity/UserEventEntityJsonSchema.json)
+A JSON Schema corresponding to this data model can be found [JSON Schema](../schema.json)
 
 + `id` : Entity's unique identifier.
 
