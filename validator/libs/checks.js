@@ -3,7 +3,7 @@
 var fs = require("fs");
 var glob = require('glob');
 var msg  = require('./message.js');
-var options = require('./options.js');
+var conf = require("./conf.js");
 
 const path = require('path');
 
@@ -15,8 +15,7 @@ var containsModelFolders = function (basePath) {
     try {
       var fullPath = path.join(basePath, fileName);
       var stat=fs.lstatSync(fullPath);
-      //TODO
-      if (stat && stat.isDirectory() && !nconf.get('dmv:ignoreFolders').includes(path.basename(fullPath)) && !nconf.get('dmv:docFolders').includes(path.basename(fullPath)) && !nconf.get('dmv:externalSchemaFolders').includes(path.basename(fullPath)))
+      if (stat && stat.isDirectory() && !conf.nconf.get('dmv:ignoreFolders').includes(path.basename(fullPath)) && !conf.nconf.get('dmv:docFolders').includes(path.basename(fullPath)) && !conf.nconf.get('dmv:externalSchemaFolders').includes(path.basename(fullPath)))
       folderCounter++;
     } catch (err) {
       console.log("***ERROR*** "+err );
@@ -45,14 +44,14 @@ module.exports = {
 //check if a documentation file exists in a given path
 docExist: function (fullPath){
   if (!fileExists(fullPath, "spec.md") && !fileExists(fullPath, "introduction.md"))
-  if (msg.addWarning(fullPath, "does not include a documentation file name spec.md or introduction.md") && options.getFailWarnings())
+  if (msg.addWarning(fullPath, "does not include a documentation file name spec.md or introduction.md") && conf.failWarnings)
   throw new Error("Fail on Warnings: " +JSON.stringify(msg.warnings,null, '\t'));
 };
 
 //check if a documentation folder exists in a given path
-docFolderExist: function (fullPath,docFolders) {
+docFolderExist: function (fullPath) {
   var counter = 0;
-  docFolders.forEach(function(value){
+  conf.nconf.get('dmv:docFolders').forEach(function(value){
     try {
       fs.lstatSync(path.join(fullPath, value)).isDirectory();
       counter++;
@@ -68,28 +67,28 @@ docFolderExist: function (fullPath,docFolders) {
 //check if a folder name is valid for a data model
 modelNameValid: function (fullPath) {
   if (fullPath.charAt(0) != fullPath.charAt(0).toUpperCase())
-  if (msg.addWarning(fullPath, "Model folder names should start in capital letter") && options.getFailWarnings())
+  if (msg.addWarning(fullPath, "Model folder names should start in capital letter") && conf.failWarnings)
   throw new Error("Fail on Warnings: " +JSON.stringify(msg.warnings,null, '\t'));
 };
 
 //check if a folder includes a README.md file
 var readmeExist = function(fullPath){
   if (!fileExists(fullPath,"README.md"))
-  if (msg.addWarning(fullPath, "does not include a Readme file README.md") && options.getFailWarnings())
+  if (msg.addWarning(fullPath, "does not include a Readme file README.md") && conf.failWarnings)
   throw new Error("Fail on Warnings: " +JSON.stringify(msg.warnings,null, '\t'));
 };
 
 //check if a folder includes a schema file
 var schemaExist = function(fullPath){
   if (!containsModelFolders(fullPath) && !fileExists(fullPath,"schema.json"))
-  if (msg.addWarning(fullPath, "does not include a JSON Schema file schema.json") && options.getFailWarnings())
+  if (msg.addWarning(fullPath, "does not include a JSON Schema file schema.json") && conf.failWarnings)
   throw new Error("Fail on Warnings: " +JSON.stringify(msg.warnings,null, '\t'));
 };
 
 //check if a folder includes one or more example files
 var exampleExist = function (fullPath){
   if (!containsModelFolders(fullPath) && !fileExists(fullPath,"example*.json"))
-  if (msg.addWarning(fullPath, "does not include a JSON Example file example*.json") && options.getFailWarnings())
+  if (msg.addWarning(fullPath, "does not include a JSON Example file example*.json") && conf.failWarnings)
   throw new Error("Fail on Warnings: " +JSON.stringify(msg.warnings,null, '\t'));
 };
 
