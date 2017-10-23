@@ -37,6 +37,19 @@
         },
         "dataProvider": {
           "type": "string"
+        },
+        "owner": {
+          "type": "array",
+          "items": {
+            "oneOf": [ 
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              }
+            ]
         }
       }
     },

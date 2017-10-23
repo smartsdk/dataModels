@@ -153,6 +153,10 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional    
 
++ `owner` : The owners of a Device.
+    + Attribute type: List of references to [Person]( http://schema.org/Person) or [Organization](https://schema.org/Organization).
+    + Optional
+
 ## Examples
 
     {
@@ -170,6 +174,7 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
       "value": "l=0.22;t=21.2",
       "deviceState": "ok",
       "dateFirstUsed": "2014-09-11",
+      "owner": ["http://person.org/leon"]
     }
 
 
