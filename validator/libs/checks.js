@@ -59,9 +59,10 @@ module.exports = {
         
       }
     });
-    
     if (counter == 0) msg.addWarning(fullPath, "does not include a documentation folder");
-    throw new Error("Fail on Warnings: " +JSON.stringify(msg.warnings,null, '\t'));
+    if (conf.nconf.get('dmv:warningChecks').includes("docExist") && counter == 0)
+    if (msg.addWarning(fullPath, "does not include a documentation file name spec.md or introduction.md") && conf.failWarnings)
+        throw new Error("Fail on Warnings: " +JSON.stringify(warnings,null, '\t'));    
   },
   
   //check if a folder name is valid for a data model

@@ -55,7 +55,7 @@ module.exports = {
   compileSchema: function(fullPath,fileSchema,commonSchemas){
     var file = path.join(fullPath, fileSchema);
     var schema = openFile(file, 'schema');
-    var ajv = new Ajv(options.getAjvOptions());
+    var ajv = new Ajv(conf.ajvOptions);
     addSchemas(commonSchemas, ajv.addSchema, 'schema');
     var validate;
     try {

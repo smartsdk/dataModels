@@ -1,4 +1,5 @@
 /* handle warning and error messages */
+const path = require('path');
 
 var warnings = {};
 var errors = {};
