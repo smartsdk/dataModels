@@ -9,13 +9,13 @@ var checks = require(".lib/checks.js");
 const path = require('path');
 
 /* load conf from command line and/or config.js */
-defaults.load()
+conf.load();
 /* load default values if not provided: as bug fix to nconf bug */
-defaults.defaults();
+conf.defaults();
 /* print help if -h option */
-defauls.help();
+conf.help();
 /* validate command line input */
-defauls.validate();
+conf.validate();
 
 // Path Scan function
 
@@ -52,7 +52,7 @@ var dive = function (basePath,schemas) {
           //dive in again if recursion is enabled
           if (conf.nconf.get("dmv:recursiveScan")) dive(fullPath,localCommonSchemas);
           
-          if (relativePath != "" && nconf.get('dmv:docFolders').includes(path.basename(fullPath)) && !conf.ignoreWarnings){
+          if (relativePath != "" && conf.nconf.get('dmv:docFolders').includes(path.basename(fullPath)) && !conf.ignoreWarnings){
             if (conf.nconf.get('dmv:warningChecks').includes("docExist")) checks.docExist(fullPath);
           }
           //schema compilation and example validation
@@ -65,7 +65,7 @@ var dive = function (basePath,schemas) {
               throw new Error("asynch compile is not implemented, don't use yet dmv:resolveRemoteSchemas option");
             }
           }
-          if (relativePath != "" && fileExists(fullPath,"example*.json") && nconf.get('dmv:validateExamples')) {
+          if (relativePath != "" && fileExists(fullPath,"example*.json") && conf.nconf.get('dmv:validateExamples')) {
             schema.validateExamples(fullPath,validate);
           }
         }
