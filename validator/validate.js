@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 "use strict";
 var fs = require("fs");
-var conf = require(".lib/conf.js");
-var msg = require(".lib/message.js");
-var schema = require(".lib/schema.js");
-var checks = require(".lib/checks.js");
+var conf = require("./libs/conf.js");
+var msg = require("./libs/message.js");
+var schema = require("./libs/schema.js");
+var checks = require("./libs/checks.js");
 
 const path = require('path');
 

@@ -3,7 +3,7 @@
 var glob = require('glob');
 var Ajv  = require('ajv');
 var msg  = require('./message.js');
-var options = require('./options.js');
+var conf = require('./conf.js');
 const path = require('path');
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
         }
     } catch (err) {
       msg.addError(fullPath, 'Schema '+ file +' is invalid, if one or more schemas cannot be retrieved, try using remote validation (dmv:resolveRemoteSchemas=true), check if "dmv:loadModelCommonSchemas" is enabled (if missing schemas are FIWARE common schemas) or store third party schemas in the "externalSchema" folder: '+err.message);
-      if(options.getFailErrors()) throw new Error(err.message);
+      if(conf.failErrors) throw new Error(err.message);
     }
     return validate;
   },
@@ -48,11 +48,11 @@ module.exports = {
         msg.addValidExample(fullPath,fileName +" is valid");
         else {
           msg.addError(fullPath, 'Example '+ fileName +' is invalid: '+JSON.stringify(validate.errors,null));
-          if(options.getFailErrors()) throw new Error("Fail on Error:" + JSON.stringify(msg.errors,null, '\t'));
+          if(conf.failErrors) throw new Error("Fail on Error:" + JSON.stringify(msg.errors,null, '\t'));
         }
       });
     } catch (err) {
-      if(options.getFailErrors()) throw new Error("Fail on Error:" + JSON.stringify(msg.errors,null, '\t'));
+      if(conf.failErrors) throw new Error("Fail on Error:" + JSON.stringify(msg.errors,null, '\t'));
     }
   },
 

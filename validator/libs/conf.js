@@ -1,5 +1,6 @@
 var nconf = require('nconf');
 var fs = require("fs");
+var schema = require("./schema.js");
 
 var ignoreWarnings = false;
 var failWarnings = false;
