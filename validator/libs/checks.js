@@ -26,6 +26,20 @@ var containsModelFolders = function (basePath) {
   else return false;
 };
 
+//if a file matching a given regular expression exists in a given path returns true, otherwise false
+var fileExists = function (basePath,regex) {
+  var files = fs.readdirSync(basePath);
+  var counter=0;
+  var regexp = new RegExp(regex);
+  files.forEach( function(item) {
+    if(regexp.test(item)){
+      counter++;
+    }
+  });
+  if (counter>0) return true;
+  else return false;
+};
+
 module.exports = {
   //check if a documentation file exists in a given path
   docExist: function (fullPath){
@@ -90,18 +104,6 @@ module.exports = {
     console.log("*** idMatching: not implemented ***");
   },
   
-  
   //if a file matching a given regular expression exists in a given path returns true, otherwise false
-  fileExists: function (basePath,regex) {
-    var files = fs.readdirSync(basePath);
-    var counter=0;
-    var regexp = new RegExp(regex);
-    files.forEach( function(item) {
-      if(regexp.test(item)){
-        counter++;
-      }
-    });
-    if (counter>0) return true;
-    else return false;
-  }
+  fileExists: fileExists
 };
