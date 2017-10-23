@@ -9,7 +9,7 @@ const path = require('path');
 module.exports = {
 
   //compile schema without remote resolve
-  var compileSchema = function(fullPath,fileSchema,commonSchemas){
+  compileSchema: function(fullPath,fileSchema,commonSchemas){
     var file = path.join(fullPath, fileSchema);
     var schema = openFile(file, 'schema');
     var ajv = new Ajv(options.getAjvOptions());
@@ -29,9 +29,9 @@ module.exports = {
       if(options.getFailErrors()) throw new Error(err.message);
     }
     return validate;
-  };
+  },
 
-  var validateExamples = function (fullPath,validate) {
+  validateExamples: function (fullPath,validate) {
     var files = schema.getFiles(fullPath + path.sep + "example*.json");
     if (typeof validate != 'function')
     if (msg.addError(fullPath, 'Examples cannot be validated since validation function cannot be computed. Probably not all schemas can be resolved correctly (check schema errors)') && options.getFailErrors())
@@ -54,7 +54,7 @@ module.exports = {
     } catch (err) {
       if(options.getFailErrors()) throw new Error("Fail on Error:" + JSON.stringify(msg.errors,null, '\t'));
     }
-  };
+  },
 
   addUniqueToArray: function (array1, array2){
     var result =  Array.from(array1);
@@ -63,7 +63,7 @@ module.exports = {
       result.push(item2);
     });
     return result;
-  };
+  },
 
   //load a remote schema
   loadSchema: function loadSchema(uri,callback) {
@@ -77,7 +77,7 @@ module.exports = {
       }
     };
     
-  }
+  },
   
   addSchemas: function(fileList, method, fileType) {
     if (!fileList) return;
@@ -86,7 +86,7 @@ module.exports = {
       var schema = openFile(file, fileType);
       method(schema);
     });
-  };
+  },
   
   //load  a list of files, supports patterns, e.g. *-schema.json
   getFiles: function(args) {
@@ -103,7 +103,7 @@ module.exports = {
         files.push(fileOrPattern);
       }
     }
-  }
+  },
   
   //load a JSON File
   openFile: function (filename, suffix){
@@ -120,7 +120,7 @@ module.exports = {
       process.exit(2);
     }
     return json;
-  };
+  },
 
   // load schemas local to FIWARE Data Model (that should be named using *-schema.json pattern
   loadLocalSchemas: function (fullPath) {
@@ -130,6 +130,5 @@ module.exports = {
     else
       files = getFiles("*-schema.json");
     return files;
-  };
-  
-}
+  }
+};

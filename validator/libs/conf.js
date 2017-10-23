@@ -8,11 +8,11 @@ var ajvOptions = {};
 
 module.exports = {
   /* export variables */
-  nconf: nconf;
-  ignoreWarnings: ignoreWarnings;
-  failWarnings: failWarnings;
-  failErrors: failErrors;
-  ajvOptions: ajvOptions;
+  nconf: nconf,
+  ignoreWarnings: ignoreWarnings,
+  failWarnings: failWarnings,
+  failErrors: failErrors,
+  ajvOptions: ajvOptions,
   
   /* load configuration from arg and config.json file (if any)*/
   load: function() {
@@ -39,8 +39,7 @@ module.exports = {
         demand: false
       }
     },"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]").file('config.json');
-  }
-  
+  },
   
   /* load default values 
   TODO: fix issues with nconf.default */
@@ -103,14 +102,14 @@ module.exports = {
       extendRefs:       nconf.get('ajv:extendRefs'),
       loadSchema:       schema.loadSchema
     };
-  }
+  },
   
   help: function(){
     if (nconf.get('h')){
       nconf.stores.argv.showHelp();
       return;
     }
-  }
+  },
   
   validate: function(){
     /* Check configuration validity */
