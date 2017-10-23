@@ -57,7 +57,7 @@ var dive = function (basePath,schemas) {
           }
           //schema compilation and example validation
           var validate;
-          if (relativePath != "" && fileExists(fullPath,"schema.json")) {
+          if (relativePath != "" && schema.fileExists(fullPath,"schema.json")) {
             if(!conf.nconf.get("dmv:resolveRemoteSchemas")){
               validate = schema.compileSchema(fullPath,"schema.json",localCommonSchemas);
             } else {
@@ -65,7 +65,7 @@ var dive = function (basePath,schemas) {
               throw new Error("asynch compile is not implemented, don't use yet dmv:resolveRemoteSchemas option");
             }
           }
-          if (relativePath != "" && fileExists(fullPath,"example*.json") && conf.nconf.get('dmv:validateExamples')) {
+          if (relativePath != "" && schema.fileExists(fullPath,"example*.json") && conf.nconf.get('dmv:validateExamples')) {
             schema.validateExamples(fullPath,validate);
           }
         }
