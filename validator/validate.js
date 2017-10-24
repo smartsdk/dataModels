@@ -43,9 +43,12 @@ var dive = function(basePath, schemas) {
 
       if (stat && stat.isDirectory()) {
         // Dive into the directory
-        if (!conf.nconf.get('dmv:ignoreFolders').includes(path.basename(fullPath)) &&
-             !conf.nconf.get('dmv:docFolders').includes(path.basename(fullPath)) &&
-             !conf.nconf.get('dmv:externalSchemaFolders').includes(path.basename(fullPath))) {
+        if (!conf.nconf.get('dmv:ignoreFolders')
+               .includes(path.basename(fullPath)) &&
+             !conf.nconf.get('dmv:docFolders')
+               .includes(path.basename(fullPath)) &&
+             !conf.nconf.get('dmv:externalSchemaFolders')
+               .includes(path.basename(fullPath))) {
           if (conf.nconf.get('dmv:warningChecks').includes('modelNameValid') &&
                !conf.ignoreWarnings)
             checks.modelNameValid(fullPath);
@@ -84,10 +87,15 @@ var dive = function(basePath, schemas) {
           }
           //schema compilation and example validation
           var validate;
-          if (relativePath != '' && checks.fileExists(fullPath, 'schema.json')) {
+          if (relativePath != '' &&
+              checks.fileExists(fullPath, 'schema.json')) {
             if (!conf.nconf.get('dmv:resolveRemoteSchemas')) {
               validate =
-                schema.compileSchema(fullPath, 'schema.json', localCommonSchemas);
+                schema.compileSchema(
+                  fullPath,
+                  'schema.json',
+                  localCommonSchemas
+                );
             } else {
               console.error('**** asynch compile is not implemented, ' +
                 "don't use yet the dmv:resolveRemoteSchemas option ****");

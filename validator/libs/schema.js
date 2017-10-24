@@ -69,7 +69,7 @@ module.exports = {
           if (conf.failErrors) throw new Error(validate.errors);
         }
     } catch (err) {
-      msg.addError(fullPath, 'Schema '+ file + ' is invalid, ' +
+      msg.addError(fullPath, 'Schema ' + file + ' is invalid, ' +
         'if one or more schemas cannot be retrieved, ' +
         'try using remote validation (dmv:resolveRemoteSchemas=true), ' +
         'check if \"dmv:loadModelCommonSchemas\" is enabled ' +
@@ -88,13 +88,14 @@ module.exports = {
     if (msg.addError(fullPath, 'Examples cannot be validated since ' +
          'validation function cannot be computed. Probably not all schemas ' +
          'can be resolved correctly (check schema errors)') && conf.failErrors)
-      throw new Error('Fail on Error:' + JSON.stringify(msg.errors, null, '\t'));
+      throw new Error('Fail on Error:' +
+        JSON.stringify(msg.errors, null, '\t'));
 
     try {
       files.forEach(function(fileName) {
         var data = openFile(fileName, 'example ' + fileName);
         if (typeof validate != 'function') {
-          msg.addError(fullPath, 'Example '+ fileName + ' is invalid: ' +
+          msg.addError(fullPath, 'Example ' + fileName + ' is invalid: ' +
             JSON.stringify(validate.errors, null));
           if (conf.failErrors)
             throw new Error('Fail on Error:' +
@@ -103,7 +104,7 @@ module.exports = {
         if (validate(data))
         msg.addValidExample(fullPath, fileName + ' is valid');
         else {
-          msg.addError(fullPath, 'Example '+ fileName + ' is invalid: ' +
+          msg.addError(fullPath, 'Example ' + fileName + ' is invalid: ' +
             JSON.stringify(validate.errors, null));
           if (conf.failErrors) throw new Error('Fail on Error:' +
             JSON.stringify(msg.errors, null, '\t'));

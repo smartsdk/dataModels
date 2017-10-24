@@ -20,8 +20,9 @@ module.exports = {
     nconf.argv({
       'i': {
         alias: 'dmv:importSchemas',
-        describe: 'Additional schemas that will be included during validation.' +
-          'Default imported schemas are: common-schema.json, geometry-schema.json',
+        describe: 'Additional schemas that will be included' +
+          ' during validation. Default imported schemas are: ' +
+          ' common-schema.json, geometry-schema.json',
         type: 'array',
       },
       'w' : {

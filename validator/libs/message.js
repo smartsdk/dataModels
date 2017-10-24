@@ -8,7 +8,7 @@ var validExamples = {};
 
 var addMessageToMap = function(modelPath, message, map) {
   var rootModel = getRootModelName(modelPath);
-  var fullMessage = modelPath + ': '+ message;
+  var fullMessage = modelPath + ': ' + message;
   if (map[rootModel] != null)
   map[rootModel].push(fullMessage);
   else
