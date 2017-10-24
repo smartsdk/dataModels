@@ -29,6 +29,15 @@ matrix:
         - jshint .
       script:
         - true
+  ## Data model validator
+    - language: node_js
+      python:
+      install:
+        - npm install -g fiware-model-validator
+      before_script:
+        - validate -p .
+      script:
+        - true
 
 notifications:
   on_success: change
