@@ -6,7 +6,7 @@ var msg = require("./libs/message.js");
 var schema = require("./libs/schema.js");
 var checks = require("./libs/checks.js");
 
-const path = require("path");
+var path = require("path");
 
 /* load conf from command line and/or config.js */
 conf.load();

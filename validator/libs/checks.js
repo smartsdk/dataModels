@@ -5,7 +5,7 @@ var glob = require("glob");
 var msg  = require("./message.js");
 var conf = require("./conf.js");
 
-const path = require("path");
+var path = require("path");
 
 //if a path contains folders beyond the doc and ignore ones,
 // returns true, otherwise false

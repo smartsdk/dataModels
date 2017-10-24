@@ -4,7 +4,7 @@ var glob = require("glob");
 var Ajv  = require("ajv");
 var msg  = require("./message.js");
 var conf = require("./conf.js");
-const path = require("path");
+var path = require("path");
 
 var addSchemas = function (fileList, method, fileType) {
   if (!fileList) return;
