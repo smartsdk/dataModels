@@ -73,7 +73,7 @@ module.exports = {
     if (counter == 0)
       msg.addWarning(fullPath, 'does not include a documentation folder');
     if (conf.nconf.get('dmv:warningChecks').includes('docExist') &&
-        ≈counter == 0)
+        counter == 0)
       if (msg.addWarning(fullPath, 'does not include a documentation ' +
            'file named spec.md or introduction.md') && conf.failWarnings)
         throw new Error('Fail on Warnings: ' +
