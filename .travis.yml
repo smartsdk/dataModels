@@ -32,6 +32,8 @@ matrix:
   ## Data model validator
     - language: node_js
       python:
+      node_js:
+        - 7
       install:
         - npm install -g fiware-model-validator
       before_script:
