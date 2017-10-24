@@ -20,17 +20,22 @@ module.exports = {
     nconf.argv({
       "i": {
         alias: "dmv:importSchemas",
-        describe: "Additional schemas that will be included during validation. Default imported schemas are: common-schema.json, geometry-schema.json",
+        describe: "Additional schemas that will be included during validation." +
+          "Default imported schemas are: common-schema.json, geometry-schema.json",
         type: "array",
       },
       "w" : {
         alias: "dmv:warnings",
-        describe: "How to handle FIWARE Data Models checks warnings.\n true (default) - print warnings, but does not fail. \n ignore -  do nothing and do not print warnings.\n fail - print warnings, and fails.",
+        describe: "How to handle FIWARE Data Models checks warnings.\n" +
+          "true (default) - print warnings, but does not fail. \n" +
+          "ignore -  do nothing and do not print warnings.\n" +
+          " fail - print warnings, and fails.",
         type: "string",
       },
       "p" : {
         alias: "dmv:path",
-        describe: "The path of FIWARE Data Model(s) to be validated (if recursion enabled, it will be the starting point of recursion)",
+        describe: "The path of FIWARE Data Model(s) to be validated " +
+          "(if recursion enabled, it will be the starting point of recursion)",
         demand: false,
         type: "string",
       },
@@ -39,20 +44,33 @@ module.exports = {
         describe: "Print the help message",
         demand: false,
       },
-    },"Usage: validate -p DataModel -w ignore -i [common-schema.json,geometry-schema.json]").file("config.json");
+    },"Usage: validate -p DataModel -w ignore " +
+        "-i [common-schema.json,geometry-schema.json]").file("config.json");
   },
   
   /* load default values 
   TODO: fix issues with nconf.default */
   defaults: function() {    
     if (nconf.get("dmv:importSchemas") == null) {
-      nconf.set("dmv:importSchemas", ["common-schema.json","geometry-schema.json",]);
+      nconf.set("dmv:importSchemas",
+        [
+          "common-schema.json", 
+          "geometry-schema.json"
+        ]);
     }
     if (nconf.get("dmv:warnings") == null) {
       nconf.set("dmv:warnings", "true");
     }
     if (nconf.get("dmv:warningChecks") == null) {
-      nconf.set("dmv:warningChecks", ["schemaExist","docExist","docFolderExist","exampleExist","modelNameValid","readmeExist",]);
+      nconf.set("dmv:warningChecks",
+        [
+          "schemaExist",
+          "docExist",
+          "docFolderExist",
+          "exampleExist",
+          "modelNameValid",
+          "readmeExist"
+        ]);
     }
     if (nconf.get("dmv:recursiveScan") == null) {
       nconf.set("dmv:recursiveScan", true);
@@ -87,7 +105,9 @@ module.exports = {
     if (nconf.get("ajv:allErrors") == null) {
       nconf.set("ajv:allErrors", true);
     }
-    nconf.set("dmv:ignoreFolders",  nconf.get("dmv:ignoreFolders").concat([".git","node_modules","validator",]));
+    nconf.set("dmv:ignoreFolders",
+      nconf.get("dmv:ignoreFolders")
+        .concat([".git","node_modules","validator"]));
     
     /* error and warnings management configuration */
     ignoreWarnings=(nconf.get("dmv:warnings") == "ignore");
@@ -118,7 +138,7 @@ module.exports = {
       nconf.required(["dmv:path",]);
     } catch (err) {
       process.exitCode = -1;
-      console.error("\n Invalid Configuration:"+err.message+"\n");
+      console.error("\n Invalid Configuration:" + err.message + "\n");
       nconf.stores.argv.showHelp();
       return;
     }
@@ -134,7 +154,7 @@ module.exports = {
     }
     catch (err) {
       process.exitCode = -1;
-      console.error("\n Invalid Path: "+err.message+"\n");
+      console.error("\n Invalid Path: " + err.message + "\n");
       return;
     }
   },

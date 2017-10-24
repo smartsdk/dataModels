@@ -1,24 +1,24 @@
 {
-    "plugins": [
-        "json"
-    ],
-    "extends": "eslint:recommended",
-    "rules": {
-        // enable additional rules
-        "indent": ["error", 2],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-        "max-len" : [2, 80, 4],
-
-        // override default options for rules from base configurations
-        "comma-dangle": ["error", "always"],
-        "no-cond-assign": ["error", "always"],
-
-        // disable rules from base configurations
-        "no-console": "off",
-        "brace-style": 0,               // enforce one true brace style (off by default)
-
+  "plugins": [
+    "json"
+  ],
+  "extends": "eslint:recommended",
+  "rules": {
+    // enable additional rules
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "max-len": [2, 80, 4],
+  
+    // override default options for rules from base configurations
+    "comma-dangle": ["error", "always"],
+    "no-cond-assign": ["error", "always"],
+  
+    // disable rules from base configurations
+    "no-console": "off",
+    "brace-style": 0,               // enforce one true brace style (off by default)
+  
     "camelcase": 0,                 // require camel case names
     "comma-spacing": 0,             // enforce spacing before and after comma
     "comma-style": 0,               // enforce one true comma style (off by default)
@@ -58,5 +58,5 @@
     "space-unary-ops": 0,           // Require or disallow spaces before/after unary operators (words on by default, nonwords off by default)
     "spaced-line-comment": 0,       // require or disallow a space immediately following the // in a line comment (off by default)
     "wrap-regex": 0,                // require regex literals to be wrapped in parentheses (off by default)
-    }
+  }
 }
