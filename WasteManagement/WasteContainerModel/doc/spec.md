@@ -10,7 +10,9 @@ A model of waste container which captures the static properties of a class of co
 
 + `type`: Entity Type. It must be equal to `WasteContainerModel`.
 
-+ `name`. Name given to the container model
++ `name`. Name given to this container model. It is a "well-known", mnemotechnic or codename.
+This attribute is different than `modelName` which conveys the formal model name given by the
+manufacturer. 
     + Normative References: [https://schema.org/name](https://schema.org/name)
     + Mandatory
 
@@ -81,7 +83,8 @@ A model of waste container which captures the static properties of a class of co
     + See also: [https://schema.org/brand](https://schema.org/brand)
     + Optional
        
-+ `modelName`. Name of the model.
++ `modelName`. Name of the model as given by the manufacturer.
+This attribute is different than `name` which is just a codename usually given by municipalities. 
     + Attribute type: [Text](https://schema.org/Text)
     + See also: [https://schema.org/model](https://schema.org/model)
     + Optional
@@ -126,11 +129,12 @@ A model of waste container which captures the static properties of a class of co
     {
        "id": "wastecontainermodel:c1",
        "type": "WasteContainerModel",
+       "name": "Dumpster_Plastic_Brute_2009",
        "width": 0.50,
        "height": 0.80,
        "depth": 0.40,
        "cargoVolume": 150,
-       "brandName": "Contenedores Ejemplo",
+       "brandName": "Brute",
        "modelName": "C1",
        "compliantWith": ["UNE-EN 840-2:2013"],
        "madeOf": "plastic",
