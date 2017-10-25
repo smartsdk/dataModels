@@ -27,7 +27,7 @@ var containsModelFolders = function(basePath) {
       folderCounter++;
     } catch (err) {
       console.log('***ERROR*** ' + err);
-      if (options.getFailErrors()) throw new Error(err);
+      if (conf.failErrors) throw new Error(err);
     }
   });
   if (folderCounter) return true;

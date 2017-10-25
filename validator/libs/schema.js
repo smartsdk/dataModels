@@ -5,6 +5,8 @@
 var glob = require('glob');
 var Ajv = require('ajv');
 var path = require('path');
+var fs = require('fs');
+var request = require('request');
 var msg = require('./message.js');
 var conf = require('./conf.js');
 
