@@ -1,5 +1,8 @@
 /* handle warning and error messages */
-const path = require('path');
+
+'use strict';
+
+var path = require('path');
 
 var warnings = {};
 var errors = {};

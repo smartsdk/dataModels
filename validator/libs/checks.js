@@ -1,11 +1,12 @@
 /* Data Model Validation checkers for structure */
 
+'use strict';
+
 var fs = require('fs');
 var glob = require('glob');
+var path = require('path');
 var msg = require('./message.js');
 var conf = require('./conf.js');
-
-var path = require('path');
 
 //if a path contains folders beyond the doc and ignore ones,
 // returns true, otherwise false

@@ -1,3 +1,7 @@
+/* provide functions to support the  the data model validator */
+
+'use strict';
+
 var nconf = require('nconf');
 var fs = require('fs');
 var schema = require('./schema.js');
