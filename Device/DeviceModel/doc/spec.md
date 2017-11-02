@@ -38,7 +38,7 @@ If the device is not a constrained device this property can be left as `null` or
     + Attribute type: List of [Text](https://schema.org/Text)
     + Allowed values: (some of this values are defined as instances of the class `Property` in SAREF)
         + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`,
-        `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `pressure`, `conductivity`,
+        `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `conductivity`,
         `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`,
         `gasComsumption`, `electricityConsumption`)
     + Mandatory

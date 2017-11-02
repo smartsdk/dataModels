@@ -132,7 +132,7 @@ and which are not currently covered by the standard attributes defined by this m
     + Optional
 
 + `dateLastValueReported` : A timestamp which denotes the last time when the device successfully reported data to the cloud.
-    + Attribute type: [DateTime](https://schema.org/)
+    + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
 + `value` : A observed or reported value. For actuator devices, it is an attribute that allows
@@ -154,7 +154,7 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
     + Optional    
 
 + `owner` : The owners of a Device.
-    + Attribute type: List of references to [Person]( http://schema.org/Person) or [Organization](https://schema.org/Organization).
+    + Attribute type: List of references to [Person](http://schema.org/Person) or [Organization](https://schema.org/Organization).
     + Optional
 
 ## Examples
@@ -169,11 +169,11 @@ Obviously, in order to toggle the referred switch, this attribute value will hav
       "mcc": "214",
       "mnc": "07",
       "batteryLevel": 0.75,
-      "serialNumer": "9845A",
+      "serialNumber": "9845A",
       "refDeviceModel": "myDevice-wastecontainer-sensor-345",
       "value": "l=0.22;t=21.2",
       "deviceState": "ok",
-      "dateFirstUsed": "2014-09-11",
+      "dateFirstUsed": "2014-09-11T11:00:00Z",
       "owner": ["http://person.org/leon"]
     }
 
