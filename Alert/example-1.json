@@ -1,13 +1,24 @@
-	{
-		"id": "Alert:1",
-		"type": "Alert",
-		"alertType": "Weather condition",
-		"eventObserved": "Rainfall",
-		"location": {
-			"type": "Point",
-			"coordinates": [-3.712247222222222, 40.423852777777775]
-		},
-		"dateTime": "2017-01-02T09:25:55.00Z",
-		"description": "Alert Orange: More than 15-30 mm rain (intense), alert for possible evacuation",
-		"refDevice": "Device1"
-	}
+{
+  "id": "Alert:1",
+  "type": "Alert",
+  "category": "traffic",
+  "subCategory": "trafficJam",
+  "severity": "high",
+  "location": {
+    "type": "feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -3.712247222222222,
+        40.423852777777775
+      ]
+    }
+  },
+  "dateTimeObserved": "2017-01-02T09:25:55.00Z",
+  "dateTimeValidity": {
+    "start": "2017-01-02T09:25:55.00Z",
+    "end": "2017-01-02T10:25:55.00Z"
+  },
+  "description": "The road is completely blocked for 3kms",
+  "alertSource": "https://account.lab.fiware.org/users/8"
+}
