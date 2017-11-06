@@ -12,6 +12,7 @@ Some examples of context data are: type of alert (traffic, suspicious activities
 
 ## Examples of use
 
+```
 {
 	"id": "Alert:1",
 	"type": "Alert",
@@ -29,3 +30,4 @@ Some examples of context data are: type of alert (traffic, suspicious activities
 	"description": "The road is completely blocked for 3kms",
 	"alertSource":"https://account.lab.fiware.org/users/8"
 }
+``

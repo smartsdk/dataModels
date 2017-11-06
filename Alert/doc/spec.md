@@ -1,6 +1,7 @@
 # Alert data model
 
 ## Description
+
 This entity models an alert and could be used to send alerts related to traffic
 jam, accidents, weather conditions, high level of pollutants and so on.
 The purpose of the model is to support the generation of notifications for
@@ -92,6 +93,7 @@ found [here](../schema.json).
 
 ## Examples of use (traffic)
 
+```
 	{
 		"id": "Alert:1",
 		"type": "Alert",
@@ -109,9 +111,11 @@ found [here](../schema.json).
 		"description": "The road is completely blocked for 3kms",
 		"alertSource":"https://account.lab.fiware.org/users/8"
 	}
+```
 
 ## Examples of use (security)
 
+```
 	{
 		"id": "VisualEvent123",
 		"type": "Alert",
@@ -134,7 +138,7 @@ found [here](../schema.json).
 		},
 		"severity" : ["informational"]
 	}
-
+```
 ## Use it with a real service
 The model has been defined to support different scenarios inside [SmartSDK](https://smartsdk.eu) project.
 
