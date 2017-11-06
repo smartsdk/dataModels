@@ -94,53 +94,62 @@ found [here](../schema.json).
 ## Examples of use (traffic)
 
 ```
-	{
-		"id": "Alert:1",
-		"type": "Alert",
-		"category": "traffic",
-		"subCategory": "trafficJam",
-		"severity": "high",
-		"location": {
-			"type": "feature",
-			"geometry": {
-					"type": "Point",
-					"coordinates": [-3.712247222222222, 40.423852777777775]
-			}
-		},
-		"dateTimeObserved": "2017-01-02T09:25:55.00Z",
-		"description": "The road is completely blocked for 3kms",
-		"alertSource":"https://account.lab.fiware.org/users/8"
-	}
+{
+  "id": "Alert:1",
+  "type": "Alert",
+  "category": "traffic",
+  "subCategory": "trafficJam",
+  "severity": "high",
+  "location": {
+    "type": "feature",
+    "geometry": {
+      "type": "Point",
+        "coordinates": [
+          -3.712247222222222,
+          40.423852777777775
+        ]
+    }
+  },
+  "dateTimeObserved": "2017-01-02T09:25:55.00Z",
+  "description": "The road is completely blocked for 3kms",
+  "alertSource":"https://account.lab.fiware.org/users/8"
+}
 ```
 
 ## Examples of use (security)
 
 ```
-	{
-		"id": "VisualEvent123",
-		"type": "Alert",
-		"category": "security",
-		"subCategory": "robbery",
-		"location": {
-			"type": "feature",
-			"geometry": {
-					"type": "Point",
-					"coordinates": [-3.712247222222222, 40.423852777777775]
-			}
-		},
-		"dateTimeObserved": "2017-04-25T09:25:55.00Z",
-		"description": "Potential robbery in main building",
-		"alertSource": "Camera1234",
-		"data": {
-			"videoURL": "www.smartsecurity.com/video123.mp4",
-			"initialFrame": "80",
-			"finalFrame": "120"
-		},
-		"severity" : ["informational"]
-	}
+{
+  "id": "VisualEvent123",
+  "type": "Alert",
+  "category": "security",
+  "subCategory": "robbery",
+  "location": {
+    "type": "feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -3.712247222222222,
+        40.423852777777775
+      ]
+    }
+  },
+  "dateTimeObserved": "2017-04-25T09:25:55.00Z",
+  "description": "Potential robbery in main building",
+  "alertSource": "Camera1234",
+  "data": {
+    "videoURL": "www.smartsecurity.com/video123.mp4",
+    "initialFrame": "80",
+    "finalFrame": "120"
+  },
+  "severity" : ["informational"]
+}
 ```
+
 ## Use it with a real service
+
 The model has been defined to support different scenarios inside [SmartSDK](https://smartsdk.eu) project.
 
 ## Open Issues
+
 T.B.D

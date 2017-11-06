@@ -14,20 +14,23 @@ Some examples of context data are: type of alert (traffic, suspicious activities
 
 ```
 {
-	"id": "Alert:1",
-	"type": "Alert",
-	"category": "traffic",
-	"subCategory": "trafficJam",
-	"severity": "high",
-	"location": {
-		"type": "feature",
-		"geometry": {
-				"type": "Point",
-				"coordinates": [-3.712247222222222, 40.423852777777775]
-		}
-	},
-	"dateTimeObserved": "2017-01-02T09:25:55.00Z",
-	"description": "The road is completely blocked for 3kms",
-	"alertSource":"https://account.lab.fiware.org/users/8"
+  "id": "Alert:1",
+  "type": "Alert",
+  "category": "traffic",
+  "subCategory": "trafficJam",
+  "severity": "high",
+  "location": {
+    "type": "feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -3.712247222222222,
+        40.423852777777775
+      ]
+    }
+  },
+  "dateTimeObserved": "2017-01-02T09:25:55.00Z",
+  "description": "The road is completely blocked for 3kms",
+  "alertSource":"https://account.lab.fiware.org/users/8"
 }
-``
+```
