@@ -134,7 +134,7 @@ module.exports = {
   //check if a folder includes a schema file
   schemaExist: function(fullPath) {
     var check = true;
-    if (!fileExists(fullPath, '^schema\.json'))
+    if (!fileExists(fullPath, '^schema\\.json'))
       check = false;
     if (!check && !containsModelFolders(fullPath) &&
         msg.addWarning(fullPath, 'does not include a JSON Schema ' +
@@ -148,11 +148,11 @@ module.exports = {
   //check if a folder includes one or more example files
   exampleExist: function(fullPath) {
     var check = true;
-    if (!fileExists(fullPath, 'example(-\d+)?\.json'))
+    if (!fileExists(fullPath, '^example(-\\d+)?\\.json'))
       check = false;
     if (!check && !containsModelFolders(fullPath) &&
         msg.addWarning(fullPath, 'does not include a JSON Example file ' +
-          'example(-\d+)?\.json') && conf.failWarnings)
+          'example(-\\d+)?\\.json') && conf.failWarnings)
       throw new Error('Fail on Warnings: ' +
         JSON.stringify(msg.warnings, null, '\t'));
     debug("*exampleExist* - " + fullPath + ": "+ check);

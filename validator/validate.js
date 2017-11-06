@@ -139,7 +139,7 @@ var dive = function(basePath, schemas) {
 
 
       if (path.basename(basePath) != 'dataModels' &&
-          checks.fileExists(fullPath, '^schema\.json')) {
+          checks.fileExists(fullPath, '^schema\\.json')) {
         debug('*dive* run schema validation');
         if (!conf.nconf.get('dmv:resolveRemoteSchemas')) {
           validate =
@@ -159,7 +159,7 @@ var dive = function(basePath, schemas) {
 //TODO change to check if there are not sons. if sons it's ok to not have a json examples.
 
       if (path.basename(basePath) != 'dataModels' &&
-          checks.fileExists(fullPath, 'example(-\d+)?\.json') &&
+          checks.fileExists(fullPath, '^example(-\\d+)?\\.json') &&
           conf.nconf.get('dmv:validateExamples')) {
         debug('*dive* run example validation');
         schema.validateExamples(fullPath, validate);
