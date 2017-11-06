@@ -1,12 +1,13 @@
 #!/usr/bin/env node;
 'use strict';
 var fs = require('fs');
+var path = require('path');
 var conf = require('./libs/conf.js');
 var msg = require('./libs/message.js');
 var schema = require('./libs/schema.js');
 var checks = require('./libs/checks.js');
 
-var path = require('path');
+const debug = require('debug')('validate');
 
 /* load conf from command line and/or config.js */
 conf.load();
@@ -21,105 +22,192 @@ conf.validate();
 
 var dive = function(basePath, schemas) {
 
-  var relativePath = path.relative('.', basePath);
-
-  var files = fs.readdirSync(basePath);
+  debug('*dive* basePath: '+basePath);
+  debug('*dive* processPath: '+process.cwd());
 
   var localCommonSchemas = Array.from(schemas);
 
-  if (conf.nconf.get('dmv:loadModelCommonSchemas'))
-  localCommonSchemas =
-    schema.addUniqueToArray(
-      localCommonSchemas,
-      schema.loadLocalSchemas(basePath)
-    );
+  debug('*dive* localSchema: ' + localCommonSchemas);
 
-  files.forEach(function(fileName) {
+  debug('*dive* root path: ' + (path.basename(basePath) == 'dataModels'));
+
+  debug('*dive* basename: ' + path.basename(basePath));
+
+  var fullPath = basePath;
+
+  debug('*dive* fullPath: ' + fullPath);
+
+  //Is it a Data Model directory?
+  if (!conf.nconf.get('dmv:ignoreFolders')
+        .includes(path.basename(fullPath)) &&
+      !conf.nconf.get('dmv:docFolders')
+        .includes(path.basename(fullPath)) &&
+      !conf.nconf.get('dmv:externalSchemaFolders')
+        .includes(path.basename(fullPath))) {
+
+    //let's run the configured checkers
+    debug('*dive* running checkers');
+
+    //is the modelNameValid?
+    if (path.basename(basePath) != 'dataModels' &&
+        conf.nconf.get('dmv:warningChecks').includes('modelNameValid') &&
+        !conf.ignoreWarnings)
+      checks.modelNameValid(fullPath);
+
+    //does the data model include a documentation folder?
+    if (path.basename(basePath) != 'dataModels' &&
+        conf.nconf.get('dmv:warningChecks').includes('docFolderExist') &&
+        !conf.ignoreWarnings)
+      checks.docFolderExist(fullPath);
+
+    //is there a JSON Schema file?
+    if (path.basename(basePath) != 'dataModels' &&
+        conf.nconf.get('dmv:warningChecks').includes('schemaExist') &&
+        !conf.ignoreWarnings)
+      checks.schemaExist(fullPath);
+
+    //is there one or more JSON Example
+    if (path.basename(basePath) != 'dataModels' &&
+        conf.nconf.get('dmv:warningChecks').includes('exampleExist') &&
+        !conf.ignoreWarnings)
+      checks.exampleExist(fullPath);
+
+    //is there a readme file?
+    if (conf.nconf.get('dmv:warningChecks').includes('readmeExist') &&
+        !conf.ignoreWarnings)
+      checks.readmeExist(fullPath);
+
+    //are links in the documentation valid? TODO
+    if (path.basename(basePath) != 'dataModels' &&
+        conf.nconf.get('dmv:warningChecks').includes('docValidLinks') &&
+        !conf.ignoreWarnings)
+      checks.docValidLinks(fullPath);
+
+    //is the documentation valid? TODO
+    if (path.basename(basePath) != 'dataModels' &&
+        conf.nconf.get('dmv:warningChecks').includes('docValid') &&
+        !conf.ignoreWarnings)
+      checks.docValid(fullPath);
+
+    //is the schema id matching the name of the folder? TODO
+    if (path.basename(basePath) != 'dataModels' &&
+        conf.nconf.get('dmv:warningChecks').includes('idMatching') &&
+        !conf.ignoreWarnings)
+      checks.idMatching(fullPath);
+
+    //does it exists the documentation of the data model?
+    if (path.basename(basePath) != 'dataModels' &&
+        !conf.ignoreWarnings &&
+        conf.nconf.get('dmv:warningChecks').includes('docExist'))
+      checks.docExist(fullPath);
+
     try {
-      var fullPath;
-      if (basePath != '.') fullPath = basePath + path.sep + fileName;
-      else fullPath = fileName;
-      var stat = fs.lstatSync(fullPath);
+      //schema compilation and example validation
+      var validate;
 
-      if (stat && stat.isDirectory()) {
-        // Dive into the directory
-        if (!conf.nconf.get('dmv:ignoreFolders')
-               .includes(path.basename(fullPath)) &&
-             !conf.nconf.get('dmv:docFolders')
-               .includes(path.basename(fullPath)) &&
-             !conf.nconf.get('dmv:externalSchemaFolders')
-               .includes(path.basename(fullPath))) {
-          if (conf.nconf.get('dmv:warningChecks').includes('modelNameValid') &&
-               !conf.ignoreWarnings)
-            checks.modelNameValid(fullPath);
-          if (conf.nconf.get('dmv:warningChecks').includes('docFolderExist') &&
-               !conf.ignoreWarnings)
-            checks.docFolderExist(fullPath);
-          if (conf.nconf.get('dmv:warningChecks').includes('schemaExist') &&
-               !conf.ignoreWarnings)
-            checks.schemaExist(fullPath);
-          if (conf.nconf.get('dmv:warningChecks').includes('exampleExist') &&
-               !conf.ignoreWarnings)
-            checks.exampleExist(fullPath);
-          if (conf.nconf.get('dmv:warningChecks').includes('readmeExist') &&
-               !conf.ignoreWarnings)
-            checks.readmeExist(fullPath);
-          if (conf.nconf.get('dmv:warningChecks').includes('docValidLinks') &&
-               !conf.ignoreWarnings)
-            checks.docValidLinks(fullPath);
-          if (conf.nconf.get('dmv:warningChecks').includes('docValid') &&
-               !conf.ignoreWarnings)
-            checks.docValid(fullPath);
-          if (conf.nconf.get('dmv:warningChecks').includes('idMatching') &&
-               !conf.ignoreWarnings)
-            checks.idMatching(fullPath);
+      if (conf.nconf.get('dmv:loadModelCommonSchemas') &&
+          checks.fileExists(fullPath, '.+-schema\.json')) {
 
-          //dive in again if recursion is enabled
-          if (conf.nconf.get('dmv:recursiveScan'))
-            dive(fullPath, localCommonSchemas);
-
-          if (relativePath != '' &&
-               conf.nconf.get('dmv:docFolders')
-                 .includes(path.basename(fullPath)) &&
-               !conf.ignoreWarnings) {
-            if (conf.nconf.get('dmv:warningChecks').includes('docExist'))
-              checks.docExist(fullPath);
-          }
-          //schema compilation and example validation
-          var validate;
-          if (relativePath != '' &&
-              checks.fileExists(fullPath, 'schema.json')) {
-            if (!conf.nconf.get('dmv:resolveRemoteSchemas')) {
-              validate =
-                schema.compileSchema(
-                  fullPath,
-                  'schema.json',
-                  localCommonSchemas
-                );
-            } else {
-              console.error('**** asynch compile is not implemented, ' +
-                "don't use yet the dmv:resolveRemoteSchemas option ****");
-              throw new Error('asynch compile is not implemented,  ' +
-                "don't use yet dmv:resolveRemoteSchemas option");
-            }
-          }
-          if (relativePath != '' &&
-               checks.fileExists(fullPath, 'example*.json') &&
-               conf.nconf.get('dmv:validateExamples')) {
-            schema.validateExamples(fullPath, validate);
-          }
+        var files = schema.getFiles(fullPath + path.sep + '*-schema.json');
+        debug('*dive* validate common schemas :' + files);
+        if (!conf.nconf.get('dmv:resolveRemoteSchemas')){
+          files.forEach(function(fileName) {
+            debug('*dive* validate common schema :' + path.basename(fileName));
+            schema.compileSchema(
+              fullPath,
+              path.basename(fileName),
+              localCommonSchemas
+            );
+          });
+        } else {
+          console.error('**** asynch compile is not implemented, ' +
+            "don't use yet the dmv:resolveRemoteSchemas option ****");
+          throw new Error('asynch compile is not implemented,  ' +
+            "don't use yet dmv:resolveRemoteSchemas option");
         }
       }
+
+      debug('*dive* load common schemas :' +
+        conf.nconf.get('dmv:loadModelCommonSchemas'));
+
+      if (conf.nconf.get('dmv:loadModelCommonSchemas'))
+        localCommonSchemas =
+          schema.addUniqueToArray(
+            localCommonSchemas,
+            schema.loadLocalSchemas(basePath)
+        );
+
+
+      if (path.basename(basePath) != 'dataModels' &&
+          checks.fileExists(fullPath, '^schema\.json')) {
+        debug('*dive* run schema validation');
+        if (!conf.nconf.get('dmv:resolveRemoteSchemas')) {
+          validate =
+            schema.compileSchema(
+              fullPath,
+              'schema.json',
+              localCommonSchemas
+            );
+        } else {
+          console.error('**** asynch compile is not implemented, ' +
+            "don't use yet the dmv:resolveRemoteSchemas option ****");
+          throw new Error('asynch compile is not implemented,  ' +
+            "don't use yet dmv:resolveRemoteSchemas option");
+        }
+      }
+
+//TODO change to check if there are not sons. if sons it's ok to not have a json examples.
+
+      if (path.basename(basePath) != 'dataModels' &&
+          checks.fileExists(fullPath, 'example(-\d+)?\.json') &&
+          conf.nconf.get('dmv:validateExamples')) {
+        debug('*dive* run example validation');
+        schema.validateExamples(fullPath, validate);
+      }
+
+      //dive in again if recursion is enabled
+      var files = fs.readdirSync(basePath);
+
+      if (conf.nconf.get('dmv:recursiveScan'))
+        files.forEach(function(fileName) {
+          debug('*dive* recursion on ' + fileName);
+          try {
+            var fullPath = basePath + path.sep + fileName;
+            var stat = fs.lstatSync(fullPath);
+
+            //it's a directory -> run the validator inside
+            if (stat && stat.isDirectory())
+              dive(fullPath, localCommonSchemas);
+
+          } catch (err) {
+            console.log(err);
+            if (conf.failErrors) throw new Error(err.message);
+          }
+        });
     } catch (err) {
       console.log(err);
       if (conf.failErrors) throw new Error(err.message);
     }
-  });
+  }
 };
 
 console.log('*** Active Warnings ***:' + conf.nconf.get('dmv:warningChecks'));
 
-dive(conf.nconf.get('dmv:path'), conf.nconf.get('dmv:importSchemas'));
+var scanningPath = path.resolve(process.cwd(),conf.nconf.get('dmv:path'));
+
+console.log('scan: '+scanningPath);
+
+/* absolute schema path */
+var schemas = []
+
+conf.nconf.get('dmv:importSchemas').forEach(function(schema) {
+ var schemaFullPath = path.resolve(process.cwd(),schema);
+ schemas.push(schemaFullPath);
+});
+
+debug('full path common schemas :' + schemas);
+
+dive(scanningPath, schemas);
 
 console.log('*** ValidSchemas ***: ' +
   JSON.stringify(msg.validSchemas, null, '\t'));

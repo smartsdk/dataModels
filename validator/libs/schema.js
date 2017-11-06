@@ -9,6 +9,7 @@ var fs = require('fs');
 var request = require('request');
 var msg = require('./message.js');
 var conf = require('./conf.js');
+const debug = require('debug')('schema');
 
 var addSchemas = function(fileList, method, fileType) {
   if (!fileList) return;
@@ -19,11 +20,12 @@ var addSchemas = function(fileList, method, fileType) {
   });
 };
 
-//load  a list of files, supports patterns, e.g. *-schema.json
+//load  a list of files, supports regex
 var getFiles = function(args) {
     var files = [];
     if (Array.isArray(args)) args.forEach(_getFiles);
     else _getFiles(args);
+    debug("*getFiles* - " +args+ " :" +files);
     return files;
 
     function _getFiles(fileOrPattern) {
@@ -43,8 +45,10 @@ var openFile = function(filename, suffix) {
     try {
       try {
         json = JSON.parse(fs.readFileSync(file).toString());
+        debug("*openFile* - JSON" +file+ " :" +json);
       } catch (JSONerr) {
         json = require(file);
+        debug("*openFile* - JSONerr " +file+ " :" +json);
       }
     } catch (err) {
       console.error('error:  ' + err.message.replace(' module', ' ' + suffix));
@@ -66,8 +70,10 @@ module.exports = {
         validate = ajv.compile(schema);
         /* istanbul ignore else */
         if (typeof validate == 'function') {
+          debug("*compileSchema* - valid schema " +file+ " :" +validate);
           msg.addValidSchema(fullPath, 'Schema ' + file + ' is valid');
         } else {
+          debug("*compileSchema* - invalid schema " +file+ " :" +validate);
           msg.addError(fullPath, 'Schema ' + file +
             ' failed to compile to a function');
           if (conf.failErrors) throw new Error(validate.errors);
@@ -99,14 +105,19 @@ module.exports = {
       files.forEach(function(fileName) {
         var data = openFile(fileName, 'example ' + fileName);
         if (typeof validate != 'function') {
-          msg.addError(fullPath, 'Example ' + fileName + ' is invalid: ' +
+         debug("*validateExamples* - " + fileName +
+           " cannot be validated");
+         msg.addError(fullPath, 'Example ' + fileName +
+            ' cannot be validated: ' +
             JSON.stringify(validate.errors, null));
           if (conf.failErrors)
             throw new Error('Fail on Error:' +
               JSON.stringify(msg.errors, null, '\t'));
         }
-        if (validate(data))
-        msg.addValidExample(fullPath, fileName + ' is valid');
+        var validExample = validate(data);
+        debug("*validateExamples* - " +fileName+ " validity : " +validExample);
+        if (validExample)
+          msg.addValidExample(fullPath, fileName + ' is valid');
         else {
           msg.addError(fullPath, 'Example ' + fileName + ' is invalid: ' +
             JSON.stringify(validate.errors, null));
@@ -124,8 +135,9 @@ module.exports = {
   addUniqueToArray: function(array1, array2) {
     var result = Array.from(array1);
     array2.forEach(function(item2) {
-      if (!array1.includes(item2))
-      result.push(item2);
+      if (!array1.includes(item2) &&
+          !array1.includes(path.basename(item2)))
+        result.push(item2);
     });
     return result;
   },
@@ -133,11 +145,12 @@ module.exports = {
   //load a remote schema
   loadSchema: function loadSchema(uri, callback) {
     request(uri, call);
-
+    debug("*loadSchema* - uri: " + uri);
     var call = function(err, res, body) {
       if (err || res.statusCode >= 400)
       callback(err || new Error('Loading error: ' + res.statusCode));
       else {
+        debug("*loadSchema* - body: " + body);
         callback(null, JSON.parse(body));
       }
     };
@@ -156,6 +169,7 @@ module.exports = {
       files = getFiles(fullPath + path.sep + '*-schema.json');
     else
       files = getFiles('*-schema.json');
+    debug("*loadLocalSchemas* - files: " + files);
     return files;
   }
 };
