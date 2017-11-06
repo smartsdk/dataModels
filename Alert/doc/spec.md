@@ -57,17 +57,21 @@ found [here](../schema.json).
   + Attribute type: [Address](https://schema.org/address)
   + Mandatory if `location` is not present.
 
-+ `dateTimeObserved` : The date and time the observation of the alert
++ `dateObserved` : The date and time the observation of the alert
   in ISO8601 UTC format.
   + Attribute type: [DateTime](https://schema.org/DateTime).
   + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
   + Mandatory
 
-+ `dateTimeValidity` : The date and time of validity of the alert in ISO8601
-  UTC format. It can be represented by an specific time instant (the time
-  when the alert expire) or by an ISO8601 interval.
-  + Attribute type: [DateTime](https://schema.org/DateTime) or
-    an ISO8601 interval.
++ `validFrom` : The start date of validity of the alert in ISO8601
+  UTC format.
+  + Attribute type: [DateTime](https://schema.org/DateTime).
+  + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
+  + Optional
+
++ `validTo` : The end date of validity of the alert in ISO8601
+  UTC format.                                                            
+  + Attribute type: [DateTime](https://schema.org/DateTime).
   + Normative References: [ISO8601](https://www.iso.org/standard/40874.html)
   + Optional
 
@@ -101,16 +105,13 @@ found [here](../schema.json).
   "subCategory": "trafficJam",
   "severity": "high",
   "location": {
-    "type": "feature",
-    "geometry": {
-      "type": "Point",
-        "coordinates": [
-          -3.712247222222222,
-          40.423852777777775
-        ]
-    }
+    "type": "Point",
+      "coordinates": [
+        -3.712247222222222,
+        40.423852777777775
+      ]
   },
-  "dateTimeObserved": "2017-01-02T09:25:55.00Z",
+  "dateObserved": "2017-01-02T09:25:55.00Z",
   "description": "The road is completely blocked for 3kms",
   "alertSource":"https://account.lab.fiware.org/users/8"
 }
@@ -125,16 +126,13 @@ found [here](../schema.json).
   "category": "security",
   "subCategory": "robbery",
   "location": {
-    "type": "feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -3.712247222222222,
-        40.423852777777775
-      ]
-    }
+    "type": "Point",
+    "coordinates": [
+      -3.712247222222222,
+      40.423852777777775
+    ]
   },
-  "dateTimeObserved": "2017-04-25T09:25:55.00Z",
+  "dateObserved": "2017-04-25T09:25:55.00Z",
   "description": "Potential robbery in main building",
   "alertSource": "Camera1234",
   "data": {
@@ -142,7 +140,7 @@ found [here](../schema.json).
     "initialFrame": "80",
     "finalFrame": "120"
   },
-  "severity" : ["informational"]
+  "severity" : "informational"
 }
 ```
 
