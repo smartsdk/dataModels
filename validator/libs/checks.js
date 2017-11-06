@@ -107,7 +107,7 @@ module.exports = {
   modelNameValid: function(fullPath) {
     var check = true;
     if (fullPath.charAt(0) != fullPath.charAt(0).toUpperCase())
-      check == false;
+      check = false;
     if (!check &&
         msg.addWarning(fullPath, 'Model folder names should start' +
         ' in capital letter') && conf.failWarnings)

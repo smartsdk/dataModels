@@ -108,10 +108,10 @@ var dive = function(basePath, schemas) {
       if (conf.nconf.get('dmv:loadModelCommonSchemas') &&
           checks.fileExists(fullPath, '.+-schema\.json')) {
 
-        var files = schema.getFiles(fullPath + path.sep + '*-schema.json');
+        var schemaFiles = schema.getFiles(fullPath + path.sep + '*-schema.json');
         debug('*dive* validate common schemas :' + files);
         if (!conf.nconf.get('dmv:resolveRemoteSchemas')){
-          files.forEach(function(fileName) {
+          schemaFiles.forEach(function(fileName) {
             debug('*dive* validate common schema :' + path.basename(fileName));
             schema.compileSchema(
               fullPath,
@@ -198,7 +198,7 @@ var scanningPath = path.resolve(process.cwd(),conf.nconf.get('dmv:path'));
 console.log('scan: '+scanningPath);
 
 /* absolute schema path */
-var schemas = []
+var schemas = [];
 
 conf.nconf.get('dmv:importSchemas').forEach(function(schema) {
  var schemaFullPath = path.resolve(process.cwd(),schema);
