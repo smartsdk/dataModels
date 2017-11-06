@@ -1,12 +1,12 @@
 {
 	"name": "fiware-model-validator",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "A simple validator for FIWARE Data Models",
 	"keywords": [
 		"node",
 		"fiware",
 		"datamodel",
-		"vadlidator",
+		"validator",
 		"ngsi"
 	],
 	"license": "MIT",
