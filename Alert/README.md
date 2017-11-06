@@ -20,14 +20,11 @@ Some examples of context data are: type of alert (traffic, suspicious activities
   "subCategory": "trafficJam",
   "severity": "high",
   "location": {
-    "type": "feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -3.712247222222222,
-        40.423852777777775
-      ]
-    }
+    "type": "Point",
+    "coordinates": [
+      -3.712247222222222,
+      40.423852777777775
+    ]
   },
   "dateTimeObserved": "2017-01-02T09:25:55.00Z",
   "description": "The road is completely blocked for 3kms",
