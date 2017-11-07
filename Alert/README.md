@@ -26,7 +26,7 @@ Some examples of context data are: type of alert (traffic, suspicious activities
       40.423852777777775
     ]
   },
-  "dateTimeObserved": "2017-01-02T09:25:55.00Z",
+  "dateObserved": "2017-01-02T09:25:55.00Z",
   "description": "The road is completely blocked for 3kms",
   "alertSource": "https://account.lab.fiware.org/users/8"
 }
