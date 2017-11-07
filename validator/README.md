@@ -39,6 +39,11 @@ Command line available options are:
 
 If you want to execute `validate` outside the root directory and you want to import the common schemas, you have to import them using the correct path.
 
+If you experience un expected behaviours, you can check the process using the debug functionality, e.g.:
+```
+DEBUG=* validate -p .
+```
+
 ### Default configuration
 For a more fine grained configuration you can create a `config.json` file. An example is provided in the repository.
 
