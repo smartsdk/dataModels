@@ -1,0 +1,19 @@
+{
+  "id": "VisualEvent123",
+  "type": "Alert",
+  "category": "security",
+  "subCategory": "robbery",
+  "location": {
+     "type": "Point",
+     "coordinates": [-3.712247222222222, 40.423852777777775]
+  },
+  "dateObserved": "2017-04-25T09:25:55.00Z",
+  "description": "Potential robbery in main building",
+  "alertSource": "Camera1234",
+  "data": {
+    "videoURL": "www.smartsecurity.com/video123.mp4",
+    "initialFrame": "80",
+    "finalFrame": "120"
+  },
+  "severity" : "informational"
+}
