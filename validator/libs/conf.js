@@ -5,7 +5,7 @@
 var nconf = require('nconf');
 var fs = require('fs');
 var schema = require('./schema.js');
-var pjson = require('./package.json');
+var pjson = require('../package.json');
 
 var ignoreWarnings = false;
 var failWarnings = false;
@@ -143,6 +143,10 @@ module.exports = {
       return true;
     }
     return false;
+  },
+
+  showHelp: function() {
+      nconf.stores.argv.showHelp();
   },
 
   version: function() {

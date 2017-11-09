@@ -26,7 +26,7 @@ try {
 } catch (err) {
   process.exitCode = -1;
   console.error('\n Invalid Configuration:' + err.message + '\n');
-  nconf.stores.argv.showHelp();
+  conf.showHelp();
   return;
 }
 

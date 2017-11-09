@@ -35,6 +35,7 @@ Command line available options are:
   * `ignore` -  do nothing and do not print warnings.
   * `fail` - print warnings, and fails.         
 * ``-p, --dmv:path``. The path of FIWARE Data Model(s) to be validated (if recursion enabled, it will be the starting point of recursion)
+* ``-v, --version``. Print the validator version
 * ``-h, --help``. Print the help message
 
 If you want to execute `validate` outside the root directory and you want to import the common schemas, you have to import them using the correct path.
