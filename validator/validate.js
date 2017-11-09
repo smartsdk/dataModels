@@ -13,10 +13,22 @@ const debug = require('debug')('validate');
 conf.load();
 /* load default values if not provided: as bug fix to nconf bug */
 conf.defaults();
-/* print help if -h option */
-conf.help();
+/* print help if -h option and exit */
+if (conf.help())
+  return;
+/* print version if -v option and exit */
+if (conf.version())
+  return;
 /* validate command line input */
-conf.validate();
+try {
+  conf.validate();
+  conf.validatePath();
+} catch (err) {
+  process.exitCode = -1;
+  console.error('\n Invalid Configuration:' + err.message + '\n');
+  nconf.stores.argv.showHelp();
+  return;
+}
 
 // Path Scan function
 
@@ -156,8 +168,6 @@ var dive = function(basePath, schemas) {
         }
       }
 
-//TODO change to check if there are not sons. if sons it's ok to not have a json examples.
-
       if (path.basename(basePath) != 'dataModels' &&
           checks.fileExists(fullPath, '^example(-\\d+)?\\.json') &&
           conf.nconf.get('dmv:validateExamples')) {
@@ -195,14 +205,14 @@ console.log('*** Active Warnings ***:' + conf.nconf.get('dmv:warningChecks'));
 
 var scanningPath = path.resolve(process.cwd(),conf.nconf.get('dmv:path'));
 
-console.log('scan: '+scanningPath);
+console.log('scan: ' + scanningPath);
 
 /* absolute schema path */
 var schemas = [];
 
 conf.nconf.get('dmv:importSchemas').forEach(function(schema) {
- var schemaFullPath = path.resolve(process.cwd(),schema);
- schemas.push(schemaFullPath);
+  var schemaFullPath = path.resolve(process.cwd(),schema);
+  schemas.push(schemaFullPath);
 });
 
 debug('full path common schemas :' + schemas);

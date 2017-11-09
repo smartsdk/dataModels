@@ -5,6 +5,7 @@
 var nconf = require('nconf');
 var fs = require('fs');
 var schema = require('./schema.js');
+var pjson = require('./package.json');
 
 var ignoreWarnings = false;
 var failWarnings = false;
@@ -43,6 +44,11 @@ module.exports = {
           '(if recursion enabled, it will be the starting point of recursion)',
         demand: false,
         type: 'string',
+      },
+      'v' : {
+        alias: 'version',
+        describe: 'Print the current version',
+        demand: false,
       },
       'h' : {
         alias: 'help',
@@ -128,39 +134,37 @@ module.exports = {
       extendRefs: nconf.get('ajv:extendRefs'),
       loadSchema: schema.loadSchema,
     };
+    return true;
   },
 
   help: function() {
     if (nconf.get('h')) {
       nconf.stores.argv.showHelp();
-      return;
+      return true;
     }
+    return false;
   },
 
+  version: function() {
+    if (nconf.get('v')) {
+      console.log("data model validator version: " + pjson.version);
+      return true;
+    }
+    return false;
+  },
+  /* Check configuration validity */
   validate: function() {
-    /* Check configuration validity */
-    try {
-      nconf.required(['dmv:path',]);
-    } catch (err) {
-      process.exitCode = -1;
-      console.error('\n Invalid Configuration:' + err.message + '\n');
-      nconf.stores.argv.showHelp();
-      return;
-    }
-    /* Check if path is valid */
-    try {
-      // Query the entry
-      var stats = fs.lstatSync(nconf.get('dmv:path'));
+    nconf.required(['dmv:path',]);
+    return true;
+  },
 
-      // Is it a directory?
-      if (!stats.isDirectory()) {
-        throw new Error('The path passed must be a directory');
-      }
+  /* Check path validity */
+  validatePath: function() {
+    var stats = fs.lstatSync(nconf.get('dmv:path'));
+    // Is it a directory?
+    if (!stats.isDirectory()) {
+      throw new Error('The path passed must be a directory');
     }
-    catch (err) {
-      process.exitCode = -1;
-      console.error('\n Invalid Path: ' + err.message + '\n');
-      return;
-    }
+    return true;
   },
 };
