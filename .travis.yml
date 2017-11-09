@@ -33,7 +33,7 @@ matrix:
     - language: node_js
       python:
       node_js:
-        - 7
+        - 8
       install:
         - npm install -g fiware-model-validator
       before_script:
