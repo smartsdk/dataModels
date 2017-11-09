@@ -15,28 +15,20 @@ script:
 
 matrix:
   include:
-  ## linters for json and JavaScript files
     - language: node_js
       python:
       node_js:
         - 8
       install:
+      ## linters for json and JavaScript files
         - npm i -g eslint --save-dev
         - npm install eslint-plugin-json --save-dev -g
         - npm install -g jshint
+      ## Data model validator
+        - npm install -g fiware-model-validator
       before_script:
         - eslint --ext .json .
         - jshint .
-      script:
-        - true
-  ## Data model validator
-    - language: node_js
-      python:
-      node_js:
-        - 8
-      install:
-        - npm install -g fiware-model-validator
-      before_script:
         - validate -p .
       script:
         - true
