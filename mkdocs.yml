@@ -11,7 +11,7 @@ extra_css: ["https://fiware.org/style/fiware_readthedocs.css"]
 pages:
   - 'Home': index.md
   - 'Guidelines'  : guidelines.md
-  - 'Alarms'                     : 'Alarm/doc/introduction.md'
+  - 'Alert'                            : 'Alert/doc/spec.md'
   - 'Civic Issue Tracking':
       - 'Introduction'                 : 'IssueTracking/doc/introduction.md'
       - 'Open311:ServiceType'          : 'IssueTracking/Open311_ServiceType/doc/spec.md' 
