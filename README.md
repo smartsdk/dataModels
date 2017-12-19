@@ -2,9 +2,9 @@
 
 [![MIT license][license-image]][license-url]
 [![License](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0)
-![Build badge](https://img.shields.io/travis/Fiware/dataModels.svg "Travis build status")
+[![Build badge](https://img.shields.io/travis/Fiware/dataModels.svg "Travis build status")](https://travis-ci.org/Fiware/dataModels/)
 [![Documentation badge](https://readthedocs.org/projects/fiware-datamodels/badge/?version=latest)](http://fiware-datamodels.readthedocs.org/en/latest/?badge=latest)
-[![Support badge]( https://img.shields.io/badge/support-askbot-yellowgreen.svg)](http://ask.fiware.org)
+[![Support badge](https://img.shields.io/badge/support-askbot-yellowgreen.svg)](http://ask.fiware.org)
 
 This repository contains: 
 * code that allows to expose different harmonized datasets useful for different applications.
