@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "id": "https://smartsdk.github.io/dataModels/User/UserContext/schema.json",
+  "id": "https://fiware.github.io/dataModels/User/UserContext/schema.json",
   "title": "FIWARE - User Context schema",
   "description": "Information on the context of an anonymized in a given point in time",
   "type": "object",
@@ -20,8 +20,15 @@
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
         },
         "refUser": {
-          "type": "string",
-          "format": "uri"
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
         },
         "type": {
           "type": "string",

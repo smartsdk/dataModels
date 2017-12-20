@@ -6,5 +6,5 @@
   "activityStart": "2016-11-30T07:00:00.00Z",
   "refObject": "Car1",
   "refTarget": "Office1",
-  "refActor": "https://account.lab.fiware.org/users/1"
+  "refActor": "UserId1"
 }
