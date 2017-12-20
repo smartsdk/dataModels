@@ -8,11 +8,11 @@ scenarios, from modeling social activities on a web site (e.g. Federico shares a
 
 The model is represents users activities using the following predicate structure: `(Actor, Verb, Object*, Target*)`, where `Object` and `Target` are optional.
 
-The `Actor` is identified by the attribute `refActor`, the `Verb` is identified by `activityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`. In generally it is assumed that the different part of the predicate are references to other NGSI entities, with the exception of the `Actor`. Within FIWARE, `refActor` could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
+The `Actor` is identified by the attribute `refActor`, the `Verb` is identified by `activityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`. In generally it is assumed that the different part of the predicate are references to other NGSI entities, with the exception of the `Actor`.
 
 ## Data Model
 
-A JSON Schema corresponding to this data model can be found [here](https://smartsdk.github.io/dataModels/User/UserActivity/schema.json).
+A JSON Schema corresponding to this data model can be found [here](https://fiware.github.io/dataModels/User/UserActivity/schema.json).
 
 + `id` : Unique identifier.
 
@@ -34,7 +34,7 @@ A JSON Schema corresponding to this data model can be found [here](https://smart
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
-+ `refActor` : Reference to the actor of the activity. Within FIWARE, `refActor` could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
++ `refActor` : Reference to the actor of the activity.
     + Attribute type: [https://schema.org/URL](https://schema.org/URL)
     + Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)
     + Mandatory
@@ -49,7 +49,7 @@ A JSON Schema corresponding to this data model can be found [here](https://smart
     + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
     + Optional
 
-+ `refTarget` : Reference to the target of the action, it could be an NGSI entity (identified via entity reference) or an external object (identified via uri).
++ `refTarget` : Reference to the target of the action.
     + Attribute type: `string` or [https://schema.org/URL](https://schema.org/URL)
     + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
     + Optional
@@ -65,7 +65,7 @@ A JSON Schema corresponding to this data model can be found [here](https://smart
   "activityStart": "2016-11-30T07:00:00.00Z",
   "refObject": "Car1",
   "refTarget": "Office1",
-  "refActor": "https://account.lab.fiware.org/users/1"
+  "refActor": "UserId1"
 }
 ```
 

@@ -4,8 +4,7 @@
 
 This data model describe the Context of a User. No personal data is encoded in
 the model. The actual User data are stored in a different end point, as identified
-by the `refUser` property. Within FIWARE, this reference could point to the end of
-the FIWARE Identity Manager, where FIWARE user profiles are stored.
+by the `refUser` property.
 
 ## Data Model
 
@@ -23,8 +22,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional    
 
-+ `refUser` : reference to the actual User to which this UserContext is associated. Within FIWARE, this reference could point to the end of
-the FIWARE Identity Manager, where FIWARE user profiles are stored.
++ `refUser` : reference to the (anonymised) User to which this UserContext is associated.
     + Attribute type: [https://schema.org/URL](https://schema.org/URL)
     + Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)
     + Mandatory
@@ -61,7 +59,7 @@ the FIWARE Identity Manager, where FIWARE user profiles are stored.
   },
   "refActivity": "UserActivity1",
   "refDevice": "Device1",
-  "refUser": "https://account.lab.fiware.org/users/1"
+  "refUser": "UserId1"
 }
 ```
 

@@ -6,7 +6,7 @@ scenarios, from modelling social activities on a web site (e.g. Federico shares 
 
 The model is represents users activities using the following predicate structure: `(Actor, Verb, Object*, Target*)`, where `Object` and `Target` are optional.
 
-The `Actor` is identified by the attribute `refActor`, the `Verb` is identified by `refActivityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`. In generally it is assumed that the different part of the predicate are references to other NGSI entities, with the exception of the `Actor`. Within FIWARE, `refActor` could point to the end of the FIWARE Identity Manager, where FIWARE user profiles are stored.
+The `Actor` is identified by the attribute `refActor`, the `Verb` is identified by `refActivityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`. In generally it is assumed that the different part of the predicate are references to other NGSI entities, with the exception of the `Actor`.
 
 ## Examples of use
 
@@ -19,6 +19,6 @@ The `Actor` is identified by the attribute `refActor`, the `Verb` is identified 
   "activityStart": "2016-11-30T07:00:00.00Z",
   "refObject": "Car1",
   "refTarget": "Office1",
-  "refActor": "https://account.lab.fiware.org/users/1"
+  "refActor": "UserId1"
 }
 ```
