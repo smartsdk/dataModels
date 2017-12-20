@@ -33,6 +33,10 @@
           "type": "number",
           "minimum": 0
         },
+        "illuminance": {
+          "type": "number",
+          "minimum": 0
+        },
         "pressureTendency": {
           "oneOf": [
             {

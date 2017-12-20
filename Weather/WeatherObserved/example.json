@@ -27,5 +27,6 @@
             "temperature": 3.3,
             "windDirection": -45,
             "windSpeed": 2,
+            "illuminance": 1000,
             "refDevice": "device-0A3478"
 }
