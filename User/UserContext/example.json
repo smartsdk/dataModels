@@ -9,5 +9,5 @@
     ]
   },
   "refActivity": "UserActivity1",
-  "refUser": "https://account.lab.fiware.org/users/1"
+  "refUser": "UserId1"
 }
