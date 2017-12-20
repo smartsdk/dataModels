@@ -40,7 +40,7 @@ If the device is not a constrained device this property can be left as `null` or
         + (`temperature`, `humidity`, `light`, `motion`, `fillingLevel`, `occupancy`, `power`, `pressure`, `smoke`, `energy`, `airPollution`, `noiseLevel`,
         `weatherConditions`, `precipitation`, `windSpeed`, `windDirection`, `barometricPressure`, `solarRadiation`, `depth`, `pH`, `conductivity`,
         `conductance`, `tss`, `tds`, `turbidity`, `salinity`, `orp`, `cdom`, `waterPollution`, `location`, `speed`, `heading`, `weight`, `waterConsumption`,
-        `gasComsumption`, `electricityConsumption`)
+        `gasComsumption`, `electricityConsumption`, `soilMoisture`, `trafficFlow`)
     + Mandatory
         
 + `function` :  The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function.

@@ -31,6 +31,52 @@
             "C2"
           ]
         },
+        "controlledProperty": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "temperature",
+              "humidity",
+              "light",
+              "motion",
+              "fillingLevel",
+              "occupancy",
+              "power",
+              "pressure",
+              "smoke",
+              "energy",
+              "airPollution",
+              "noiseLevel",
+              "weatherConditions",
+              "precipitation",
+              "windSpeed",
+              "windDirection",
+              "barometricPressure",
+              "solarRadiation",
+              "depth",
+              "pH",
+              "conductivity",
+              "conductance",
+              "tss",
+              "tds",
+              "turbidity",
+              "salinity",
+              "orp",
+              "cdom",
+              "waterPollution",
+              "location",
+              "speed",
+              "heading",
+              "weight",
+              "waterConsumption",
+              "gasComsumption",
+              "electricityConsumption",
+              "soilMoisture",
+              "trafficFlow"
+            ]
+          }
+        },
         "function": {
           "type": "array",
           "items": {
