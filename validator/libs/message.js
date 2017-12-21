@@ -52,7 +52,7 @@ module.exports = {
   //add valid example to the valid examples map for a given model
   addValidExample: function(modelPath, message) {
     return addMessageToMap(modelPath, message, validExamples);
-  }
+  },
   //add valid example to the valid examples map for a given model
   addSupportedExample: function(modelPath, message) {
     return addMessageToMap(modelPath, message, supportedExamples);
