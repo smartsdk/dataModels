@@ -200,12 +200,12 @@ module.exports = {
                 JSON.stringify(data, null, 2));
               cb(null, data);
             }
-          })
+          });
         });
 
 	createEntity(body);
 
-        var entityId = body['id']; // String | Id of the entity to be deleted
+        var entityId = body.id; // String | Id of the entity to be deleted
 
         var deleteEntity = deasync(function (entityId, cb){
           apiInstance.removeEntity(entityId, null, function(error, data, response) {
@@ -216,7 +216,7 @@ module.exports = {
               debug('*exampleSupported* - remove entity API called successfully.');
               cb(null, data);
             }
-          })
+          });
         });
 
         deleteEntity(entityId);
