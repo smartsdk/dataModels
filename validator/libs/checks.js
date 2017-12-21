@@ -183,8 +183,6 @@ module.exports = {
 
     var files = schema.getFiles(fullPath + path.sep + 'example*.json');
 
-    var fileName = null;
-
     try {
       files.forEach(function(fileName) {
         var body = schema.openFile(fileName, 'example ' + fileName);
@@ -203,7 +201,7 @@ module.exports = {
           });
         });
 
-	createEntity(body);
+        createEntity(body);
 
         var entityId = body.id; // String | Id of the entity to be deleted
 
@@ -222,10 +220,10 @@ module.exports = {
         deleteEntity(entityId);
       });
     } catch (err) {
-       msg.addError(fullPath, 'JSON Example ' + fileName + ' is not supported by ' +
+       msg.addError(fullPath, 'JSON Example is not supported by ' +
          'contextBroker: ' +  JSON.stringify(err));
        if (conf.failErrors)
-         throw new Error('Fail on Error: JSON Example ' + fileName + ' is not supported by ' +
+         throw new Error('Fail on Error: JSON Example is not supported by ' +
          'contextBroker: ' +  JSON.stringify(err));
     }
     debug("*exampleSupported* - " + fullPath + ": "+ check);
