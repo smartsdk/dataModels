@@ -5,6 +5,7 @@
 var fs = require('fs');
 var glob = require('glob');
 var path = require('path');
+var deasync = require('deasync');
 var msg = require('./message.js');
 var conf = require('./conf.js');
 var schema = require('./schema.js');
@@ -180,34 +181,52 @@ module.exports = {
       options: "keyValues"
     };
 
-    var files = getFiles(fullPath + path.sep + 'example*.json');
+    var files = schema.getFiles(fullPath + path.sep + 'example*.json');
+
+    var fileName = null;
 
     try {
       files.forEach(function(fileName) {
         var body = schema.openFile(fileName, 'example ' + fileName);
 
-        var callback = function(error, data, response) {
-          if (error) {
-            check = false;
-            if (!containsModelFolders(fullPath) &&
-                msg.addWarning(fullPath, 'JSON Example file not supported by' +
-                'contextBroker') && conf.failWarnings)
-              throw new Error('Fail on Warnings: ' +
-                JSON.stringify(msg.warnings, null, '\t'));
-            debug("*exampleSupported* - " + fullPath + ": "+ check);
-          } else {
-            msg.addSupportedExample(fullPath, fileName + ' is supported');
-            debug('*exampleSupported* - API called successfully. Returned data: ' +
-              JSON.stringify(data, null, 2));
-          }
-        };
+        var createEntity = deasync(function (body, cb){
+          apiInstance.createEntity(body, opts, function(error, data, response) {
+            if (error){
+              check = false;
+              cb(error, null);
+            } else {
+              msg.addSupportedExample(fullPath, fileName + ' is supported');
+              debug('*exampleSupported* - API called successfully. Returned data: ' +
+                JSON.stringify(data, null, 2));
+              cb(null, data);
+            }
+          })
+        });
 
-        apiInstance.createEntity(body, opts, callback);
+	createEntity(body);
+
+        var entityId = body['id']; // String | Id of the entity to be deleted
+
+        var deleteEntity = deasync(function (entityId, cb){
+          apiInstance.removeEntity(entityId, null, function(error, data, response) {
+            if (error) {
+              debug('*exampleSupported* - remove entity API error: ' +  JSON.stringify(error));
+              cb(error, null);
+            } else {
+              debug('*exampleSupported* - remove entity API called successfully.');
+              cb(null, data);
+            }
+          })
+        });
+
+        deleteEntity(entityId);
       });
     } catch (err) {
-      if (conf.failErrors)
-        throw new Error('Fail on Error:' +
-          JSON.stringify(msg.errors, null, '\t'));
+       msg.addError(fullPath, 'JSON Example ' + fileName + ' is not supported by ' +
+         'contextBroker: ' +  JSON.stringify(err));
+       if (conf.failErrors)
+         throw new Error('Fail on Error: JSON Example ' + fileName + ' is not supported by ' +
+         'contextBroker: ' +  JSON.stringify(err));
     }
     debug("*exampleSupported* - " + fullPath + ": "+ check);
     return check;

@@ -230,6 +230,8 @@ console.log('*** ValidSchemas ***: ' +
   JSON.stringify(msg.validSchemas, null, '\t'));
 console.log('*** ValidExamples ***: ' +
   JSON.stringify(msg.validExamples, null, '\t'));
+console.log('*** SupportedExamples ***: ' +
+  JSON.stringify(msg.supportedExamples, null, '\t'));
 console.log('*** Warnings ***: ' +
   JSON.stringify(msg.warnings, null, '\t'));
 console.log('*** Errors ***: ' +
