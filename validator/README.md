@@ -77,6 +77,6 @@ Options available are:
 * `ajv:allErrors`: when `true` check all rules collecting all errors, when `false` return after the first error. See [ajv](https://github.com/epoberezkin/ajv) for more details. Default value: `true`
 
 ## Compiling the validator
-Should you want to change the code of the validator, to install your modified version, you  simple need compile it with the following command:
+Should you want to change the code of the validator, to install your modified version, you simply need compile it with the following command:
 
 ``npm install -g``

@@ -62,7 +62,7 @@ var fileExists = function(basePath, regex) {
 var getApiEntityClient = function() {
    if (apiEntityClient == null) {
       var api  = NgsiV2.ApiClient.instance;
-      api.basePath = conf.nconf.get('dmv:contextBrokerUrl')
+      api.basePath = conf.nconf.get('dmv:contextBrokerUrl');
       apiEntityClient = new NgsiV2.EntitiesApi();
     }
    return apiEntityClient;
@@ -174,7 +174,7 @@ module.exports = {
   //check if an example is supported by contextBroker
   exampleSupported: function(fullPath) {
     var check = true;
-    getApiEntityClient
+    var apiInstance=getApiEntityClient();
 
     var opts = {
       options: "keyValues"
@@ -185,10 +185,14 @@ module.exports = {
     var callback = function(error, data, response) {
       if (error) {
         check = false;
-        msg.addWarning(fullPath, 'JSON Example file not supported by' +
-          'contextBroker') && conf.failWarnings)
+        if (!check && !containsModelFolders(fullPath) &&
+            msg.addWarning(fullPath, 'JSON Example file not supported by' +
+            'contextBroker') && conf.failWarnings)
+          throw new Error('Fail on Warnings: ' +
+            JSON.stringify(msg.warnings, null, '\t'));
+        debug("*exampleSupported* - " + fullPath + ": "+ check);
       } else {
-        debug('API called successfully. Returned data: ' +
+        debug('*exampleSupported* - API called successfully. Returned data: ' +
           JSON.stringify(data, null, 2));
       }
     };
