@@ -47,13 +47,13 @@ module.exports = {
       },
       'c': {
         alias: 'dmv:contextBroker',
-        describe: 'Enable example testing with Orion contextBroker',
+        describe: 'Enable JSON example testing with Orion Context Broker',
         type: 'boolean',
         demand: false,
       },
       'u': {
         alias: 'dmv:contextBrokerUrl',
-        describe: 'Orion contextBroker Url for Example testing',
+        describe: 'Orion Context Broker Url for example testing',
         type: 'string',
         demand: false,
       },

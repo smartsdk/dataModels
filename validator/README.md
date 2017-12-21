@@ -35,6 +35,8 @@ Command line available options are:
   * `ignore` -  do nothing and do not print warnings.
   * `fail` - print warnings, and fails.         
 * ``-p, --dmv:path``. The path of FIWARE Data Model(s) to be validated (if recursion enabled, it will be the starting point of recursion)
+* ``-c, --dmv:contextBroker``. Enable example testing with Orion Context Broker
+* ``-u, --dmv:contextBrokerUrl``. Orion Context Broker URL for Example testing
 * ``-v, --version``. Print the validator version
 * ``-h, --help``. Print the help message
 
@@ -66,6 +68,8 @@ Options available are:
 * `dmv:loadModelCommonSchemas`: automatically include any file named ``*-schema.json`` in data path.
 * `dmv:ignoreFolders`: The list of folder names that should be ignored. Default value: `['harvest','auxiliary']`
 * `dmv:docFolders`: The list of folder names that are expected to contain Documentation: Default value: `['doc']`
+* `dmv:contextBroker`: Enable JSON example testing with Orion Context Broker. Default value: `false`
+* `dmv:contextBrokerUrl`: The URL for the Orion Context Broker for JSON example testing. Default value: `http://localhost:1026/v2`
 * `ajv:missingRefs`: handling of missing referenced schemas. See [ajv](https://github.com/epoberezkin/ajv) for more details. Option values:
   * `true (default)` - if the reference cannot be resolved during compilation the exception is thrown. The thrown error has properties missingRef (with hash fragment) and missingSchema (without it). Both properties are resolved relative to the current base id (usually schema id, unless it was substituted).
   * `ignore` - to log error during compilation and always pass validation.
