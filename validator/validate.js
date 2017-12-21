@@ -175,6 +175,13 @@ var dive = function(basePath, schemas) {
         schema.validateExamples(fullPath, validate);
       }
 
+      if (path.basename(basePath) != 'dataModels' &&
+          checks.fileExists(fullPath, '^example(-\\d+)?\\.json') &&
+          conf.nconf.get('dmv:contextBroker')) {
+        debug('*dive* run example validation');
+        checks.exampleSupported(fullPath);
+      }
+
       //dive in again if recursion is enabled
       var files = fs.readdirSync(basePath);
 

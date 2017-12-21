@@ -45,6 +45,18 @@ module.exports = {
         demand: false,
         type: 'string',
       },
+      'c': {
+        alias: 'dmv:contextBroker',
+        describe: 'Enable example testing with Orion contextBroker',
+        type: 'boolean',
+        demand: false,
+      },
+      'u': {
+        alias: 'dmv:contextBrokerUrl',
+        describe: 'Orion contextBroker Url for Example testing',
+        type: 'string',
+        demand: false,
+      },
       'v' : {
         alias: 'version',
         describe: 'Print the current version',
@@ -106,6 +118,12 @@ module.exports = {
     }
     if (nconf.get('dmv:externalSchemaFolders') == null) {
       nconf.set('dmv:externalSchemaFolders', ['externalSchema',]);
+    }
+    if (nconf.get('dmv:contextBroker') == null) {
+      nconf.set('dmv:contextBroker', false);
+    }
+    if (nconf.get('dmv:contextBrokerUrl') == null) {
+      nconf.set('dmv:contextBrokerUrl', 'http://localhost:1026/v2');
     }
     if (nconf.get('ajv:missingRefs') == null) {
       nconf.set('ajv:missingRefs', 'true');

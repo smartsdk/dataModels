@@ -7,8 +7,10 @@ var glob = require('glob');
 var path = require('path');
 var msg = require('./message.js');
 var conf = require('./conf.js');
+var schema = require('./schema.js');
+var NgsiV2 = require('ngsi_v2');
 const debug = require('debug')('checks');
-
+var apiEntityClient = null;
 
 //if a path contains folders beyond the doc and ignore ones,
 // returns true, otherwise false
@@ -54,6 +56,16 @@ var fileExists = function(basePath, regex) {
   });
   if (counter > 0) return true;
   else return false;
+};
+
+//returns an EntityClient API for the Orion ContextBroker
+var getApiEntityClient = function() {
+   if (apiEntityClient == null) {
+      var api  = NgsiV2.ApiClient.instance;
+      api.basePath = conf.nconf.get('dmv:contextBrokerUrl')
+      apiEntityClient = new NgsiV2.EntitiesApi();
+    }
+   return apiEntityClient;
 };
 
 module.exports = {
@@ -158,6 +170,36 @@ module.exports = {
     debug("*exampleExist* - " + fullPath + ": "+ check);
     return check;
   },
+
+  //check if an example is supported by contextBroker
+  exampleSupported: function(fullPath) {
+    var check = true;
+    getApiEntityClient
+
+    var opts = {
+      options: "keyValues"
+    };
+
+    var body = schema.openFile(fullPath);
+
+    var callback = function(error, data, response) {
+      if (error) {
+        check = false;
+        msg.addWarning(fullPath, 'JSON Example file not supported by' +
+          'contextBroker') && conf.failWarnings)
+      } else {
+        debug('API called successfully. Returned data: ' +
+          JSON.stringify(data, null, 2));
+      }
+    };
+
+    apiInstance.createEntity(body, opts, callback);
+
+    debug("*exampleSupported* - " + fullPath + ": "+ check);
+    return check;
+  },
+
+
 
   docValid: function(fullpath) {
     console.log('*** docValid: not implemented ***');

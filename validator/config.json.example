@@ -24,7 +24,9 @@
       "validator"
     ],
     "externalSchemaFolders" : ["externalSchema"],
-    "docFolders": ["doc"]
+    "docFolders": ["doc"],
+    "contextBroker": false;
+    "contextBrokerUrl": "http://localhost:1026/v2";
   },
   "ajv":{
    "missingRefs": "true",
