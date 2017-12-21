@@ -178,7 +178,7 @@ var dive = function(basePath, schemas) {
       if (path.basename(basePath) != 'dataModels' &&
           checks.fileExists(fullPath, '^example(-\\d+)?\\.json') &&
           conf.nconf.get('dmv:contextBroker')) {
-        debug('*dive* run example validation');
+        debug('*dive* check example support');
         checks.exampleSupported(fullPath);
       }
 

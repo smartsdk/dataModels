@@ -8,6 +8,7 @@ var warnings = {};
 var errors = {};
 var validSchemas = {};
 var validExamples = {};
+var supportedExamples = {};
 
 var addMessageToMap = function(modelPath, message, map) {
   var rootModel = getRootModelName(modelPath);
@@ -31,6 +32,7 @@ module.exports = {
   errors: errors,
   validSchemas: validSchemas,
   validExamples: validExamples,
+  supportedExamples: supportedExamples,
 
   //add warning to the warnings map for a given model
   addWarning: function(modelPath, message) {
@@ -50,5 +52,9 @@ module.exports = {
   //add valid example to the valid examples map for a given model
   addValidExample: function(modelPath, message) {
     return addMessageToMap(modelPath, message, validExamples);
+  }
+  //add valid example to the valid examples map for a given model
+  addSupportedExample: function(modelPath, message) {
+    return addMessageToMap(modelPath, message, supportedExamples);
   }
 };

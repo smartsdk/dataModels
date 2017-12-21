@@ -180,25 +180,35 @@ module.exports = {
       options: "keyValues"
     };
 
-    var body = schema.openFile(fullPath);
+    var files = getFiles(fullPath + path.sep + 'example*.json');
 
-    var callback = function(error, data, response) {
-      if (error) {
-        check = false;
-        if (!check && !containsModelFolders(fullPath) &&
-            msg.addWarning(fullPath, 'JSON Example file not supported by' +
-            'contextBroker') && conf.failWarnings)
-          throw new Error('Fail on Warnings: ' +
-            JSON.stringify(msg.warnings, null, '\t'));
-        debug("*exampleSupported* - " + fullPath + ": "+ check);
-      } else {
-        debug('*exampleSupported* - API called successfully. Returned data: ' +
-          JSON.stringify(data, null, 2));
-      }
-    };
+    try {
+      files.forEach(function(fileName) {
+        var body = schema.openFile(fileName, 'example ' + fileName);
 
-    apiInstance.createEntity(body, opts, callback);
+        var callback = function(error, data, response) {
+          if (error) {
+            check = false;
+            if (!containsModelFolders(fullPath) &&
+                msg.addWarning(fullPath, 'JSON Example file not supported by' +
+                'contextBroker') && conf.failWarnings)
+              throw new Error('Fail on Warnings: ' +
+                JSON.stringify(msg.warnings, null, '\t'));
+            debug("*exampleSupported* - " + fullPath + ": "+ check);
+          } else {
+            msg.addSupportedExample(fullPath, fileName + ' is supported');
+            debug('*exampleSupported* - API called successfully. Returned data: ' +
+              JSON.stringify(data, null, 2));
+          }
+        };
 
+        apiInstance.createEntity(body, opts, callback);
+      });
+    } catch (err) {
+      if (conf.failErrors)
+        throw new Error('Fail on Error:' +
+          JSON.stringify(msg.errors, null, '\t'));
+    }
     debug("*exampleSupported* - " + fullPath + ": "+ check);
     return check;
   },
