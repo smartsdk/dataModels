@@ -165,7 +165,11 @@ Applications *SHOULD* inspect the value of this property at parent's level if it
 + `refParkingSpot` : Parking spots belonging to this group.
     + Attribute type: List of references to [ParkingSpot](../../ParkingSpot/doc/spec.md)
     + Optional
-        
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
+a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
+mode (`options=keyValues`).
+
 ## Examples of use
 
 A group of parking spots especially for disabled people. 

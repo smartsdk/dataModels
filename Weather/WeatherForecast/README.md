@@ -14,6 +14,10 @@ The scripts present in this folder are the following:
 
 Please check data licenses at the original data sources before using this data in an application. 
 
+**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
+a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
+mode (`options=keyValues`).
+
 ## Examples of use
 
 You can use a FIWARE instance described [here](https://docs.google.com/document/d/1lHP7XS-7TNzsxLa0bNFb-96JnJXh0ecIHS3-H0qMREg/edit?usp=sharing)

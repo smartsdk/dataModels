@@ -176,7 +176,11 @@ This value must aggregate free spots from all groups devoted to special parking 
  For instance, it can be a neighbourhood, burough or district.
     + Attribute type: [Text](http://schema.org/Text)
     + Optional    
-  
+
+**Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with
+a [FIWARE NGSI version 2](http://fiware.github.io/specifications/ngsiv2/stable) API implementation, you need to use the `keyValues`
+mode (`options=keyValues`).
+
 ## Examples of use
 
 An on street parking which contains a group of parking spots reserved for disabled people.
@@ -184,6 +188,7 @@ At root entity level is announced that special parking spots for disabled are pr
 
 Main `OnstreetParking` entity. 
 
+```
     {
       "id": "santander:daoiz_velarde_1_5",
       "type": "OnStreetParking",
@@ -214,11 +219,13 @@ Main `OnstreetParking` entity.
       "areaServed": "Zona Centro",
       "refParkingGroup: ["daoiz-velarde-1-5-main", daoiz-velarde-1-5-disabled"]
     }
+```
 
 Two different parking groups are needed in this case:
 
 A/ Subrogated `ParkingGroup` which gives details about the regular parking spots
 
+```
     {
       "id": "daoiz-velarde-1-5-main",
       "type": "ParkingGroup",
@@ -231,10 +238,11 @@ A/ Subrogated `ParkingGroup` which gives details about the regular parking spots
       "requiredPermit": "blueZonePermit"
       /* Other required attributes */
     }
-
+```
 
 B/ Subrogated `ParkingGroup`. `refPArkingSite` is a pointer to the root entity. All the parking spots are free. 
 
+```
     {
       "id": "daoiz-velarde-1-5-disabled",
       "type": "ParkingGroup",
@@ -248,6 +256,7 @@ B/ Subrogated `ParkingGroup`. `refPArkingSite` is a pointer to the root entity. 
       "requiredPermit": "disabledPermit,blueZonePermit"
       /* Other required attributes */
     }
+```
 
 ## Test it with a real service
 
