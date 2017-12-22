@@ -175,7 +175,7 @@ module.exports = {
   //check if an example is supported by contextBroker
   exampleSupported: function(fullPath) {
     var check = true;
-    var apiInstance=getApiEntityClient();
+    var apiInstance = getApiEntityClient();
 
     var opts = {
       options: "keyValues"
@@ -184,41 +184,54 @@ module.exports = {
     var files = schema.getFiles(fullPath + path.sep + 'example*.json');
 
     try {
-      files.forEach(function(fileName) {
-        var body = schema.openFile(fileName, 'example ' + fileName);
+      files.forEach(
+        function(fileName) {
+          var body = schema.openFile(fileName, 'example ' + fileName);
 
-        var createEntity = deasync(function (body, cb){
-          apiInstance.createEntity(body, opts, function(error, data, response) {
-            if (error){
-              check = false;
-              cb(error, null);
-            } else {
-              msg.addSupportedExample(fullPath, fileName + ' is supported');
-              debug('*exampleSupported* - API called successfully. Returned data: ' +
-                JSON.stringify(data, null, 2));
-              cb(null, data);
+          var createEntity = deasync(
+            function(body, cb) {
+              apiInstance.createEntity(body, opts,
+                function(error, data, response) {
+                  if (error) {
+                    check = false;
+                    cb(error, null);
+                  } else {
+                    msg.addSupportedExample(fullPath, fileName +
+                      ' is supported');
+                    debug('*exampleSupported* - API called successfully.' +
+                      ' Returned data: ' + JSON.stringify(data, null, 2));
+                    cb(null, data);
+                  }
+                }
+              );
             }
-          });
-        });
+          );
 
-        createEntity(body);
+          createEntity(body);
 
-        var entityId = body.id; // String | Id of the entity to be deleted
+          var entityId = body.id; // String | Id of the entity to be deleted
 
-        var deleteEntity = deasync(function (entityId, cb){
-          apiInstance.removeEntity(entityId, null, function(error, data, response) {
-            if (error) {
-              debug('*exampleSupported* - remove entity API error: ' +  JSON.stringify(error));
-              cb(error, null);
-            } else {
-              debug('*exampleSupported* - remove entity API called successfully.');
-              cb(null, data);
+          var deleteEntity = deasync(
+            function(entityId, cb) {
+              apiInstance.removeEntity(entityId, null,
+                function(error, data, response) {
+                  if (error) {
+                    debug('*exampleSupported* - remove entity API error: ' +
+                      JSON.stringify(error));
+                    cb(error, null);
+                  } else {
+                    debug('*exampleSupported* - remove entity API called ' +
+                      'successfully.');
+                    cb(null, data);
+                  }
+                }
+              );
             }
-          });
-        });
+          );
 
         deleteEntity(entityId);
-      });
+      }
+    );
     } catch (err) {
        msg.addError(fullPath, 'JSON Example is not supported by ' +
          'contextBroker: ' +  JSON.stringify(err));
@@ -226,7 +239,7 @@ module.exports = {
          throw new Error('Fail on Error: JSON Example is not supported by ' +
          'contextBroker: ' +  JSON.stringify(err));
     }
-    debug("*exampleSupported* - " + fullPath + ": "+ check);
+    debug("*exampleSupported* - " + fullPath + " : " + check);
     return check;
   },
 
