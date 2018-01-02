@@ -6,5 +6,5 @@
   "dateActivityStarted": "2016-11-30T07:00:00.00Z",
   "refObject": "Car1",
   "refTarget": "Office1",
-  "refActor": "User1"
+  "refAgent": "User1"
 }
