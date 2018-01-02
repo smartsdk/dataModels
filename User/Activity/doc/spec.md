@@ -34,9 +34,8 @@ A JSON Schema corresponding to this data model can be found [here](https://fiwar
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
-+ `refAgent` : Reference to the agent performing the activity. It may be another NGSI entity or any "Agent" identified by an URI.
-    + Attribute type: [Text](https://schema.org/Text) or [https://schema.org/URL](https://schema.org/URL)
-    + Normative References: [http://schema.org/Person](http://schema.org/Person)
++ `refAgent` : Reference to the agent (i.e. a person) performing the activity. It may be another NGSI Entity or any `Agent` identified by an URI.
+    + Attribute type: Reference to an Entity or [https://schema.org/URL](https://schema.org/URL).
     + Mandatory
 
 + `activityType` : The action performed (e.g. Drive).
@@ -44,14 +43,12 @@ A JSON Schema corresponding to this data model can be found [here](https://fiwar
     + Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)
     + Mandatory
 
-+ `refObject` : Reference to the object of the action (e.g. Car1). It may be another NGSI entity or any "Thing" identified by an URI.
-    + Attribute type: [Text](https://schema.org/Text) or [https://schema.org/URL](https://schema.org/URL)
-    + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
++ `refObject` : Reference to the object of the action (e.g. Car1). It may be another NGSI Entity or any `Object` identified by an URI.
+    + Attribute type: Reference to an Entity or [https://schema.org/URL](https://schema.org/URL).
     + Optional
 
 + `refTarget` : Reference to the target of the action (e.g. Office1).
-    + Attribute type: [Text](https://schema.org/Text) or [https://schema.org/URL](https://schema.org/URL)
-    + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
+    + Attribute type: Reference to an Entity or [https://schema.org/URL](https://schema.org/URL).
     + Optional
 
 **Note**: JSON Schemas only capture the NGSI simplified representation, this means that to test the JSON schema examples with

@@ -20,7 +20,7 @@ mode (`options=keyValues`).
   "type": "UserActivity",
   "activityType": "Drive",
   "description": "User1 drive Car1 to Office1",
-  "activityStart": "2016-11-30T07:00:00.00Z",
+  "dateActivityStarted": "2016-11-30T07:00:00.00Z",
   "refObject": "Car1",
   "refTarget": "Office1",
   "refAgent": "User1"
