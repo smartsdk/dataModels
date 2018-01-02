@@ -18,7 +18,7 @@ by the `refUser` property.
     ]
   },
   "refActivity": "UserActivity1",
-  "refDevice": "Device1",
+  "refUserDevice": "Device1",
   "refUser": "User1"
 }
 ```
