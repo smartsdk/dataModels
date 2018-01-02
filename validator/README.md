@@ -5,6 +5,7 @@ FIWARE Data Model validator is an utility to help the management of NGSI DataMod
 The FIWARE Data Model validator perform the following checks for each Data Model:
 * validity of JSON Schema
 * validity of JSON Examples
+* support of JSON Examples in Orion Context Broker
 * adherence of Data Model name to FIWARE Data Models guidelines
 * existence of Doc folder
 * existence of JSON Schema
