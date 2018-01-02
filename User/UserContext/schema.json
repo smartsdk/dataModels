@@ -14,15 +14,31 @@
     {
       "properties": {
         "refActivity": {
-          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
         },
-        "refDevice": {
-          "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+        "refUserDevice": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
         },
         "refUser": {
           "oneOf": [
             {
-              "type": "string"
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
             },
             {
               "type": "string",

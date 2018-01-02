@@ -9,5 +9,6 @@
     ]
   },
   "refActivity": "UserActivity1",
-  "refUser": "UserId1"
+  "refUserDevice": "Device1",
+  "refUser": "User1"
 }
