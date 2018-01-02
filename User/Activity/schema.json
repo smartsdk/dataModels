@@ -59,7 +59,6 @@
   "required": [
     "activityType",
     "refAgent",
-    "description",
     "type",
     "id"
   ]
