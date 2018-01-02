@@ -36,7 +36,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
     + Normative References: [https://schema.org/address](https://schema.org/address)
     + Mandatory if `location` is not present.
 
-+ `refDevice` : An object representing the current device user by the User. See [Device](../../Device/Device/doc/spec.md) definition.
++ `refDevice` : An object representing the current device used by the User. See [Device](../../Device/Device/doc/spec.md) definition.
     + Attribute type: A references to a [Device](../../Device/Device/doc/spec.md) entity.
     + Optional
 
@@ -59,7 +59,7 @@ A JSON Schema corresponding to this data model can be found [here](../schema.jso
   },
   "refActivity": "UserActivity1",
   "refDevice": "Device1",
-  "refUser": "UserId1"
+  "refUser": "User1"
 }
 ```
 
