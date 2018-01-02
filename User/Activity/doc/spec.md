@@ -6,9 +6,9 @@ This entity represents the current activity performed by an user. It can be used
 scenarios, from modeling social activities on a web site (e.g. Federico shares a picture of his dog) to real life activities (e.g. Federico drives his car to work). The model is largely inspired by
 [https://www.w3.org/TR/activitystreams-core](https://www.w3.org/TR/activitystreams-core).
 
-The model is represents users activities using the following predicate structure: `(Actor, Verb, Object*, Target*)`, where `Object` and `Target` are optional.
+The model represents user activities using the following predicate structure: `(Agent, Verb, Object*, Target*)`, where `Object` and `Target` are optional.
 
-The `Actor` is identified by the attribute `refActor`, the `Verb` is identified by `activityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`. In generally it is assumed that the different part of the predicate are references to other NGSI entities, with the exception of the `Actor`.
+The `Agent` is identified by the attribute `refAgent`, the `Verb` is identified by `activityType`, the `Object` is identified by `refObject`, and the `Target` is identified by `refTarget`.
 
 ## Data Model
 
@@ -26,31 +26,31 @@ A JSON Schema corresponding to this data model can be found [here](https://fiwar
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional  
 
-+ `activityStart` : Activity's start timestamp.
++ `dateActivityStarted` : Activity's start timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Mandatory    
 
-+ `activityEnd` : Activity's end timestamp.
++ `dateActivityEnded` : Activity's end timestamp.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional
 
-+ `refActor` : Reference to the actor of the activity.
-    + Attribute type: [https://schema.org/URL](https://schema.org/URL)
-    + Normative References: [https://tools.ietf.org/html/rfc3986](https://tools.ietf.org/html/rfc3986)
++ `refAgent` : Reference to the direct performer of the activity (e.g. User1). It may be another NGSI entity or any "Agent" identified by an URI.
+    + Attribute type: [Text](https://schema.org/Text) or [https://schema.org/URL](https://schema.org/URL)
+    + Normative References: [http://schema.org/Person](http://schema.org/Person)
     + Mandatory
 
 + `activityType` : The action performed (e.g. Drive)
-    + Attribute type: `string`
-    + Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivity](https://health-lifesci.schema.org/PhysicalActivity)
+    + Attribute type: [Text](https://schema.org/Text)
+    + Normative References: [https://schema.org/Action](https://schema.org/Action), [https://www.w3.org/TR/activitystreams-vocabulary/#activity-types](https://www.w3.org/TR/activitystreams-vocabulary/#activity-types), [https://health-lifesci.schema.org/PhysicalActivityCategory](https://health-lifesci.schema.org/PhysicalActivityCategory)
     + Mandatory
 
-+ `refObject` : Reference to the object of the action
-    + Attribute type: `string` or [https://schema.org/URL](https://schema.org/URL)
++ `refObject` : Reference to the object of the action (e.g. Car1). It may be another NGSI entity or any "Thing" identified by an URI.
+    + Attribute type: [Text](https://schema.org/Text) or [https://schema.org/URL](https://schema.org/URL)
     + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
     + Optional
 
-+ `refTarget` : Reference to the target of the action.
-    + Attribute type: `string` or [https://schema.org/URL](https://schema.org/URL)
++ `refTarget` : Reference to the target of the action (e.g. Office1).
+    + Attribute type: [Text](https://schema.org/Text) or [https://schema.org/URL](https://schema.org/URL)
     + Normative References: [http://schema.org/Thing](http://schema.org/Thing)
     + Optional
 
@@ -62,10 +62,10 @@ A JSON Schema corresponding to this data model can be found [here](https://fiwar
   "type": "UserActivity",
   "activityType": "Drive",
   "description": "User1 drive Car1 to Office1",
-  "activityStart": "2016-11-30T07:00:00.00Z",
+  "dateActivityStarted": "2016-11-30T07:00:00.00Z",
   "refObject": "Car1",
   "refTarget": "Office1",
-  "refActor": "UserId1"
+  "refAgent": "User1"
 }
 ```
 
