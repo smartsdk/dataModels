@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://fiware.github.io/dataModels/Building/BuildingOperation/schema.json",
+  "title": "FIWARE - Building Operation schema",
+  "description": "Information on a given Building Operation",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "BuildingOperation"
+          ],
+          "description": "NGSI Entity type"
+        },
+        "refBuilding": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "refOperator": {
+          "oneOf": [
+            {
+              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+            },
+            {
+              "type": "string",
+              "format": "uri"
+            }
+          ]
+        },
+        "operationType": {
+          "type": "string"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "aborted"
+          ]
+        },
+        "plannedStartDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "plannedEndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actualStartDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actualEndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "ongoing",
+            "finished",
+            "scheduled",
+            "cancelled"
+          ]
+        },
+        "operationSequence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer"
+              },
+              "operation": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "refRelatedBuildingOperation": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          }
+        },
+        "refRelatedDeviceOperation": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "type",
+    "id",
+    "refBuilding",
+    "plannedStartDate",
+    "plannedEndDate",
+  ]
+}

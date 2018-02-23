@@ -1,0 +1,15 @@
+{
+  "id": "buildingType-224182bb3b9f",
+  "type": "BuildingType",
+  "dateCreated": "2016-08-08T10:18:16Z",
+  "dateModified": "2016-08-08T10:18:16Z",
+  "source":  "http://www.example.com",
+  "dataProvider": "OperatorA",
+  "name": "Office",
+  "description": "Standard building type definition for a office",
+  "root": true,
+  "refParentType": [
+    "buildingType-6b4e6232b734",
+    "buildingType-22e874c35180"
+  ]
+}
