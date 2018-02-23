@@ -17,11 +17,11 @@
   "operationSequence": [
     {
       "index": 1,
-      "operation": "fan_power=0"
+      "operation": "fan_power%3D0"
     },
     {
       "index": 2,
-      "operation": "set_temperature=24"
+      "operation": "set_temperature%3D24"
     }
   ],
   "refRelatedBuildingOperation": [
