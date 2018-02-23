@@ -127,7 +127,6 @@
           "format": "uri"
         },
         "openingHours": {
-          "type": "string",
           "type": "array",
           "items": {
             "type": "object",
