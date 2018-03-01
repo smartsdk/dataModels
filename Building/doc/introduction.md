@@ -8,7 +8,6 @@ It is composed by the following entity types:
 + [Building](../Building/doc/spec.md). A Building is a human build structure
     where different activities occur related to living, working, healing
     and so on. 
-+ [BuildingType](../BuildingType/doc/spec.md). It represents a hierarchy
-    of Building types. 
+
 + [BuildingOperation](../BuildingOperation/doc/spec.md). It captures 
     automated operations that may be ongoing within a building.

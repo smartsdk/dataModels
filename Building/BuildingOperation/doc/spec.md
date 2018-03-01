@@ -9,48 +9,59 @@ applicable to the building. This entity is associated with the vertical segments
 of smart homes, smart cities, industry and related IoT applications.
 
 This data model has been partially developed in cooperation with mobile
-operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/),
+compared to GSMA data model following changes are introduced:
+
+* `startDate` renamed to `plannedStartDate`
+
++ `endDate` renamed to`plannedEndDate`
+
+* `startedDate` renamed to `actualStartDate`
+
++ `endedDate` renamed to`actualEndDate`
+
+* `refRelatedDeviceOperation` replaces `refRelatedOperation`
 
 ## Data Model
 
-+ `id` : Unique identifier. 
+For a full description of the following attributes refer to GSMA
+[IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/11/CLP.26-v1.0.pdf)
 
-+ `type` : Entity type. It must be equal to `BuildingOperation`.
++ `id`
 
-+ `dateModified` : Last update timestamp of this entity.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
++ `type`` : Entity type. It must be equal to `BuildingOperation`.`
+
++ `dateModified`
     + Optional
 
-+ `dateCreated` : Entity's creation timestamp.
-    + Attribute type: [DateTime](https://schema.org/DateTime)
++ `dateCreated`
     + Optional    
 
-+ `description` : A description of the operation performed. 
-    + Attribute type: [Text](https://schema.org/Text)
-    + Normative References: [https://schema.org/description](https://schema.org/description)
++ `description`
     + Optional
 
-+ `refBuilding` : A reference to the building where the operation is performed.
-    + Attribute type: A references to an entity of type
-      BuildingType.
++ `refBuilding`
     + Required
 
-+ `refOperator` : A reference to the operator.
-    + Attribute type: A reference to [Person](http://schema.org/Person)
-      or [Organization](https://schema.org/Organization) executing the operation.
++ `refOperator`
     + Required
 
-+ `operationType` : The type of operation associated with the current
-    operation.
-    + Attribute type: [Text](https://schema.org/Text)
++ `operationType`
     + Optional
 
-+ `result` : The final result of the operation.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values, one of the following:
-      + `ok`
-      + `aborted`
++ `result`
     + Optional
+
++ `result`
+    + Optional
+
++ `operationSequence`
+    + Optional
+
++ `refRelatedBuildingOperation`
+    + Optional
+
+These are the modified attributes  compared to GSMA model:
 
 + `plannedStartDate` : The planned start date for the operation..
     + Attribute type: [DateTime](https://schema.org/DateTime)
@@ -67,30 +78,6 @@ operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
 + `actualEndDate` : The actual end date for the operation.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional 
-
-+ `result` : The current status of the operation.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values, one of the following:
-      + `planned`
-      + `ongoing`
-      + `finished`
-      + `scheduled`
-      + `cancelled`
-    + Optional
-
-+ `operationSequence` : The sequence of actions executed by the operation.
-    + Attribute type: [Text](https://schema.org/Text)
-    + Allowed values, one of the following:
-      + `planned`
-      + `ongoing`
-      + `finished`
-      + `scheduled`
-      + `cancelled`
-    + Optional
-
-+ `refRelatedBuildingOperation` : Operations related to the current operation.
-    + Attribute type: A list of references to an entity of type
-      BuildingOperation.
 
 + `refRelatedDeviceOperation` : Devices related to the current operation.
     + Attribute type: A list of references to an entity of type
@@ -122,14 +109,8 @@ mode (`options=keyValues`).
   "actualEndDate": "2016-08-20T10:18:16Z",
   "status": "finished",
   "operationSequence": [
-    {
-      "index": 1,
-      "action": "fan_power=0"
-    },
-    {
-      "index": 2,
-      "action": "set_temperature=24"
-    }
+   "fan_power=0",
+   "set_temperature=24"
   ],
   "refRelatedBuildingOperation": [
     "b4fb8bff-1a8f-455f-8cc0-ca43c069f865",

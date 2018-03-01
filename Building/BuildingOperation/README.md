@@ -32,14 +32,8 @@ mode (`options=keyValues`).
   "actualEndDate": "2016-08-20T10:18:16Z",
   "status": "finished",
   "operationSequence": [
-    {
-      "index": 1,
-      "operation": "fan_power=0"
-    },
-    {
-      "index": 2,
-      "operation": "set_temperature=24"
-    }
+   "fan_power=0",
+   "set_temperature=24"
   ],
   "refRelatedBuildingOperation": [
     "b4fb8bff-1a8f-455f-8cc0-ca43c069f865",

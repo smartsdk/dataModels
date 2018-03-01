@@ -12,6 +12,10 @@ pages:
   - 'Home': index.md
   - 'Guidelines'  : guidelines.md
   - 'Alert'                            : 'Alert/doc/spec.md'
+  - 'Building':
+      - 'Introduction'                 : 'Building/doc/introduction.md'
+      - 'Building'                     : 'Building/Building/doc/spec.md' 
+      - 'BuildingOperation'            : 'Building/BuildingOperation/doc/spec.md'
   - 'Civic Issue Tracking':
       - 'Introduction'                 : 'IssueTracking/doc/introduction.md'
       - 'Open311:ServiceType'          : 'IssueTracking/Open311_ServiceType/doc/spec.md' 

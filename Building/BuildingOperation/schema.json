@@ -78,15 +78,7 @@
         "operationSequence": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "index": {
-                "type": "integer"
-              },
-              "operation": {
-                "type": "string"
-              }
-            }
+            "type": "string"
           }
         },
         "refRelatedBuildingOperation": {

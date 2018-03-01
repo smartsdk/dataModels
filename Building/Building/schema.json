@@ -20,17 +20,6 @@
           ],
           "description": "NGSI Entity type"
         },
-        "refBuildingType": {
-          "oneOf": [
-            {
-              "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
-            },
-            {
-              "type": "string",
-              "format": "uri"
-            }
-          ]
-        },
         "category": {
           "type": "array",
           "items": {
@@ -159,7 +148,7 @@
   "required": [
     "type",
     "id",
-    "refBuildingType",
+    "category",
     "address"
   ]
 }

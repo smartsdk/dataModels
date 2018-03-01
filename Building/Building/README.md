@@ -20,7 +20,6 @@ mode (`options=keyValues`).
   "dateModified": "2016-08-08T10:18:16Z",
   "source": "http://www.example.com",
   "dataProvider": "OperatorA",
-  "refBuildingType": "buildingType-224182bb3b9f",
   "category": [
     "office"
   ],
