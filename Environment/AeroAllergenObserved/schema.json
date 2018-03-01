@@ -26,8 +26,8 @@
             "low",
             "moderate",
             "high",
-            "very high",
-          ],
+            "very high"
+          ]
         },
         "refDevice": {
           "$ref": "https://fiware.github.io/dataModels/common-schema.json#/definitions/EntityIdentifierType"
