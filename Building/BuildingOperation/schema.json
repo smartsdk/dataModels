@@ -49,19 +49,19 @@
             "aborted"
           ]
         },
-        "plannedStartDate": {
+        "startDate": {
           "type": "string",
           "format": "date-time"
         },
-        "plannedEndDate": {
+        "endDate": {
           "type": "string",
           "format": "date-time"
         },
-        "actualStartDate": {
+        "dateStarted": {
           "type": "string",
           "format": "date-time"
         },
-        "actualEndDate": {
+        "dateFinished": {
           "type": "string",
           "format": "date-time"
         },

@@ -12,20 +12,12 @@ This data model has been partially developed in cooperation with mobile
 operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/),
 compared to GSMA data model following changes are introduced:
 
-* `startDate` renamed to `plannedStartDate`
-
-+ `endDate` renamed to`plannedEndDate`
-
-* `startedDate` renamed to `actualStartDate`
-
-+ `endedDate` renamed to`actualEndDate`
-
 * `refRelatedDeviceOperation` replaces `refRelatedOperation`
 
 ## Data Model
 
 For a full description of the following attributes refer to GSMA
-[IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/11/CLP.26-v1.0.pdf)
+[IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf)
 
 + `id`
 
@@ -63,19 +55,19 @@ For a full description of the following attributes refer to GSMA
 
 These are the modified attributes  compared to GSMA model:
 
-+ `plannedStartDate` : The planned start date for the operation..
++ `startDate` : The planned start date for the operation.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Required 
 
-+ `plannedEndDate` : The planned end date for the operation..
++ `endDate` : The planned end date for the operation.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Required 
 
-+ `actualStartDate` : The actual start date for the operation.
++ `dateStarted` : The actual start date for the operation.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional 
 
-+ `actualEndDate` : The actual end date for the operation.
++ `dateFinished` : The actual end date for the operation.
     + Attribute type: [DateTime](https://schema.org/DateTime)
     + Optional 
 
@@ -103,10 +95,10 @@ mode (`options=keyValues`).
   "operationType": "airConditioning",
   "description": "Air conditioning levels reduced due to out of hours",
   "result": "ok",
-  "plannedStartDate": "2016-08-08T10:18:16Z",
-  "plannedEndDate": "2016-08-20T10:18:16Z",
-  "actualStartDate": "2016-08-08T10:18:16Z",
-  "actualEndDate": "2016-08-20T10:18:16Z",
+  "startDate": "2016-08-08T10:18:16Z",
+  "endDate": "2016-08-20T10:18:16Z",
+  "dateStarted": "2016-08-08T10:18:16Z",
+  "dateFinished": "2016-08-20T10:18:16Z",
   "status": "finished",
   "operationSequence": [
    "fan_power=0",

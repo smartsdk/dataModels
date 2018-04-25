@@ -25,7 +25,7 @@ compared to GSMA data model following changes are introduced:
 ## Data Model
 
 For a full description of the following attributes refer to GSMA
-[IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/11/CLP.26-v1.0.pdf)
+[IoT Big Data Harmonised Data Model](https://www.gsma.com/iot/wp-content/uploads/2016/06/CLP.26-v4.0.pdf)
 
 + `id`
 
@@ -67,7 +67,7 @@ For a full description of the following attributes refer to GSMA
 + `refMap`
     + Optional
 
-The following attribute was introduced:
+The following attribute has been introduced:
 
 + `openingHours` : The number of floors above ground level in this building.
     + Attribute type: List of [Opening Hours](http://schema.org/openingHours)
