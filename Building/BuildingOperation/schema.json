@@ -116,7 +116,7 @@
     "type",
     "id",
     "refBuilding",
-    "plannedStartDate",
-    "plannedEndDate"
+    "startDate",
+    "endDate"
   ]
 }
