@@ -4,7 +4,12 @@
 This entity models aero allergens observed at a given location and
   related overall allergen risk.
 
-This data model has been developed based on [GSMA](http://www.gsma.com/connectedliving/iot-big-data/). 
+This data model has been developed based on [GSMA](http://www.gsma.com/connectedliving/iot-big-data/).
+Aero allergens strictly depends on the geographical location. Common Aero allergens
+in Europe may be quite different from the ones in US due to the different biological
+species. A list of commonly used aero allergens in Europe can be found on
+[polleninfo.org](https://www.polleninfo.org/en/allergy/profiles/) a web site
+maintained by the European Aeroallergen Network.
 
 ## Data Model
 
@@ -42,7 +47,7 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 + `allergenRisk` : Overall allergen risk corresponding to the aero allergens observed.
     + Attribute type: [Text](https://schema.org/Text)
     + Example values defined by the [European Aeroallergen Network](https://www.ean-net.org/en/):
-  (`none`, `low`, `moderate`, `high`, `very high`).
+  (`none`, `low`, `moderate`, `high`, `veryHigh`).
   As this can be different between countries, regulations or implementations, the set of allowed values will depend on the reference specification used.
   It is recommended that implementations use the same naming conventions as exemplified above (lower case starting words, camel case when compound terms are used)
     + Attribute metadata:
@@ -57,17 +62,17 @@ A JSON Schema corresponding to this data model can be found [here](http://fiware
 
 ### Representing aero allergens concentration
 
-In order to enable a proper management of the the different aero allergens concentration,
-*for each* aero allergens we have to use an attribute that *MUST* refers exactly
+To describe the different aero allergens concentrations,
+*for each* aero allergens we use an attribute that *MUST* refers exactly
 to the conventional name of the allergen (usually the latin name of
-the associated plant) concatenated with the string `Concentration`,
-e.g. `alnusConcentration` to measure
-the concentration (usually in grains per cubic meter) of 
-[alder](https://en.wikipedia.org/wiki/Alder) pollen.
+the associated plant) to measure
+the concentration (usually in grains per cubic meter `gr/m3`). e.g. `alnus`
+to measure the concentration of [alnus](https://en.wikipedia.org/wiki/Alder)
+pollen (*Alder* is the common english name for *Alnus*).
 
 The structure of such an attribute will be as follows:
 
-+ Attribute name: Equal to the name of the allergen plus the suffix `Level`, for instance `alnusConcentration`.
++ Attribute name: Equal to the name of the allergen, for instance `alnus`.
 
 + Attribute type: [Number](https://schema.org/Number)
 
@@ -77,7 +82,8 @@ The structure of such an attribute will be as follows:
     + `timestamp` : optional timestamp for the observed value in ISO8601 format.
         It can be omitted if the observation time is the same as the one captured by the `dateObserved` attribute at entity level.
         + Type: [DateTime](https://schema.org/DateTime)
-    + `unitCode` : The unit code (text) of measured concentration (usually grains per cubic meter).
+    + `unitCode` : The unit code (text) of measured concentration (usually the
+        unit adopted is grains per cubic meter: `gr/m3`).
         + Type: [Text](https://schema.org/Text)
         + Optional
     + `description` : short description of the allergen
@@ -86,18 +92,17 @@ The structure of such an attribute will be as follows:
 
 ### Representing qualitative levels of aero allergens
 
-In order to enable a proper management of the aero allergens qualitative levels,
-*for each* aero allergens we have to use an attribute that *MUST* refers exactly
+T describe the aero allergens qualitative levels,
+*for each* aero allergens we use an attribute that *MUST* refers exactly
 to the conventional name of the allergen (usually the latin name of
 the associated plant) concatenated with the string `Level`,
-e.g. `alnusLevel` to measure
-the qualitative level for a given concentration of 
-[alder](https://en.wikipedia.org/wiki/Alder) pollen.
+e.g. `alnusLevel` to measure the qualitative level for a given concentration of
+[alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
 + Attribute name: Equal to the name of the allergen plus the suffix `Level`, for instance `alnusLevel`.
 + Attribute type: [Text](https://schema.org/Text)
 + Attribute value: Example values defined by the [European Aeroallergen Network](https://www.ean-net.org/en/):
-(`none`, `low`, `moderate`, `high`, `very high`).
+(`none`, `low`, `moderate`, `high`, `veryHigh`).
   As this can be different between countries, regulations or implementations, the set of allowed values will depend on the reference specification used.
   It is recommended that implementations use the same naming conventions as exemplified above (lower case starting words, camel case when compound terms are used)
 + Attribute metadata:
@@ -110,13 +115,12 @@ the qualitative level for a given concentration of
 
 ### Representing allergenicity category of aero allergens
 
-In order to enable a proper management of the allergenicity category of aero allergens,
-*for each* aero allergens we have to use an attribute that *MUST* refers exactly
+To describe the allergenicity category of aero allergens,
+*for each* aero allergens we use an attribute that *MUST* refers exactly
 to the conventional name of the allergen (usually the latin name of
 the associated plant) concatenated with the string `Allergenicity`,
-e.g. `alnusAllergenicity` to describe
-the allergenicity level of 
-[alder](https://en.wikipedia.org/wiki/Alder) pollen.
+e.g. `alnusAllergenicity` to describe the allergenicity level of 
+[alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
 + Attribute name: Equal to the name of the allergen plus the suffix `Allergenicity`, for instance `alnusAllergenicity`.
 + Attribute type: [Text](https://schema.org/Text)
@@ -143,10 +147,10 @@ mode (`options=keyValues`).
   "id": "AeroAllergenObserved-CDMX-Pollen-Cuajimalpa",
   "type": "AeroAllergenObserved",
   "alnusLevel": "moderate",
-  "alnusConcentration": 40,
+  "alnus": 40,
   "alnusAllergenicity": "3",
   "casuarinaLevel": "low",
-  "casuarinaConcentration": 1,
+  "casuarina": 1,
   "casuarinaAllergenicity": "3",
   "allergenRisk": "moderate",
   "address": {
