@@ -102,11 +102,11 @@ The structure of such an attribute will be as follows:
 T describe the aero allergens qualitative levels,
 *for each* aero allergens we use an attribute that *MUST* refers exactly
 to the conventional name of the allergen (usually the latin name of
-the associated plant) concatenated with the string `Level`,
-e.g. `alnusLevel` to measure the qualitative level for a given concentration of
+the associated plant) concatenated with the string `_Level`,
+e.g. `alnus_Level` to measure the qualitative level for a given concentration of
 [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
-+ Attribute name: Equal to the name of the allergen plus the suffix `Level`, for instance `alnusLevel`.
++ Attribute name: Equal to the name of the allergen plus the suffix `Level`, for instance `alnus_Level`.
 + Attribute type: [Text](https://schema.org/Text)
 + Attribute value: Example values defined by the [European Aeroallergen Network](https://www.ean-net.org/en/):
 (`none`, `low`, `moderate`, `high`, `veryHigh`).
@@ -125,11 +125,11 @@ e.g. `alnusLevel` to measure the qualitative level for a given concentration of
 To describe the allergenicity category of aero allergens,
 *for each* aero allergens we use an attribute that *MUST* refers exactly
 to the conventional name of the allergen (usually the latin name of
-the associated plant) concatenated with the string `Allergenicity`,
-e.g. `alnusAllergenicity` to describe the allergenicity level of 
+the associated plant) concatenated with the string `_Allergenicity`,
+e.g. `alnus_Allergenicity` to describe the allergenicity level of 
 [alnus](https://en.wikipedia.org/wiki/Alder) pollen.
 
-+ Attribute name: Equal to the name of the allergen plus the suffix `Allergenicity`, for instance `alnusAllergenicity`.
++ Attribute name: Equal to the name of the allergen plus the suffix `_Allergenicity`, for instance `alnus_Allergenicity`.
 + Attribute type: [Text](https://schema.org/Text)
 + Attribute value: Example values defined by the [Spanish Network for Aerobiology](https://www.uco.es/rea/infor_rea/interpretacion.html):
 (`1`, `2`, `3`, `4`).
@@ -153,12 +153,12 @@ mode (`options=keyValues`).
 {
   "id": "AeroAllergenObserved-CDMX-Pollen-Cuajimalpa",
   "type": "AeroAllergenObserved",
-  "alnusLevel": "moderate",
+  "alnus_Level": "moderate",
   "alnus": 40,
-  "alnusAllergenicity": "3",
-  "casuarinaLevel": "low",
+  "alnus_Allergenicity": "3",
+  "casuarina_Level": "low",
   "casuarina": 1,
-  "casuarinaAllergenicity": "3",
+  "casuarina_Allergenicity": "3",
   "allergenRisk": "moderate",
   "address": {
     "addressCountry": "MX",

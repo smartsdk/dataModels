@@ -16,12 +16,12 @@ This entity models aero allergens observed at a given location and
 {
   "id": "AeroAllergenObserved-CDMX-Pollen-Cuajimalpa",
   "type": "AeroAllergenObserved",
-  "alnusLevel": "moderate",
+  "alnus_Level": "moderate",
   "alnus": 40,
-  "alnusAllergenicity": "3",
-  "casuarinaLevel": "low",
+  "alnus_Allergenicity": "3",
+  "casuarina_Level": "low",
   "casuarina": 1,
-  "casuarinaAllergenicity": "3",
+  "casuarina_Allergenicity": "3",
   "allergenRisk": "moderate",
   "address": {
     "addressCountry": "MX",
