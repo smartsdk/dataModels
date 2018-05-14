@@ -22,6 +22,7 @@ pages:
       - 'DeviceModel'            : 'Device/DeviceModel/doc/spec.md'
   - 'Environment':
       - 'Introduction'           : 'Environment/doc/introduction.md'
+      - 'AeroAllergenObserved'   : 'Environment/AeroAllergenObserved/doc/spec.md'
       - 'AirQualityObserved'     : 'Environment/AirQualityObserved/doc/spec.md'
       - 'WaterQualityObserved'   : 'Environment/WaterQualityObserved/doc/spec.md'
       - 'NoiseLevelObserved'     : 'Environment/NoiseLevelObserved/doc/spec.md'
