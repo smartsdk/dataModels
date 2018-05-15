@@ -10,7 +10,7 @@ of smart homes, smart cities, industry and related IoT applications.
 
 This data model has been partially developed in cooperation with mobile
 operators and the [GSMA](http://www.gsma.com/connectedliving/iot-big-data/),
-compared to GSMA data model following changes are introduced:
+compared to GSMA data model the following changes are introduced:
 
 * `refRelatedDeviceOperation` replaces `refRelatedOperation`
 

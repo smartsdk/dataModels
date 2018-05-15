@@ -17,7 +17,7 @@ compared to GSMA data model following changes are introduced:
 
 * `openingHours` is introduced following schema.org data model to allow
   fine-grained on building opening times. GSMA supported this as free text
-  in the `notes` attribute (remove as well).
+  in the `notes` attribute (removed as well).
 
 * `refSubscriptionService` is not supported, since `SubscriptionService` model
   is not supported currently.
