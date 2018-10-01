@@ -25,6 +25,9 @@ matrix:
         - npm install eslint-plugin-json --save-dev -g
         - npm install -g jshint
       ## Data model validator
+        - cd validator
+        - sudo npm install -g
+        - cd ..
         - sudo apt-get remove -y docker docker-engine docker.io
         - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
         - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -36,9 +39,6 @@ matrix:
       before_script:
         - eslint --ext .json .
         - jshint .
-        - cd validator
-        - sudo npm install -g
-        - cd ..
         - validate -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p . -c true
       script:
         - true
