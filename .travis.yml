@@ -38,7 +38,7 @@ matrix:
         - docker run -d --name orion1 --link mongodb:mongodb -p 1026:1026 fiware/orion -dbhost mongodb
       before_script:
         - eslint --ext .json .
-        - jshint .
+        - jshint . --exclude-path validator/node_modules
         - validate -i common-schema.json -i geometry-schema.json -i specs/Weather/weather-schema.json -i specs/Alert/alert-schema.json -p . -c true
       script:
         - true
