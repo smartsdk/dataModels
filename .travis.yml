@@ -26,7 +26,7 @@ matrix:
         - npm install -g jshint
       ## Data model validator
         - cd validator
-        - sudo npm install -g
+        - npm install -g
         - cd ..
         - sudo apt-get remove -y docker docker-engine docker.io
         - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
