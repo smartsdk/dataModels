@@ -212,8 +212,8 @@ mode (`options=keyValues`).
          ]
        },
        "dateObserved": "2016-12-07T11:10:00/2016-12-07T11:15:00",
-       "dateObservedFrom": "2016-12-07T11:10:00",
-       "dateObservedTo": "2016-12-07T11:15:00",
+       "dateObservedFrom": "2016-12-07T11:10:00Z",
+       "dateObservedTo": "2016-12-07T11:15:00Z",
        "averageHeadwayTime": 0.5,
        "intensity": 197,
        "occupancy": 0.76,

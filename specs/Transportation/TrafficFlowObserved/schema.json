@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema#",
   "id": "https://fiware.github.io/dataModels/specs/Transportation/TrafficFlowObserved/schema.json",
   "title": "FIWARE - Transportation / TrafficFlowObserved",
-  "description": "TrafficFlowObserved - TODO: Provide a complete Schema",
+  "description": "TrafficFlowObserved",
   "type": "object",
   "allOf": [
     {
@@ -20,6 +20,10 @@
           ],
           "description": "NGSI Entity type"
         },
+        "laneId": {
+          "type": "integer",
+          "minimum": 0
+        },
         "refRoadSegment": {
           "type": "string",
           "format": "uri"
@@ -34,6 +38,44 @@
         "dateObservedTo": {
           "type": "string",
           "format": "date-time"
+        },
+        "intensity": {
+          "type": "number",
+          "minimum": 0
+        },
+        "occupancy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "averageVehicleSpeed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "averageVehicleLength": {
+          "type": "number",
+          "minimum": 0
+        },
+        "averageGapDistance": {
+          "type": "number",
+          "minimum": 0
+        },
+        "congested": {
+          "type": "boolean"
+        },
+        "averageHeadwayTime": {
+          "type": "number",
+          "minimum": 0
+        },
+        "laneDirection": {
+          "type": "string",
+          "enum": [
+            "forward",
+            "backward"
+          ]
+        },
+        "reversedLane": {
+          "type": "boolean"
         }
       }
     }
