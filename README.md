@@ -15,12 +15,17 @@ Such datasets are exposed through the [FIWARE NGSI version 2](http://fiware.gith
 This work is aligned with the results of the
 [GSMA IoT Big Data](http://www.gsma.com/connectedliving/iot-big-data/) Project.
 Such project is working on the harmonization of APIs and data models for fueling IoT and Big Data Ecosystems.
-In fact the FIWARE datamodels are a superset of the [GSMA Data Models](http://www.gsma.com/connectedliving/wp-content/uploads/2016/11/CLP.26-v1.0.pdf). 
+In fact the FIWARE data models are a superset of the [GSMA Data Models](http://www.gsma.com/connectedliving/wp-content/uploads/2016/11/CLP.26-v1.0.pdf). 
 
 All the code in this repository is licensed under the MIT License. However each original data source may have a different license.
 So before using harmonized data please check carefully each data license.
 
-All the datamodels documented here are offered under a [Creative Commons by Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) License.
+All the data models documented here are offered under a [Creative Commons by Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) License.
+
+## Data Models adoption
+
+To support the adoption, we created a short [guideline](specs/howto.md)
+for the usage of data models.
 
 ## JSON Schemas
 

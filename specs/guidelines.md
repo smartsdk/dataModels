@@ -2,6 +2,16 @@
 
 This is a set of guidelines for defining new data models. Further information and a guideline update can be found at [D2.2 Synhronicity IoT LSP](https://synchronicity-iot.eu/wp-content/uploads/2018/05/synchronicity_d2_2_guidelines_for_the_definition_of_oasc_shared_data_models.pdf)
 
+Before creating a new data model, explore the existing ones to be sure there is
+already a data model that covers your use case. The search box in the
+ReadTheDocs page can help you to search for specification connected to your
+needs. Recall to use synonyms in your search. E.g. what you might call Public
+Transport already exists under UrbanMobility.
+
+If you are looking for guidelines on adoption of existing data models, please
+refer to [How to use FIWARE Harmonised Data Models in your projects](howto.md)
+section.
+
 ## Syntax
 
 + Use English terms, preferably American English.
@@ -130,3 +140,51 @@ In case of doubt check other existing models!
 + `source`
 + `relativeHumidity`
 + `temperature`
+
+## How to contribute
+
+Contributions should come in the form of pull requests.
+[Fork](https://help.github.com/articles/fork-a-repo/) the repository,
+[Create a branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/)
+containing your changes, and proceed with a [Pull Request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+
+Pull Request should be easy to review, so if the model, or the changes you
+are proposing are wide, please create different pull requests.
+
+New data models should be added under a folder structured as follows:
+- `specs/`
+  - `NewModel/`
+    - `doc/`
+      - `spec.md`: A data model description based on the
+        [data model template](datamodel_template.md),
+        e.g. [spec.md of WeatherObserved](specs/Weather/WeatherObserved/doc/spec.md).
+    - `README.md`: A summary file (as an extract from the spec file),
+      e.g. [README.md of WeatherObserved](specs/Weather/WeatherObserved/README.md)
+    - `schema.json`: The JSON Schema definition,
+      e.g. [schema.json of WeatherObserved](specs/Weather/WeatherObserved/schema.json)
+    - `example.json`: One or more JSON example file,
+      e.g. [example.json of WeatherObserved](specs/Weather/WeatherObserved/example.json)
+
+The name of the folder should match the entity type used in the JSON Schema
+(e.g. `NewModel`). For data models including more entities, a hierarchical
+folder should be used. The father folder can include common JSON schemas
+shared among the entities. e.g.:
+
+- `specs/`
+  - `NewModel/`
+    - `doc/`
+      - `spec.md`
+    - `README.md`
+    - `newmodel-schema.json`: the common schema for the different entities.
+    - `NewModelEntityOne/`
+      - `doc/`
+        - `spec.md`
+      - `README.md`
+      - `schema.json`
+      - `example.json`
+    - `NewModelEntityTwo/`
+      - `doc/`
+        - `spec.md`
+      - `README.md`
+      - `schema.json`
+      - `example.json`
