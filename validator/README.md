@@ -67,7 +67,7 @@ Options available are:
 * `dmv:recursiveScan`: enable or disable the recursive scanning of directory. Default value: `true`
 * `dmv:validateExamples`: enable or disable the validation of JSON Examples. Default value: `true`
 * `dmv:loadModelCommonSchemas`: automatically include any file named ``*-schema.json`` in data path.
-* `dmv:ignoreFolders`: The list of folder names that should be ignored. Default value: `['harvest','auxiliary']`
+* `dmv:ignoreFolders`: The list of folder names that should be ignored. Default value: `['harvest','auxiliary','img']`
 * `dmv:docFolders`: The list of folder names that are expected to contain Documentation: Default value: `['doc']`
 * `dmv:contextBroker`: Enable JSON example testing with Orion Context Broker. Default value: `false`
 * `dmv:contextBrokerUrl`: The URL for the Orion Context Broker for JSON example testing. Default value: `http://localhost:1026/v2`
