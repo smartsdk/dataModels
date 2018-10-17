@@ -1,6 +1,6 @@
 {
 	"name": "fiware-model-validator",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"description": "A simple validator for FIWARE Data Models",
 	"keywords": [
 		"node",
@@ -28,7 +28,7 @@
 		"glob": "^7.0.3",
 		"ajv": "^4.0.0",
 		"debug": "^4.0.1",
-		"ngsi_v2": "0.1.0",
+		"ngsi_v2": "0.2.1",
 		"deasync": "0.1.13"
 	},
 	"devDependencies": {
