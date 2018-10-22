@@ -13,8 +13,8 @@ this does not imply that they cannot be used outside of the NGSI context model,
 it does however indicate that some of [design principles](guidelines.md) have
 been driven by that.
 This also implicitly means that Data Models will follow the evolution of FIWARE
-platform, NGSI-LD mappings will be added to all existing Data Models
-in the medium term.
+platform, [NGSI-LD](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf)
+mappings will be added to all existing Data Models in the medium term.
 
 ## General principles
 
@@ -352,7 +352,8 @@ annotation. E.g.:
 
 ### Proper usage of relations among Data Models
 
-With the introduction of NGSI-LD, a growing number attributes are being defined
+With the introduction of [NGSI-LD](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/004/01.01.01_60/gs_CIM004v010101p.pdf),
+a growing number attributes are being defined
 which represent relationships between entities.
 
 Previously the FIWARE data model defined the name of such attributes was normed
